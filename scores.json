@@ -1,1 +1,2002 @@
-[]
+[
+  {
+    "adoption": 5,
+    "alignment": 5,
+    "collapsed": false,
+    "demand": 4,
+    "effort": 5,
+    "id": 1,
+    "impact": 2,
+    "name": "Shopify"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 2,
+    "impact": 1,
+    "name": "WooCommerce"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 3,
+    "impact": 1,
+    "name": "BigCommerce"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 4,
+    "impact": 1,
+    "name": "Magento"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 5,
+    "impact": 1,
+    "name": "Etsy"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 6,
+    "impact": 1,
+    "name": "Amazon Seller"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 7,
+    "impact": 1,
+    "name": "Mailchimp"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 8,
+    "impact": 1,
+    "name": "Klaviyo"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 9,
+    "impact": 1,
+    "name": "ActiveCampaign"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 10,
+    "impact": 1,
+    "name": "Constant Contact"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 11,
+    "impact": 1,
+    "name": "ConvertKit"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 12,
+    "impact": 1,
+    "name": "Brevo (Sendinblue)"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 13,
+    "impact": 1,
+    "name": "Marketo"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 14,
+    "impact": 1,
+    "name": "Google Analytics"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 15,
+    "impact": 1,
+    "name": "Amplitude"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 16,
+    "impact": 1,
+    "name": "Mixpanel"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 17,
+    "impact": 1,
+    "name": "Segment"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 18,
+    "impact": 1,
+    "name": "Looker"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 19,
+    "impact": 1,
+    "name": "Qlik"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 20,
+    "impact": 1,
+    "name": "mParticle"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 21,
+    "impact": 1,
+    "name": "ADP"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 22,
+    "impact": 1,
+    "name": "BambooHR"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 24,
+    "impact": 1,
+    "name": "Lever ATS"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 25,
+    "impact": 1,
+    "name": "Greenhouse"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 26,
+    "impact": 1,
+    "name": "Indeed"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 27,
+    "impact": 1,
+    "name": "LinkedIn Recruiter"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 28,
+    "impact": 1,
+    "name": "Snowflake"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 29,
+    "impact": 1,
+    "name": "BigQuery"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 30,
+    "impact": 1,
+    "name": "Redshift"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 31,
+    "impact": 1,
+    "name": "MongoDB"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 32,
+    "impact": 1,
+    "name": "Firebase"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 33,
+    "impact": 1,
+    "name": "Elasticsearch"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 34,
+    "impact": 1,
+    "name": "DynamoDB"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 35,
+    "impact": 1,
+    "name": "Monday.com"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 36,
+    "impact": 1,
+    "name": "Linear"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 37,
+    "impact": 1,
+    "name": "Intercom"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 38,
+    "impact": 1,
+    "name": "Freshdesk"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 39,
+    "impact": 1,
+    "name": "Tawk"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 40,
+    "impact": 1,
+    "name": "Discord"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 41,
+    "impact": 1,
+    "name": "Telegram"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 42,
+    "impact": 1,
+    "name": "WhatsApp Business"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 43,
+    "impact": 1,
+    "name": "WordPress"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 44,
+    "impact": 1,
+    "name": "Webflow"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 45,
+    "impact": 1,
+    "name": "Contentful"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 46,
+    "impact": 1,
+    "name": "Notion"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 47,
+    "impact": 1,
+    "name": "Confluence"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 48,
+    "impact": 1,
+    "name": "Joomla"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 49,
+    "impact": 1,
+    "name": "Drupal"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 50,
+    "impact": 1,
+    "name": "QuickBooks Online"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 51,
+    "impact": 1,
+    "name": "FreshBooks"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 52,
+    "impact": 1,
+    "name": "Sage"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 53,
+    "impact": 1,
+    "name": "Wave"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 54,
+    "impact": 1,
+    "name": "Oracle NetSuite"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 55,
+    "impact": 1,
+    "name": "SAP"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 56,
+    "impact": 1,
+    "name": "Dataverse"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 57,
+    "impact": 1,
+    "name": "Google Forms"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 58,
+    "impact": 1,
+    "name": "Microsoft Dataverse"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 59,
+    "impact": 1,
+    "name": "Microsoft Graph"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 60,
+    "impact": 1,
+    "name": "Microsoft Graph Security"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 61,
+    "impact": 1,
+    "name": "Oracle"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 62,
+    "impact": 1,
+    "name": "Oracle Autonomous Database"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 63,
+    "impact": 1,
+    "name": "Oracle Block Storage"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 64,
+    "impact": 1,
+    "name": "Oracle Boot Volume"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 65,
+    "impact": 1,
+    "name": "Oracle Cloud IAM"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 66,
+    "impact": 1,
+    "name": "Oracle Compute Engine"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 67,
+    "impact": 1,
+    "name": "Oracle Database"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 68,
+    "impact": 1,
+    "name": "Oracle EBS"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 69,
+    "impact": 1,
+    "name": "Oracle Eloqua"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 70,
+    "impact": 1,
+    "name": "Oracle Financial Cloud"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 71,
+    "impact": 1,
+    "name": "Oracle Fusion Cloud"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 72,
+    "impact": 1,
+    "name": "Oracle Fusion Cloud HCM"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 73,
+    "impact": 1,
+    "name": "Oracle Fusion Middleware"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 74,
+    "impact": 1,
+    "name": "Oracle GoSaaS"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 75,
+    "impact": 1,
+    "name": "Oracle HCM Cloud"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 76,
+    "impact": 1,
+    "name": "Oracle Hyperion"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 77,
+    "impact": 1,
+    "name": "Oracle NetSuite RESTlet"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 78,
+    "impact": 1,
+    "name": "Oracle Object Storage"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 79,
+    "impact": 1,
+    "name": "Oracle PeopleSoft Financial"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 80,
+    "impact": 1,
+    "name": "Oracle Primavera Cloud"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 81,
+    "impact": 1,
+    "name": "Oracle Responsys"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 82,
+    "impact": 1,
+    "name": "Oracle Sales Cloud"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 83,
+    "impact": 1,
+    "name": "Oracle Virtual Cloud Network"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 86,
+    "impact": 1,
+    "name": "AT Invoice"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 87,
+    "impact": 1,
+    "name": "AWS Machine Learning"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 88,
+    "impact": 1,
+    "name": "AccountingBox"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 89,
+    "impact": 1,
+    "name": "AccountingSuite"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 92,
+    "impact": 1,
+    "name": "Airship"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 93,
+    "impact": 1,
+    "name": "Airteach"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 94,
+    "impact": 1,
+    "name": "Amazon SageMaker"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 95,
+    "impact": 1,
+    "name": "AnswerFirst"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 96,
+    "impact": 1,
+    "name": "Apache Solr"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 97,
+    "impact": 1,
+    "name": "Attach"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 98,
+    "impact": 1,
+    "name": "AutoReach"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 99,
+    "impact": 1,
+    "name": "Avalara AvaTax"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 100,
+    "impact": 1,
+    "name": "BankSync"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 101,
+    "impact": 1,
+    "name": "Baresquare"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 102,
+    "impact": 1,
+    "name": "Bitcoin API"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 103,
+    "impact": 1,
+    "name": "BizMachine"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 104,
+    "impact": 1,
+    "name": "Blink Payment"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 105,
+    "impact": 1,
+    "name": "Bloomreach"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 106,
+    "impact": 1,
+    "name": "BlueStone PIM Mediabank"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 107,
+    "impact": 1,
+    "name": "BoomTax"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 109,
+    "impact": 1,
+    "name": "BreachRx"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 110,
+    "impact": 1,
+    "name": "Builtfirst"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 111,
+    "impact": 1,
+    "name": "CII & UBL by InvoiceXML"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 112,
+    "impact": 1,
+    "name": "CPACharge"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 113,
+    "impact": 1,
+    "name": "CSG Forte Payments"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 114,
+    "impact": 1,
+    "name": "Cacheflow"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 115,
+    "impact": 1,
+    "name": "California Bank & Trust"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 116,
+    "impact": 1,
+    "name": "Catalog Machine"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 118,
+    "impact": 1,
+    "name": "Citibank"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 119,
+    "impact": 1,
+    "name": "CleverReach"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 120,
+    "impact": 1,
+    "name": "ClickBank"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 129,
+    "impact": 1,
+    "name": "Contact Reach"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 130,
+    "impact": 1,
+    "name": "Coupon Reach"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 131,
+    "impact": 1,
+    "name": "Creative Machine"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 132,
+    "impact": 1,
+    "name": "Credit Card Processing Modules: First Data Merchant Services"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 133,
+    "impact": 1,
+    "name": "Credit Card payment Integration(Stripe)"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 134,
+    "impact": 1,
+    "name": "AI Receptionist"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 135,
+    "impact": 1,
+    "name": "Acesso gov.br"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 136,
+    "impact": 1,
+    "name": "Active Directory"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 148,
+    "impact": 1,
+    "name": "AssoConnect"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 149,
+    "impact": 1,
+    "name": "Atlassian Administration"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 150,
+    "impact": 1,
+    "name": "AuditCase"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 151,
+    "impact": 1,
+    "name": "Azure Authentication Provider"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 152,
+    "impact": 1,
+    "name": "Berkshire Receptionists"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 155,
+    "impact": 1,
+    "name": "Bookipi AI Receptionist"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 156,
+    "impact": 1,
+    "name": "Country State City Data"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 158,
+    "impact": 1,
+    "name": "Estate.Studio"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 159,
+    "impact": 1,
+    "name": "FIN Compliance"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 161,
+    "impact": 1,
+    "name": "GOV UK"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 162,
+    "impact": 1,
+    "name": "GlowLocal"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 163,
+    "impact": 1,
+    "name": "GoVisually"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 164,
+    "impact": 1,
+    "name": "Google Service Account Authentication"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 165,
+    "impact": 1,
+    "name": "GovNotify"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 166,
+    "impact": 1,
+    "name": "GovSpend"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 167,
+    "impact": 1,
+    "name": "GovTribe"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 168,
+    "impact": 1,
+    "name": "HelloAsso"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 169,
+    "impact": 1,
+    "name": "21RISK"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 170,
+    "impact": 1,
+    "name": "AGENTVIEW"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 171,
+    "impact": 1,
+    "name": "AI Agent"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 172,
+    "impact": 1,
+    "name": "AI Agent Builder"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 173,
+    "impact": 1,
+    "name": "AI Agent Tool"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 174,
+    "impact": 1,
+    "name": "Adobe Commerce Magento"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 175,
+    "impact": 1,
+    "name": "Agent 3000"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 176,
+    "impact": 1,
+    "name": "Agent Client Collector"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 177,
+    "impact": 1,
+    "name": "Agent Legend"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 178,
+    "impact": 1,
+    "name": "Agent Response"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 179,
+    "impact": 1,
+    "name": "Agent.AI"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 180,
+    "impact": 1,
+    "name": "Agent700 Agent"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 181,
+    "impact": 1,
+    "name": "AgentBright"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 182,
+    "impact": 1,
+    "name": "AgentFire"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 183,
+    "impact": 1,
+    "name": "AgentHub"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 184,
+    "impact": 1,
+    "name": "AgentIzzy"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 185,
+    "impact": 1,
+    "name": "AgentLocator"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 189,
+    "impact": 1,
+    "name": "AgentQL"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 190,
+    "impact": 1,
+    "name": "AgentX"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 191,
+    "impact": 1,
+    "name": "Agentalk"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 195,
+    "impact": 1,
+    "name": "Agents"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 196,
+    "impact": 1,
+    "name": "Agenty"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 197,
+    "impact": 1,
+    "name": "AirAgent"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 198,
+    "impact": 1,
+    "name": "Anchor Browser Agent"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 199,
+    "impact": 1,
+    "name": "AI21 Labs"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 200,
+    "impact": 1,
+    "name": "API Labz"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 201,
+    "impact": 1,
+    "name": "ActiveCollab"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 202,
+    "impact": 1,
+    "name": "Aesthetic Record EMR"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 204,
+    "impact": 1,
+    "name": "Balabook"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 205,
+    "impact": 1,
+    "name": "Callabo"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 206,
+    "impact": 1,
+    "name": "Chatlabz"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 207,
+    "impact": 1,
+    "name": "ClinicSoftware.com"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 208,
+    "impact": 1,
+    "name": "Clinicminds"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 211,
+    "impact": 1,
+    "name": "Convertlabs"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 213,
+    "impact": 1,
+    "name": "Dentally"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 214,
+    "impact": 1,
+    "name": "Dentistry Dashboard"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 215,
+    "impact": 1,
+    "name": "Dicom Viewer"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 216,
+    "impact": 1,
+    "name": "ElevenLabs"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 218,
+    "impact": 1,
+    "name": "Epic AI"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 219,
+    "impact": 1,
+    "name": "Epic Healthcare"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 222,
+    "impact": 1,
+    "name": "Gallabox"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 224,
+    "impact": 1,
+    "name": "GitLab"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 225,
+    "impact": 1,
+    "name": "HIPAAtizer"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 226,
+    "impact": 1,
+    "name": "AWS IoT"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 227,
+    "impact": 1,
+    "name": "Amabis data quality"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 228,
+    "impact": 1,
+    "name": "Assembly"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 229,
+    "impact": 1,
+    "name": "Assembly.com"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 230,
+    "impact": 1,
+    "name": "AssemblyAI"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 231,
+    "impact": 1,
+    "name": "Asset Infinity"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 232,
+    "impact": 1,
+    "name": "Asset Panda"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 233,
+    "impact": 1,
+    "name": "Azure Data Factory"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 234,
+    "impact": 1,
+    "name": "Azure IoT"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 235,
+    "impact": 1,
+    "name": "Azure IoT Central V3"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 236,
+    "impact": 1,
+    "name": "BigFix Inventory"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 237,
+    "impact": 1,
+    "name": "Bind ERP"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 238,
+    "impact": 1,
+    "name": "Bolt IoT"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 246,
+    "impact": 1,
+    "name": "DreamzIoT"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 248,
+    "impact": 1,
+    "name": "Dynamics 365 Supply Chain Management"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 249,
+    "impact": 1,
+    "name": "E2E ERP Integration | PRIMAVERA | SAGE | PHC | ARTSOFT"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 250,
+    "impact": 1,
+    "name": "ERPLY Books"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 251,
+    "impact": 1,
+    "name": "ERPNext"
+  },
+  {
+    "adoption": 1,
+    "alignment": 1,
+    "collapsed": true,
+    "demand": 1,
+    "effort": 1,
+    "id": 252,
+    "impact": 1,
+    "name": "EZOfficeInventory"
+  }
+]

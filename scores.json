@@ -1,10 +1,10 @@
 [
   {
-    "adoption": 5,
-    "alignment": 5,
+    "adoption": 1,
+    "alignment": 1,
     "collapsed": false,
     "demand": 1,
-    "effort": 1,
+    "effort": 3,
     "id": 1,
     "impact": 1,
     "name": "Shopify"

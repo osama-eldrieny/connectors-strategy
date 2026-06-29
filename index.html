@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connector Filtering Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .question-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .question-card:focus-within {
+      border-color: var(--nintex-blue);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--nintex-blue);
+      color: white;
+      border-radius: 50%;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .question-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .question-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    textarea {
+      font-family: 'Inter', sans-serif;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: #2563eb;
+      resize: none;
+      min-height: 80px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--nintex-blue);
+    }
+
+    .section-intro {
+      margin-bottom: 2rem;
+    }
+
+    .section-intro h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .section-intro p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .review-section {
+      background: rgba(0, 102, 204, 0.05);
+      border: 2px solid var(--nintex-blue);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+
+    .review-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .reviewers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .reviewer-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .reviewer-card:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .reviewer-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .reviewer-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .reviewer-info h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .reviewer-role {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      margin: 0.25rem 0 0;
+      line-height: 123%;
+    }
+
+    .reviewer-input-group {
+      margin-bottom: 1rem;
+    }
+
+    .reviewer-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #2563eb;
+      resize: none;
+      overflow: hidden;
+    }
+
+    .reviewer-textarea:focus {
+      outline: none;
+      border-color: var(--nintex-blue);
+    }
+
+    .reviewer-approval {
+      display: flex;
+      align-items: center;
+    }
+
+    .approval-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .approval-checkbox {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: var(--nintex-blue);
+    }
+
+    .toggle-label {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--nintex-blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0052A3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--nintex-blue);
+      border: 1px solid var(--nintex-blue);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 102, 204, 0.05);
+    }
+
+    .summary-section {
+      background: rgba(0, 102, 204, 0.05);
+      border: 2px solid var(--nintex-blue);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .summary-section h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--nintex-blue);
+    }
+
+    .summary-text {
+      color: var(--text-primary);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .criteria-list {
+      background: white;
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .criteria-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .criteria-item:last-child {
+      border-bottom: none;
+    }
+
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .flow-step {
+      padding: 0.65rem 1rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      min-width: 110px;
+      font-size: 0.8rem;
+    }
+
+    .flow-step.number {
+      background: var(--nintex-blue);
+      color: white;
+      border-color: var(--nintex-blue);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .flow-arrow {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+    }
+
+    /* Hide "On This Page" section for filtering framework page */
+    #onPageSection,
+    #onPageLinks {
+      display: none !important;
+    }
+
+    /* Active sidebar link styling for this page */
+    .side-nav-link.active {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60A5FA;
+    }
+
+    .side-nav-link.active .icon svg {
+      stroke: #60A5FA !important;
+    }
+
+    .side-nav-link.active .icon svg * {
+      stroke: #60A5FA !important;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .question-card {
+        padding: 1.25rem;
+      }
+
+      .flow-arrow {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="side-nav" id="sideNav">
+  <div class="side-nav-panel open" id="sideNavPanel">
+    <div class="side-nav-header">Nintex Connector Suite</div>
+    <div class="side-nav-section-label">Pages</div>
+    <a class="side-nav-link active" href="index.html" data-page="filtering"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="filter" aria-hidden="true" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></span> Filtering Framework</a>
+    <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></span> Framework Review</a>
+    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span> Connector Scoring</a>
+    <div class="side-nav-divider"></div>
+    <div class="side-nav-section-label" id="onPageSection">🔖 On This Page</div>
+    <div id="onPageLinks"></div>
+    <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: space-between;">
+      <div class="contributors">
+        <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama"></div>
+        <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem"></div>
+      </div>
+      <div class="doc-status">in review</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-padded">
+  <div class="nav-logo">
+    <span class="dot"></span>
+    Nintex · Connector Strategy
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-header">
+    <div class="doc-status">in review</div>
+    <div class="contributors">
+      <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama"></div>
+      <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem"></div>
+    </div>
+  </div>
+  <h1>Connector Filtering <span class="accent">Framework</span></h1>
+  <p>Align customer demand with competitive landscape to prioritize your connector roadmap</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="big">12k</div><div class="label">Total Connectors</div></div>
+    <div class="hero-meta-item"><div class="big">→</div><div class="label"></div></div>
+    <div class="hero-meta-item"><div class="big">200</div><div class="label">Focus Set</div></div>
+  </div>
+</div>
+
+<section style="background: #fff; padding: 3rem 0;">
+  <div class="container">
+    <div class="section">
+      <div class="section-intro">
+        <h2>Establish Your Filtering Criteria</h2>
+      <p>Before evaluating individual connectors, your team needs to define the strategic context. Answer these questions once — they become the framework for filtering down from 12,000 connectors to 200 that matter most.</p>
+    </div>
+
+    <form id="filteringForm">
+      <!-- Question 1 -->
+      <div class="question-card">
+        <div class="question-number">1</div>
+        <h3>What industries should we focus on?</h3>
+        <p>Define which industries and verticals align with your product vision and market opportunity. This determines which connectors matter most to your core customers.</p>
+        <div class="input-group">
+          <label class="input-label">Your Answer</label>
+          <textarea id="q1" placeholder="E.g., 'Manufacturing and Healthcare verticals. Mid-market B2B SaaS. Financial services automation.'"></textarea>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-card">
+        <div class="question-number">2</div>
+        <h3>What connectors do our customers request + what do competitors support?</h3>
+        <p>Balance two critical signals: customer demand from the Nintex Ideas Portal (requested connectors and feedback) with competitive offerings (what competitors already support). This is your market reality.</p>
+        <div class="input-group">
+          <label class="input-label">Customer Requests</label>
+          <textarea id="q2a" placeholder="List connectors: Salesforce, HubSpot, Slack, Stripe, Shopify, QuickBooks, etc."></textarea>
+        </div>
+        <div class="input-group" style="margin-top: 1rem;">
+          <label class="input-label">Competitor Support</label>
+          <textarea id="q2b" placeholder="Which connectors do Zapier, Make, Workato, Power Automate, or n8n already support?"></textarea>
+        </div>
+
+        <!-- Requested Connectors Table -->
+        <div style="margin-top: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 0;">🔗 New Connectors Customers Requested</h4>
+            <button id="expandConnectorsBtn" type="button" onclick="toggleConnectors()" style="background: var(--nintex-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">Show all 18 ↓</button>
+          </div>
+          <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+            <table id="connectorsTable" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <thead>
+                <tr style="background-color: #f5f7fa; border-bottom: 2px solid var(--border);">
+                  <th style="padding: 0.75rem; text-align: left; font-weight: 600; color: var(--text-primary); border-right: 1px solid var(--border);">Connector Name</th>
+                  <th style="padding: 0.75rem; text-align: center; font-weight: 600; color: var(--text-primary); border-right: 1px solid var(--border); width: 80px;">Votes</th>
+                  <th style="padding: 0.75rem; text-align: center; font-weight: 600; color: var(--text-primary); border-right: 1px solid var(--border); white-space: nowrap;">Status</th>
+                  <th style="padding: 0.75rem; text-align: left; font-weight: 600; color: var(--text-primary);">Request</th>
+                </tr>
+              </thead>
+              <tbody id="connectorsTableBody">
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem;">📊 Data source: Nintex Ideas Portal - 18 new connectors requested by customers (out of 118 total feature requests) - sorted by votes</p>
+        </div>
+
+        <script>
+          // NEW Connectors requested by customers (filtered from Nintex Ideas Portal)
+          const allConnectors = JSON.parse(`[{"name":"Oracle","votes":20,"status":"Not Planned","request":"Add Oracle Connector to Nintex Workflow Cloud"},{"name":"Dataverse","votes":13,"status":"Not Planned","request":"Dataverse Connector"},{"name":"Snowflake","votes":12,"status":"Not Planned","request":"Add support for Snowflake connector"},{"name":"Microsoft Graph","votes":8,"status":"Not Planned","request":"Microsoft Graph Integration - Connector / Directory / Actions"},{"name":"Microsoft Planner","votes":7,"status":"Open for voting","request":"Add Connection - Microsoft Planner"},{"name":"Microsoft Teams Approvals","votes":6,"status":"Not Planned","request":"Ability to Integrate with Microsoft Teams Approvals app"},{"name":"Monday.com","votes":5,"status":"Not Planned","request":"Add Connection Monday.com"},{"name":"Google Forms","votes":4,"status":"Not Planned","request":"Google Forms Connection"},{"name":"PostgreSQL (Azure)","votes":3,"status":"Not Planned","request":"Adding a new connector for PostGreSQL DB azure"},{"name":"Azure Databricks","votes":3,"status":"Not Planned","request":"Add a connector for Azure Databricks"},{"name":"ArcGIS Online","votes":2,"status":"Not Planned","request":"ArcGIS Online Connections"},{"name":"Zoom","votes":2,"status":"Not Planned","request":"Zoom Connector"},{"name":"FreshService","votes":2,"status":"Not Planned","request":"FreshService Connector"},{"name":"Xero","votes":2,"status":"Not Planned","request":"Use the Xero connector to interface with POs and Contacts"},{"name":"Autodesk BIM 360","votes":1,"status":"Not Planned","request":"A Workflow Cloud connector to Autodesk BIM 360"},{"name":"Microsoft Access (On-Premise)","votes":1,"status":"Not Planned","request":"Add a connection for NWC to on premise Microsoft Access Database"},{"name":"Sharefile","votes":1,"status":"Not Planned","request":"Sharefile Connector"},{"name":"MS Project Online","votes":1,"status":"Not Planned","request":"Add connector for MS Project Online (MS365)"}]`);
+          let connectorsExpanded = false;
+
+          function getStatusColor(status) {
+            if (!status) return { bg: '#f0f0f0', text: '#666' };
+            if (status.includes('Open')) return { bg: '#e3f2fd', text: '#0066cc' };
+            if (status.includes('Under Review')) return { bg: '#fff3cd', text: '#856404' };
+            return { bg: '#ffe8e8', text: '#c00' };
+          }
+
+          function getShortStatus(status) {
+            if (!status) return 'Unknown';
+            return status.split(',')[0].trim();
+          }
+
+          function renderConnectors() {
+            const tbody = document.getElementById('connectorsTableBody');
+            const maxRows = connectorsExpanded ? allConnectors.length : 8;
+
+            tbody.innerHTML = '';
+            for (let i = 0; i < Math.min(maxRows, allConnectors.length); i++) {
+              const d = allConnectors[i];
+              const colors = getStatusColor(d.status);
+              const bgColor = i % 2 === 0 ? '#fff' : '#fafbfc';
+
+              const row = document.createElement('tr');
+              row.style.borderBottom = '1px solid var(--border)';
+              row.style.backgroundColor = bgColor;
+
+              const shortStatus = getShortStatus(d.status);
+
+              row.innerHTML = `
+                <td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">${d.name}</td>
+                <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">${d.votes}</td>
+                <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: ${colors.bg}; color: ${colors.text}; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">${shortStatus}</span></td>
+                <td style="padding: 0.75rem; color: var(--text-secondary);">${d.request}</td>
+              `;
+              tbody.appendChild(row);
+            }
+          }
+
+          function toggleConnectors() {
+            connectorsExpanded = !connectorsExpanded;
+            const btn = document.getElementById('expandConnectorsBtn');
+            btn.textContent = connectorsExpanded ? 'Hide rest ↑' : 'Show all 118 ↓';
+            renderConnectors();
+          }
+
+          // Initialize
+          document.addEventListener('DOMContentLoaded', renderConnectors);
+        </script>
+      </div>
+
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" onclick="saveAnswers()">Save Answers</button>
+        <button type="button" class="btn btn-secondary" onclick="clearAnswers()">Clear All</button>
+      </div>
+    </form>
+    </div>
+
+    <div class="review-section">
+      <h3>🔍 Framework Review & Approval</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 2rem;">This framework must be reviewed and approved by the leadership team before implementation.</p>
+
+      <div class="reviewers-grid">
+        <!-- Waseem -->
+        <div class="reviewer-card">
+          <div class="reviewer-header">
+            <img src="./imgs/waseem.png" alt="Waseem" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Waseem</h4>
+              <p class="reviewer-role">Product Manager</p>
+            </div>
+          </div>
+          <div class="reviewer-input-group">
+            <label class="input-label">Comments</label>
+            <textarea id="review-waseem-comment" class="reviewer-textarea" placeholder="Add your feedback or concerns..."></textarea>
+          </div>
+          <div class="reviewer-approval">
+            <label class="approval-toggle">
+              <input type="checkbox" id="review-waseem-approved" class="approval-checkbox">
+              <span class="toggle-label">Framework Approved</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Josh -->
+        <div class="reviewer-card">
+          <div class="reviewer-header">
+            <img src="./imgs/joshua-tan.png" alt="Josh" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Josh</h4>
+              <p class="reviewer-role">Senior Director, Product Management</p>
+            </div>
+          </div>
+          <div class="reviewer-input-group">
+            <label class="input-label">Comments</label>
+            <textarea id="review-josh-comment" class="reviewer-textarea" placeholder="Add your feedback or concerns..."></textarea>
+          </div>
+          <div class="reviewer-approval">
+            <label class="approval-toggle">
+              <input type="checkbox" id="review-josh-approved" class="approval-checkbox">
+              <span class="toggle-label">Framework Approved</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Chintan -->
+        <div class="reviewer-card">
+          <div class="reviewer-header">
+            <img src="./imgs/chintan-desai.png" alt="Chintan" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Chintan</h4>
+              <p class="reviewer-role">Senior Manager, Product Management</p>
+            </div>
+          </div>
+          <div class="reviewer-input-group">
+            <label class="input-label">Comments</label>
+            <textarea id="review-chintan-comment" class="reviewer-textarea" placeholder="Add your feedback or concerns..."></textarea>
+          </div>
+          <div class="reviewer-approval">
+            <label class="approval-toggle">
+              <input type="checkbox" id="review-chintan-approved" class="approval-checkbox">
+              <span class="toggle-label">Framework Approved</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-section">
+    <h3>How This Filters to Your Focus Set</h3>
+    <div class="summary-text">
+      Once your team answers these 2 questions, you have a filtering framework:
+    </div>
+
+    <div class="flow-diagram">
+      <div class="flow-step">Target Industries</div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-step">Customer Demand</div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-step">Competitive Parity</div>
+    </div>
+
+    <div class="criteria-list">
+      <div class="criteria-item"><strong>Priority connectors:</strong> Align with target industries + Requested by customers in the Nintex Ideas Portal + supported by competitors or creating market differentiation</div>
+      <div class="criteria-item"><strong>Result:</strong> Data-driven roadmap aligned with industry focus, customer needs, and competitive reality</div>
+      <div class="criteria-item"><strong>Next step:</strong> Review results with your team → Prioritize by business impact → Build strategically</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer style="text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--border);">
+  <p>Nintex Connector Filtering Framework — Strategic decision-making for integration priorities</p>
+</footer>
+
+<script>
+  // Hide "On This Page" section for filtering framework page
+  document.addEventListener('DOMContentLoaded', function() {
+    const onPageSection = document.getElementById('onPageSection');
+    const onPageLinks = document.getElementById('onPageLinks');
+    if (onPageSection) onPageSection.style.display = 'none';
+    if (onPageLinks) onPageLinks.style.display = 'none';
+  });
+</script>
+
+<script>
+  function saveAnswers() {
+    const answers = {
+      q1: document.getElementById('q1').value,
+      q2a: document.getElementById('q2a').value,
+      q2b: document.getElementById('q2b').value,
+    };
+
+    fetch('/api/filtering-answers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(answers)
+    })
+    .then(r => r.json())
+    .then(data => {
+      alert('Answers saved! Share this with your team.');
+    })
+    .catch(e => {
+      console.error('Error saving answers:', e);
+      alert('Error saving answers. Please try again.');
+    });
+  }
+
+  function clearAnswers() {
+    if (confirm('Clear all answers?')) {
+      document.getElementById('filteringForm').reset();
+      fetch('/api/filtering-answers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      });
+    }
+  }
+
+  // Load saved answers on page load
+  window.addEventListener('load', function() {
+    fetch('/api/filtering-answers')
+      .then(r => r.json())
+      .then(answers => {
+        document.getElementById('q1').value = answers.q1 || '';
+        document.getElementById('q2a').value = answers.q2a || '';
+        document.getElementById('q2b').value = answers.q2b || '';
+
+        // Auto-fit all textareas after loading answers
+        setTimeout(() => {
+          document.querySelectorAll('textarea').forEach(ta => {
+            ta.style.height = '80px';
+            const scrollHeight = ta.scrollHeight;
+            const maxHeight = window.innerHeight * 0.8;
+            ta.style.height = Math.min(scrollHeight, maxHeight) + 'px';
+          });
+        }, 0);
+      })
+      .catch(e => console.error('Error loading answers:', e));
+
+    // Load review data from server
+    loadReviewData();
+  });
+
+  // Save review data when changed
+  document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('approval-checkbox')) {
+      saveReviewData();
+    }
+  });
+
+  document.addEventListener('blur', function(e) {
+    if (e.target.classList.contains('reviewer-textarea')) {
+      saveReviewData();
+    }
+  }, true);
+
+  function loadReviewData() {
+    fetch('/api/framework-review')
+      .then(r => r.json())
+      .then(reviews => {
+        const reviewers = ['waseem', 'josh', 'chintan'];
+        reviewers.forEach(reviewer => {
+          const review = reviews[reviewer] || {};
+          const commentEl = document.getElementById(`review-${reviewer}-comment`);
+          const approvalEl = document.getElementById(`review-${reviewer}-approved`);
+          if (commentEl) {
+            commentEl.value = review.comment || '';
+            // Auto-fit textarea height
+            setTimeout(() => {
+              commentEl.style.height = '80px';
+              const scrollHeight = commentEl.scrollHeight;
+              const maxHeight = window.innerHeight * 0.8;
+              commentEl.style.height = Math.min(scrollHeight, maxHeight) + 'px';
+            }, 0);
+          }
+          if (approvalEl) {
+            approvalEl.checked = review.approved || false;
+          }
+        });
+      })
+      .catch(e => console.error('Error loading reviews:', e));
+  }
+
+  function saveReviewData() {
+    const reviewers = ['waseem', 'josh', 'chintan'];
+    const reviews = {};
+
+    reviewers.forEach(reviewer => {
+      const commentEl = document.getElementById(`review-${reviewer}-comment`);
+      const approvalEl = document.getElementById(`review-${reviewer}-approved`);
+      reviews[reviewer] = {
+        comment: commentEl ? commentEl.value : '',
+        approved: approvalEl ? approvalEl.checked : false
+      };
+    });
+
+    fetch('/api/framework-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(reviews)
+    })
+    .then(r => {
+      if (!r.ok) console.error('Save failed:', r.status);
+      return r.json();
+    })
+    .then(data => {
+      console.log('Review data saved successfully');
+    })
+    .catch(e => console.error('Error saving review:', e));
+  }
+</script>
+
+<script>
+  // Auto-fit textarea height based on content
+  function autoFitTextarea(textarea) {
+    textarea.style.height = '80px';
+    const scrollHeight = textarea.scrollHeight;
+    const maxHeight = window.innerHeight * 0.8;
+    textarea.style.height = Math.min(scrollHeight, maxHeight) + 'px';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach(textarea => {
+      // Auto-fit on input
+      textarea.addEventListener('input', function() {
+        autoFitTextarea(this);
+      });
+
+      // Auto-fit on focus too
+      textarea.addEventListener('focus', function() {
+        autoFitTextarea(this);
+      });
+
+      // Adjust on load if it has content
+      setTimeout(() => {
+        if (textarea.value) {
+          autoFitTextarea(textarea);
+        }
+      }, 0);
+    });
+  });
+</script>
+
+</body>
+</html>

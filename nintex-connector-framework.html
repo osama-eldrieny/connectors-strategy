@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="http://localhost:3001/inject.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nintex Connector Prioritization Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-padded">
+  <div class="nav-logo">
+    <span class="dot"></span>
+    Nintex · Connector Strategy
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">
+    <span>●</span> Manager Review Document
+  </div>
+  <div class="hero-header">
+    <div class="doc-status">in review</div>
+    <div class="contributors">
+      <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama" /></div>
+      <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem" /></div>
+    </div>
+  </div>
+  <h1>Connector Prioritization <span class="accent">Framework</span></h1>
+  <p>A structured, data-driven approach to deciding which missing connectors to build first — eliminating guesswork and stakeholder bias.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="big">5</div><div class="label">Scoring Criteria</div></div>
+    <div class="hero-meta-item"><div class="big">4</div><div class="label">Priority Tiers</div></div>
+    <div class="hero-meta-item"><div class="big">1–5</div><div class="label">Scoring Scale</div></div>
+    <div class="hero-meta-item"><div class="big">87</div><div class="label">Nintex Connectors Today</div></div>
+    <div class="hero-meta-item"><div class="big">200+</div><div class="label">Target Focus Set</div></div>
+  </div>
+</div>
+
+<!-- WHY CRITERIA FIRST -->
+<section id="why" style="background:#F8FAFC;">
+  <div class="container">
+    <div class="section-eyebrow">The Problem</div>
+    <h2 class="section-title">Why We Need Criteria Before a Priority List</h2>
+    <p class="section-sub">Without an agreed framework, prioritization becomes opinion-based, political, and inconsistent across teams.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">01</div>
+        <h4>Objectivity</h4>
+        <p>Every connector is scored against identical metrics. No connector gets prioritized because it was requested by the loudest voice in the room.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">02</div>
+        <h4>Transparency</h4>
+        <p>Managers and stakeholders can see exactly why Connector X ranks above Connector Y — the math is visible and auditable.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <h4>Defensibility</h4>
+        <p>When engineering resources are constrained, leadership can justify every priority decision to customers, board, or investors.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">04</div>
+        <h4>Consistency</h4>
+        <p>Quarterly reviews use the same scoring model, so the backlog stays coherent over time and teams build institutional knowledge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRITERIA -->
+<section id="criteria" style="background:#fff;">
+  <div class="container">
+    <div class="section-eyebrow">Scoring Model</div>
+    <h2 class="section-title">The 5 Prioritization Criteria</h2>
+    <p class="section-sub">Each connector is scored 1–5 on every criterion. Scores are multiplied by their weight and summed to produce a final priority score.</p>
+
+    <div class="criteria-list">
+
+      <div class="criterion-card">
+        <div class="criterion-rank">
+          <span class="rank-num">1</span>
+          <span class="rank-pct">33%</span>
+        </div>
+        <div>
+          <div class="criterion-title">Business Impact &amp; Revenue Potential</div>
+          <div class="criterion-desc">How significantly would this connector affect Nintex workflows, revenue, or operational efficiency? Consider the number of workflows it unlocks, upsell potential, and whether it reduces customer churn.</div>
+          <div class="criterion-examples">
+            <span class="tag">Workflow coverage</span>
+            <span class="tag">Revenue unlock</span>
+            <span class="tag">Churn reduction</span>
+            <span class="tag">Upsell potential</span>
+          </div>
+        </div>
+        <div class="weight-pill">33%</div>
+      </div>
+
+      <div class="criterion-card">
+        <div class="criterion-rank">
+          <span class="rank-num">2</span>
+          <span class="rank-pct">27%</span>
+        </div>
+        <div>
+          <div class="criterion-title">Customer &amp; Market Demand</div>
+          <div class="criterion-desc">How many customers or prospects have explicitly requested this connector? Is its absence blocking a deal or renewal? Is it a competitive gap vs. Power Automate or similar platforms?</div>
+          <div class="criterion-examples">
+            <span class="tag">Customer requests</span>
+            <span class="tag">Deal blocker</span>
+            <span class="tag">Renewal risk</span>
+            <span class="tag">Competitive gap</span>
+          </div>
+        </div>
+        <div class="weight-pill">27%</div>
+      </div>
+
+      <div class="criterion-card">
+        <div class="criterion-rank">
+          <span class="rank-num">3</span>
+          <span class="rank-pct">18%</span>
+        </div>
+        <div>
+          <div class="criterion-title">Implementation Effort</div>
+          <div class="criterion-desc">How complex is it to build? Factors include API quality, authentication complexity, documentation availability, and whether existing Xtensions® can accelerate delivery. Lower effort = higher effective priority.</div>
+          <div class="criterion-examples">
+            <span class="tag">API maturity</span>
+            <span class="tag">Auth complexity</span>
+            <span class="tag">SDK availability</span>
+            <span class="tag">Dev time estimate</span>
+          </div>
+        </div>
+        <div class="weight-pill">18%</div>
+      </div>
+
+      <div class="criterion-card">
+        <div class="criterion-rank">
+          <span class="rank-num">4</span>
+          <span class="rank-pct">12%</span>
+        </div>
+        <div>
+          <div class="criterion-title">Strategic Alignment</div>
+          <div class="criterion-desc">Does building this connector advance Nintex's declared roadmap priorities? Does it support a focus vertical (e.g., healthcare, financial services, government) or a strategic partnership?</div>
+          <div class="criterion-examples">
+            <span class="tag">Roadmap fit</span>
+            <span class="tag">Vertical focus</span>
+            <span class="tag">Partner ecosystem</span>
+            <span class="tag">Platform direction</span>
+          </div>
+        </div>
+        <div class="weight-pill">12%</div>
+      </div>
+
+      <div class="criterion-card">
+        <div class="criterion-rank">
+          <span class="rank-num">5</span>
+          <span class="rank-pct">10%</span>
+        </div>
+        <div>
+          <div class="criterion-title">Market Adoption &amp; Ubiquity</div>
+          <div class="criterion-desc">How widely used is the target system among enterprise customers? A connector to a near-ubiquitous platform (e.g., Salesforce, Teams) benefits a broader user base than a niche tool.</div>
+          <div class="criterion-examples">
+            <span class="tag">Market share</span>
+            <span class="tag">Enterprise prevalence</span>
+            <span class="tag">Analyst coverage</span>
+            <span class="tag">Broad applicability</span>
+          </div>
+        </div>
+        <div class="weight-pill">10%</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORMULA -->
+<section style="background:#F8FAFC;">
+  <div class="container">
+    <div class="section-eyebrow">Weighted Scoring</div>
+    <h2 class="section-title">How the Score is Calculated</h2>
+    <p class="section-sub">A simple weighted formula produces a final score between 1.0 and 5.0 for every connector.</p>
+
+    <div class="formula-box">
+      <div class="formula-label">Priority Score Formula</div>
+      <div class="formula-text">
+        Score = <span class="hi">(Impact × 0.33)</span> + <span class="hi">(Demand × 0.27)</span> + <span class="hi">(Effort × 0.18)</span> + <span class="hi">(Alignment × 0.12)</span> + <span class="hi">(Ubiquity × 0.10)</span>
+      </div>
+      <div class="formula-example">
+        <strong>Example — Salesforce connector:</strong> &nbsp;
+        (5 × 0.33) + (5 × 0.27) + (3 × 0.18) + (5 × 0.12) + (5 × 0.10)
+        = 1.65 + 1.35 + 0.54 + 0.60 + 0.50
+        = <strong style="color:#60A5FA;">4.64 → CRITICAL</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section id="tiers" style="background:#fff;">
+  <div class="container">
+    <div class="section-eyebrow">Priority Bands</div>
+    <h2 class="section-title">The 4 Priority Tiers</h2>
+    <p class="section-sub">Once scored, every connector falls into one of four tiers that inform resource allocation and roadmap planning.</p>
+
+    <div class="tiers-grid">
+      <div class="tier-card critical">
+        <span class="tier-badge">CRITICAL</span>
+        <div class="tier-score">4.0+</div>
+        <div class="tier-action">Build Next</div>
+        <div class="tier-detail">High impact + market demand. These are the connectors that unlock revenue, block customer wins, or fill competitive gaps. Prioritize immediately.</div>
+      </div>
+      <div class="tier-card high">
+        <span class="tier-badge">HIGH</span>
+        <div class="tier-score">3.0–3.9</div>
+        <div class="tier-action">Build in Current Quarter</div>
+        <div class="tier-detail">Solid strategic value. Schedule them in the current or next planning cycle. Worth the engineering effort.</div>
+      </div>
+      <div class="tier-card medium">
+        <span class="tier-badge">MEDIUM</span>
+        <div class="tier-score">2.0–2.9</div>
+        <div class="tier-action">Build as Capacity Allows</div>
+        <div class="tier-detail">Nice-to-have. Include in the backlog and plan them only when higher tiers are satisfied or if a customer escalates.</div>
+      </div>
+      <div class="tier-card low">
+        <span class="tier-badge">LOW</span>
+        <div class="tier-score">&lt; 2.0</div>
+        <div class="tier-action">Research / Track</div>
+        <div class="tier-detail">Low strategic value. Monitor for emerging demand, but don't allocate engineering time yet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section id="workflow" style="background:#F8FAFC;">
+  <div class="container">
+    <div class="section-eyebrow">Execution Process</div>
+    <h2 class="section-title">How to Use This Framework</h2>
+    <p class="section-sub">A straightforward 5-step process to evaluate and rank connectors quarterly.</p>
+
+    <div class="workflow-steps">
+      <div class="workflow-step">
+        <div class="step-circle">1</div>
+        <div class="step-title">Nominate</div>
+        <div class="step-detail">Product, sales, and engineering propose candidates</div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-circle">2</div>
+        <div class="step-title">Score</div>
+        <div class="step-detail">Rate each on the 5 criteria (1–5 scale)</div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-circle">3</div>
+        <div class="step-title">Rank</div>
+        <div class="step-detail">Apply weights to produce final priority</div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-circle">4</div>
+        <div class="step-title">Review</div>
+        <div class="step-detail">Leadership approves tiers and roadmap</div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-circle">5</div>
+        <div class="step-title">Execute</div>
+        <div class="step-detail">Engineering delivers in priority order</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLES -->
+<section id="examples" style="background:#fff;">
+  <div class="container">
+    <div class="section-eyebrow">Real-World Scenarios</div>
+    <h2 class="section-title">Example Rankings</h2>
+    <p class="section-sub">Here are three hypothetical connectors scored and ranked using the framework above.</p>
+
+    <table class="example-table">
+      <thead>
+        <tr>
+          <th>Connector</th>
+          <th>Impact</th>
+          <th>Demand</th>
+          <th>Effort</th>
+          <th>Alignment</th>
+          <th>Ubiquity</th>
+          <th>Final Score</th>
+          <th>Tier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Salesforce</td>
+          <td>5</td>
+          <td>5</td>
+          <td>3</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="score-cell">4.64</td>
+          <td><span class="badge critical">CRITICAL</span></td>
+        </tr>
+        <tr>
+          <td>HubSpot CRM</td>
+          <td>4</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+          <td>4</td>
+          <td class="score-cell">3.76</td>
+          <td><span class="badge high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>Zendesk Support</td>
+          <td>3</td>
+          <td>2</td>
+          <td>4</td>
+          <td>2</td>
+          <td>3</td>
+          <td class="score-cell">2.81</td>
+          <td><span class="badge medium">MEDIUM</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to Prioritize?</h2>
+      <p>Use this framework to run your first connector prioritization cycle and build a defensible, repeatable process for every quarter.</p>
+      <a href="connector-prioritizer.html" class="cta-btn">Go to Scoring Tool →</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Nintex. All rights reserved.</footer>
+
+<!-- SIDE NAV -->
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-panel open" id="sideNavPanel">
+    <div class="side-nav-header">Nintex Connector Suite</div>
+    <div class="side-nav-section-label">Pages</div>
+    <a class="side-nav-link" href="connector-filtering-framework.html" data-page="filtering"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="filter" aria-hidden="true" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></span> Filtering Framework</a>
+    <a class="side-nav-link active" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></span> Framework Review</a>
+    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span> Connector Scoring</a>
+    <div class="side-nav-divider"></div>
+    <div class="side-nav-section-label">On This Page</div>
+    <div id="onPageLinks">
+      <a class="side-nav-link" href="#overview"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg></span> Overview</a>
+      <a class="side-nav-link" href="#why"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="help-circle" aria-hidden="true" class="lucide lucide-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></span> Why Criteria</a>
+      <a class="side-nav-link" href="#criteria"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart-3" aria-hidden="true" class="lucide lucide-bar-chart-3"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span> The 5 Criteria</a>
+      <a class="side-nav-link" href="#tiers"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="award" aria-hidden="true" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg></span> Priority Tiers</a>
+      <a class="side-nav-link" href="#workflow"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="repeat" aria-hidden="true" class="lucide lucide-repeat"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></span> Process Steps</a>
+      <a class="side-nav-link" href="#examples"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></span> Examples</a>
+    </div>
+    <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: space-between;">
+      <div class="contributors">
+        <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama" /></div>
+        <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem" /></div>
+      </div>
+      <div class="doc-status">in review</div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const PAGE_LINKS = {
+    framework: [
+      { href: '#overview', label: 'Overview', icon: 'building-2' },
+      { href: '#why', label: 'Why Criteria', icon: 'help-circle' },
+      { href: '#criteria', label: 'The 5 Criteria', icon: 'bar-chart-3' },
+      { href: '#tiers', label: 'Priority Tiers', icon: 'award' },
+      { href: '#workflow', label: 'Process Steps', icon: 'repeat' },
+      { href: '#examples', label: 'Examples', icon: 'clipboard-list' }
+    ],
+    prioritizer: [
+      { href: '#add-connector', label: 'Add Connector', icon: 'plus-circle' },
+      { href: '#view-rankings', label: 'View Rankings', icon: 'list' }
+    ]
+  };
+
+  function initSidebar() {
+    const currentPath = window.location.pathname;
+    const isFramework = currentPath.includes('nintex-connector-framework.html') || currentPath.endsWith('/');
+    const pageType = isFramework ? 'framework' : 'prioritizer';
+
+    const links = PAGE_LINKS[pageType];
+    const onPageLinksDiv = document.getElementById('onPageLinks');
+
+    onPageLinksDiv.innerHTML = '';
+    links.forEach(link => {
+      const a = document.createElement('a');
+      a.className = 'side-nav-link';
+      a.href = link.href;
+      a.innerHTML = `
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="${link.icon}" aria-hidden="true" class="lucide lucide-${link.icon}"></svg>
+        </span>
+        ${link.label}
+      `;
+      onPageLinksDiv.appendChild(a);
+    });
+
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    document.querySelectorAll('.side-nav-link[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        document.querySelectorAll('.side-nav-link[href^="#"]').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+      if (link.href === window.location.hash || (window.location.hash === '' && link.href === '#overview')) {
+        link.classList.add('active');
+      }
+    });
+
+    window.addEventListener('hashchange', () => {
+      document.querySelectorAll('.side-nav-link[href^="#"]').forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.side-nav-link[href="${window.location.hash}"]`);
+      if (active) active.classList.add('active');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initSidebar);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="http://localhost:3001/inject.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connector Filtering Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .question-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .question-card:focus-within {
+      border-color: var(--nintex-blue);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--nintex-blue);
+      color: white;
+      border-radius: 50%;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .question-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .question-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    textarea {
+      font-family: 'Inter', sans-serif;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      resize: vertical;
+      min-height: 80px;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--nintex-blue);
+    }
+
+    .section-intro {
+      margin-bottom: 2rem;
+    }
+
+    .section-intro h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .section-intro p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--nintex-blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0052A3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--nintex-blue);
+      border: 1px solid var(--nintex-blue);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 102, 204, 0.05);
+    }
+
+    .summary-section {
+      background: rgba(0, 102, 204, 0.05);
+      border: 2px solid var(--nintex-blue);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .summary-section h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--nintex-blue);
+    }
+
+    .summary-text {
+      color: var(--text-primary);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .criteria-list {
+      background: white;
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .criteria-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .criteria-item:last-child {
+      border-bottom: none;
+    }
+
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .flow-step {
+      padding: 0.65rem 1rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      min-width: 110px;
+      font-size: 0.8rem;
+    }
+
+    .flow-step.number {
+      background: var(--nintex-blue);
+      color: white;
+      border-color: var(--nintex-blue);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .flow-arrow {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+    }
+
+    /* Hide "On This Page" section for filtering framework page */
+    #onPageSection,
+    #onPageLinks {
+      display: none !important;
+    }
+
+    /* Active sidebar link styling for this page */
+    .side-nav-link.active {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60A5FA;
+    }
+
+    .side-nav-link.active .icon svg {
+      stroke: #60A5FA !important;
+    }
+
+    .side-nav-link.active .icon svg * {
+      stroke: #60A5FA !important;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .question-card {
+        padding: 1.25rem;
+      }
+
+      .flow-arrow {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="side-nav" id="sideNav">
+  <div class="side-nav-panel open" id="sideNavPanel">
+    <div class="side-nav-header">Nintex Connector Suite</div>
+    <div class="side-nav-section-label">Pages</div>
+    <a class="side-nav-link active" href="connector-filtering-framework.html" data-page="filtering"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="filter" aria-hidden="true" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></span> Filtering Framework</a>
+    <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></span> Framework Review</a>
+    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="settings" aria-hidden="true" class="lucide lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg></span> Scoring Tool</a>
+    <div class="side-nav-divider"></div>
+    <div class="side-nav-section-label" id="onPageSection">🔖 On This Page</div>
+    <div id="onPageLinks"></div>
+    <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: space-between;">
+      <div class="contributors">
+        <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama"></div>
+        <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem"></div>
+      </div>
+      <div class="doc-status">in review</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-padded">
+  <div class="nav-logo">
+    <span class="dot"></span>
+    Nintex · Connector Strategy
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Connector Filtering <span class="accent">Framework</span></h1>
+  <p>Answer 5 foundational questions to define your connector prioritization strategy</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="big">12k</div><div class="label">Total Connectors</div></div>
+    <div class="hero-meta-item"><div class="big">→</div><div class="label"></div></div>
+    <div class="hero-meta-item"><div class="big">200</div><div class="label">Focus Set</div></div>
+  </div>
+</div>
+
+<section style="background: #fff; padding: 3rem 0;">
+  <div class="container">
+    <div class="section">
+      <div class="section-intro">
+        <h2>Establish Your Filtering Criteria</h2>
+      <p>Before evaluating individual connectors, your team needs to define the strategic context. Answer these questions once — they become the framework for filtering down from 12,000 connectors to 200 that matter most.</p>
+    </div>
+
+    <form id="filteringForm">
+      <!-- Question 1 -->
+      <div class="question-card">
+        <div class="question-number">1</div>
+        <h3>What is our product roadmap for the next 12–18 months?</h3>
+        <p>Identify strategic priorities: which verticals, use cases, and workflows are we building? This defines which connectors align with where we're headed.</p>
+        <div class="input-group">
+          <label class="input-label">Your Answer</label>
+          <textarea id="q1" placeholder="E.g., 'Expand into Manufacturing and Healthcare verticals. Build workflow automation for finance teams. Strengthen Salesforce ecosystem.'"></textarea>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-card">
+        <div class="question-number">2</div>
+        <h3>Who is our ideal customer profile (ICP)?</h3>
+        <p>Define company size, industry, and revenue threshold. Understanding who we serve tells us which connectors they depend on.</p>
+        <div class="input-group">
+          <label class="input-label">Your Answer</label>
+          <textarea id="q2" placeholder="E.g., 'Mid-market SaaS companies ($10M–$500M ARR) in vertical software. Manufacturing firms with 50–500 employees.'"></textarea>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-card">
+        <div class="question-number">3</div>
+        <h3>What connectors do our customers request + what do competitors support?</h3>
+        <p>Combine two signals: customer demand (support tickets, deal-blockers, feedback) and competitive necessity (what all competitors offer). This is market reality.</p>
+        <div class="input-group">
+          <label class="input-label">Customer Requests</label>
+          <textarea id="q3a" placeholder="List connectors: Salesforce, HubSpot, Slack, Stripe, Shopify, QuickBooks, etc."></textarea>
+        </div>
+        <div class="input-group" style="margin-top: 1rem;">
+          <label class="input-label">Competitor Support</label>
+          <textarea id="q3b" placeholder="Which connectors do Zapier, Make, or competitors already support?"></textarea>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-card">
+        <div class="question-number">4</div>
+        <h3>How many connectors can we build and maintain?</h3>
+        <p>Resource constraint: what is our engineering capacity this year? How many integrations can our support team handle? This sets the ceiling.</p>
+        <div class="input-group">
+          <label class="input-label">Your Answer</label>
+          <textarea id="q4" placeholder="E.g., '200 connectors this year. Engineering team: 6 FTE. Support: ready for 400+ integrations.'"></textarea>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question-card">
+        <div class="question-number">5</div>
+        <h3>What is the API quality distribution? (Easy/Medium/Hard to build)</h3>
+        <p>Understand the build complexity landscape. Which connectors have good APIs? Are there security/compliance blockers? This informs feasibility.</p>
+        <div class="input-group">
+          <label class="input-label">Your Answer</label>
+          <textarea id="q5" placeholder="E.g., '150 easy APIs (REST, well-documented). 100 medium (legacy, workarounds). 50 hard (complex auth, rate limits).'"></textarea>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" onclick="saveAnswers()">Save Answers</button>
+        <button type="button" class="btn btn-secondary" onclick="clearAnswers()">Clear All</button>
+      </div>
+    </form>
+    </div>
+
+    <div class="summary-section">
+    <h3>How This Filters to 200 Connectors</h3>
+    <div class="summary-text">
+      Once your team answers these 5 questions, you have a filtering framework:
+    </div>
+
+    <div class="flow-diagram">
+      <div class="flow-step">Roadmap</div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-step">ICP</div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-step">Demand</div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-step">Capacity</div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-step">Complexity</div>
+    </div>
+
+    <div class="criteria-list">
+      <div class="criteria-item"><strong>Keep connectors that:</strong> Align with roadmap + used by ICP + customer-requested or competitor-supported + buildable with your capacity + feasible API complexity</div>
+      <div class="criteria-item"><strong>Result:</strong> ~200–250 high-priority connectors from your 12,000</div>
+      <div class="criteria-item"><strong>Next step:</strong> Review framework with team → Score the 200 → Build critical/high priority</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer style="text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--border);">
+  <p>Nintex Connector Filtering Framework — Strategic decision-making for integration priorities</p>
+</footer>
+
+<script>
+  // Hide "On This Page" section for filtering framework page
+  document.addEventListener('DOMContentLoaded', function() {
+    const onPageSection = document.getElementById('onPageSection');
+    const onPageLinks = document.getElementById('onPageLinks');
+    if (onPageSection) onPageSection.style.display = 'none';
+    if (onPageLinks) onPageLinks.style.display = 'none';
+  });
+</script>
+
+<script>
+  function saveAnswers() {
+    const answers = {
+      q1: document.getElementById('q1').value,
+      q2: document.getElementById('q2').value,
+      q3a: document.getElementById('q3a').value,
+      q3b: document.getElementById('q3b').value,
+      q4: document.getElementById('q4').value,
+      q5: document.getElementById('q5').value,
+    };
+
+    fetch('/api/filtering-answers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(answers)
+    })
+    .then(r => r.json())
+    .then(data => {
+      alert('Answers saved! Share this with your team.');
+    })
+    .catch(e => {
+      console.error('Error saving answers:', e);
+      alert('Error saving answers. Please try again.');
+    });
+  }
+
+  function clearAnswers() {
+    if (confirm('Clear all answers?')) {
+      document.getElementById('filteringForm').reset();
+      fetch('/api/filtering-answers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      });
+    }
+  }
+
+  // Load saved answers on page load
+  window.addEventListener('load', function() {
+    fetch('/api/filtering-answers')
+      .then(r => r.json())
+      .then(answers => {
+        document.getElementById('q1').value = answers.q1 || '';
+        document.getElementById('q2').value = answers.q2 || '';
+        document.getElementById('q3a').value = answers.q3a || '';
+        document.getElementById('q3b').value = answers.q3b || '';
+        document.getElementById('q4').value = answers.q4 || '';
+        document.getElementById('q5').value = answers.q5 || '';
+      })
+      .catch(e => console.error('Error loading answers:', e));
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "q1": "Tier 1 - IMMEDIATE FOCUS:\n\n1. Financial Services (highest regulatory pressure + largest deal sizes)\n2. Government (FedRAMP advantage + long contract cycles = high LTV)\n3. Insurance (proven use case: underwriting automation showing strong ROI)\n\nTier 2 - EXPAND:\n\n4. Healthcare (compliance-driven, growing digital transformation budgets)\n5. Manufacturing (high volume potential, supply chain focus)\n",
+  "q2a": "Oracle, Dataverse, Snowflake, Microsoft Graph, Microsoft Planner, Monday.com, Google Forms, Microsoft Teams Approvals",
+  "q2b": "Zapier supports all (8/8).\n\nMake supports (7/8): All except Microsoft Planner.\n\nWorkato supports (5/8): Oracle, Dataverse, Snowflake, Microsoft Graph, Teams Approvals.\n\nPower Automate (4/8 - Microsoft-focused):  supports Dataverse, Microsoft Graph, Planner, Teams Approvals.\n\nn8n supports (4/8): Oracle, Snowflake, Monday.com, Google Forms.",
+  "q3": ""
+}

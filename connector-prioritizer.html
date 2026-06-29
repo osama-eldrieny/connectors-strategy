@@ -141,27 +141,52 @@
 
   async function saveConnectors() {
     try {
-      // Save to localStorage (persists in browser)
-      localStorage.setItem('connectorScores', JSON.stringify(connectors));
-      console.log('Scores saved locally');
+      // Save to Netlify Function (which saves to GitHub)
+      const response = await fetch('/.netlify/functions/save-scores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(connectors)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('✅ Scores saved to GitHub:', result.message);
+      } else {
+        console.error('Error saving to GitHub:', response.status);
+        // Fallback to localStorage
+        localStorage.setItem('connectorScores', JSON.stringify(connectors));
+      }
     } catch (e) {
       console.error('Error saving connectors:', e);
+      // Fallback to localStorage if function fails
+      localStorage.setItem('connectorScores', JSON.stringify(connectors));
     }
   }
 
   async function loadConnectors() {
     try {
-      // First try to load saved scores from localStorage
+      // First try to load scores from GitHub (via Netlify Function)
+      const response = await fetch('/.netlify/functions/get-scores');
+      if (response.ok) {
+        const scores = await response.json();
+        if (scores && scores.length > 0) {
+          connectors = scores;
+          console.log('✅ Loaded connector scores from GitHub');
+          return;
+        }
+      }
+
+      // Try localStorage as fallback
       const saved = localStorage.getItem('connectorScores');
       if (saved) {
         connectors = JSON.parse(saved);
-        console.log('Loaded connector scores from browser');
+        console.log('Loaded connector scores from browser storage');
         return;
       }
 
-      // If no saved scores, load from JSON file
-      const response = await fetch('/connectors.json');
-      connectors = await response.json();
+      // If no saved scores, load fresh connectors from JSON file
+      const jsonResponse = await fetch('/connectors.json');
+      connectors = await jsonResponse.json();
       // Ensure each connector has a collapsed property
       connectors.forEach(c => {
         if (c.collapsed === undefined) {

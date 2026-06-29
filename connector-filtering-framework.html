@@ -519,8 +519,8 @@
         </script>
       </div>
 
-      <div class="button-group" id="save-clear-buttons" style="display: none;">
-        <button type="button" class="btn btn-primary" onclick="saveAnswers()">Save Answers</button>
+      <div class="button-group" id="save-clear-buttons">
+        <button type="button" class="btn btn-primary" onclick="saveAnswers()">Save Changes</button>
         <button type="button" class="btn btn-secondary" onclick="clearAnswers()">Clear All</button>
       </div>
     </form>
@@ -635,29 +635,17 @@
 
 <script>
   function prefillAnswers() {
-    const q1Answer = `Tier 1 - IMMEDIATE FOCUS:
-
-1. Financial Services (highest regulatory pressure + largest deal sizes)
-2. Government (FedRAMP advantage + long contract cycles = high LTV)
-3. Insurance (proven use case: underwriting automation showing strong ROI)
-
-Tier 2 - EXPAND:
-
-4. Healthcare (compliance-driven, growing digital transformation budgets)
-5. Manufacturing (high volume potential, supply chain focus)`;
-
-    const q2aAnswer = `Customer Requests: Oracle, Dataverse, Snowflake, Microsoft Graph, Microsoft Planner, Monday.com, Google Forms, Microsoft Teams Approvals`;
-
-    const q2bAnswer = `Competitor Support:
-- Zapier supports all (8/8)
-- Make supports (7/8): All except Microsoft Planner
-- Workato supports (5/8): Oracle, Dataverse, Snowflake, Microsoft Graph, Teams Approvals
-- Power Automate (4/8 - Microsoft-focused): Dataverse, Microsoft Graph, Planner, Teams Approvals
-- n8n supports (4/8): Oracle, Snowflake, Monday.com, Google Forms`;
-
-    document.getElementById('q1').value = q1Answer;
-    document.getElementById('q2a').value = q2aAnswer;
-    document.getElementById('q2b').value = q2bAnswer;
+    // Load answers from GitHub via API
+    fetch('/api/get-filtering-answers')
+      .then(r => r.json())
+      .then(answers => {
+        if (answers.q1) document.getElementById('q1').value = answers.q1;
+        if (answers.q2a) document.getElementById('q2a').value = answers.q2a;
+        if (answers.q2b) document.getElementById('q2b').value = answers.q2b;
+      })
+      .catch(e => {
+        console.log('No saved answers found, starting fresh');
+      });
   }
 
   function saveAnswers() {
@@ -667,14 +655,19 @@ Tier 2 - EXPAND:
       q2b: document.getElementById('q2b').value,
     };
 
-    fetch('/api/filtering-answers', {
+    fetch('/api/save-filtering-answers', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(answers)
     })
     .then(r => r.json())
     .then(data => {
-      alert('Answers saved! Share this with your team.');
+      if (data.success) {
+        alert('✅ Answers saved to GitHub! Your team can see them now.');
+        console.log('Answers saved to GitHub successfully');
+      } else {
+        alert('Error: ' + data.message);
+      }
     })
     .catch(e => {
       console.error('Error saving answers:', e);
@@ -683,13 +676,18 @@ Tier 2 - EXPAND:
   }
 
   function clearAnswers() {
-    if (confirm('Clear all answers?')) {
+    if (confirm('Clear all answers? This will be saved to GitHub.')) {
       document.getElementById('filteringForm').reset();
-      fetch('/api/filtering-answers', {
+      fetch('/api/save-filtering-answers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({})
-      });
+        body: JSON.stringify({ q1: '', q2a: '', q2b: '' })
+      })
+      .then(r => r.json())
+      .then(data => {
+        console.log('Answers cleared and saved to GitHub');
+      })
+      .catch(e => console.error('Error clearing answers:', e));
     }
   }
 

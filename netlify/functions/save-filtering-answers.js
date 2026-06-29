@@ -7,20 +7,20 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    const scores = JSON.parse(event.body);
+    const answers = JSON.parse(event.body);
     const githubToken = process.env.GITHUB_TOKEN;
     const repo = 'Osama-Eldrieny_nintex/connectors-strategy';
-    const filePath = 'scores.json';
+    const filePath = 'filtering-answers.json';
 
     if (!githubToken) {
-      console.warn('GITHUB_TOKEN not set, scores not persisted');
+      console.warn('GITHUB_TOKEN not set, answers not persisted');
       return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           success: true,
-          message: 'Scores saved locally (not persisted to GitHub)',
-          count: scores.length
+          message: 'Answers saved locally (not persisted to GitHub)',
+          count: Object.keys(answers).length
         })
       };
     }
@@ -46,7 +46,7 @@ exports.handler = async (event, context) => {
       console.log('File does not exist yet, will create new file');
     }
 
-    // Update or create file with new scores
+    // Update or create file with new answers
     const updateResponse = await fetch(
       `https://api.github.com/repos/${repo}/contents/${filePath}`,
       {
@@ -57,8 +57,8 @@ exports.handler = async (event, context) => {
           'Accept': 'application/vnd.github.v3+json'
         },
         body: JSON.stringify({
-          message: `Update connector scores - ${new Date().toLocaleString()}`,
-          content: Buffer.from(JSON.stringify(scores, null, 2)).toString('base64'),
+          message: `Update filtering answers - ${new Date().toLocaleString()}`,
+          content: Buffer.from(JSON.stringify(answers, null, 2)).toString('base64'),
           ...(sha && { sha: sha })
         })
       }
@@ -70,23 +70,23 @@ exports.handler = async (event, context) => {
       throw new Error(`GitHub API error (${updateResponse.status}): ${errorData.message || 'Unknown error'}`);
     }
 
-    console.log('Scores saved to GitHub:', scores.length, 'connectors');
+    console.log('Filtering answers saved to GitHub');
 
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         success: true,
-        message: 'Scores saved to GitHub successfully',
-        count: scores.length
+        message: 'Answers saved to GitHub successfully',
+        count: Object.keys(answers).length
       })
     };
   } catch (error) {
-    console.error('Error saving scores:', error);
+    console.error('Error saving answers:', error);
     return {
       statusCode: 500,
       body: JSON.stringify({
-        error: 'Error saving scores: ' + error.message,
+        error: 'Error saving answers: ' + error.message,
         hint: 'Make sure GITHUB_TOKEN is set in Netlify environment variables'
       })
     };

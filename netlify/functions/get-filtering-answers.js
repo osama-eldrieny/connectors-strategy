@@ -2,7 +2,7 @@ exports.handler = async (event, context) => {
   try {
     const githubToken = process.env.GITHUB_TOKEN;
     const repo = 'Osama-Eldrieny_nintex/connectors-strategy';
-    const filePath = 'scores.json';
+    const filePath = 'filtering-answers.json';
 
     // Use GitHub API to fetch (bypasses CDN cache, always gets latest)
     const response = await fetch(
@@ -16,27 +16,31 @@ exports.handler = async (event, context) => {
     );
 
     if (!response.ok) {
-      // If file doesn't exist yet, return empty array
+      // If file doesn't exist yet, return default answers
       return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify([])
+        body: JSON.stringify({
+          q1: '',
+          q2a: '',
+          q2b: ''
+        })
       };
     }
 
     const fileData = await response.json();
-    const scoresData = Buffer.from(fileData.content, 'base64').toString('utf-8');
+    const answersData = Buffer.from(fileData.content, 'base64').toString('utf-8');
 
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: scoresData
+      body: answersData
     };
   } catch (error) {
-    console.error('Error loading scores:', error);
+    console.error('Error loading filtering answers:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error loading scores: ' + error.message })
+      body: JSON.stringify({ error: 'Error loading answers: ' + error.message })
     };
   }
 };

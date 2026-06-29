@@ -141,32 +141,48 @@
 
   async function saveConnectors() {
     try {
-      localStorage.setItem('connectorScores', JSON.stringify(connectors));
-      console.log('Connector scores saved to browser');
+      const response = await fetch('/.netlify/functions/save-scores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(connectors)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Scores saved to server:', result.message);
+      } else {
+        console.error('Error saving to server:', response.status);
+      }
     } catch (e) {
       console.error('Error saving connectors:', e);
+      // Fallback to localStorage if function fails
+      localStorage.setItem('connectorScores', JSON.stringify(connectors));
     }
   }
 
   async function loadConnectors() {
     try {
-      // First try to load saved scores from localStorage
-      const saved = localStorage.getItem('connectorScores');
-      if (saved) {
-        connectors = JSON.parse(saved);
-        console.log('Loaded connector scores from browser storage');
-        return;
+      // Try to load saved scores from server function
+      const response = await fetch('/.netlify/functions/get-scores');
+      if (response.ok) {
+        const scores = await response.json();
+        if (scores.length > 0) {
+          connectors = scores;
+          console.log('Loaded connector scores from server');
+          return;
+        }
       }
 
-      // If no saved scores, load from JSON file
-      const response = await fetch('/connectors.json');
-      connectors = await response.json();
+      // If no saved scores on server, load from JSON file
+      const connResponse = await fetch('/connectors.json');
+      connectors = await connResponse.json();
       // Ensure each connector has a collapsed property
       connectors.forEach(c => {
         if (c.collapsed === undefined) {
           c.collapsed = false;
         }
       });
+      console.log('Loaded fresh connectors from JSON file');
     } catch (e) {
       console.error('Error loading connectors:', e);
       connectors = [];

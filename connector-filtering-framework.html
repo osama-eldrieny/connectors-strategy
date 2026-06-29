@@ -636,7 +636,7 @@
 <script>
   function prefillAnswers() {
     // Load answers from GitHub via API
-    fetch('/api/get-filtering-answers')
+    fetch('/api/filtering-answers')
       .then(r => r.json())
       .then(answers => {
         if (answers.q1) document.getElementById('q1').value = answers.q1;
@@ -655,7 +655,7 @@
       q2b: document.getElementById('q2b').value,
     };
 
-    fetch('/api/save-filtering-answers', {
+    fetch('/api/filtering-answers', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(answers)
@@ -678,7 +678,7 @@
   function clearAnswers() {
     if (confirm('Clear all answers? This will be saved to GitHub.')) {
       document.getElementById('filteringForm').reset();
-      fetch('/api/save-filtering-answers', {
+      fetch('/api/filtering-answers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ q1: '', q2a: '', q2b: '' })

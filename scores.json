@@ -13,8 +13,8 @@
     "adoption": 1,
     "alignment": 1,
     "collapsed": false,
-    "demand": 1,
-    "effort": 1,
+    "demand": 5,
+    "effort": 5,
     "id": 2,
     "impact": 5,
     "name": "WooCommerce"

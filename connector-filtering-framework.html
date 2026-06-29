@@ -635,16 +635,27 @@
 
 <script>
   function prefillAnswers() {
-    // Load answers from GitHub via API
+    // Load answers from GitHub API first, fallback to localStorage
     fetch('/api/filtering-answers')
       .then(r => r.json())
       .then(answers => {
-        if (answers.q1) document.getElementById('q1').value = answers.q1;
-        if (answers.q2a) document.getElementById('q2a').value = answers.q2a;
-        if (answers.q2b) document.getElementById('q2b').value = answers.q2b;
+        if (answers.q1) {
+          document.getElementById('q1').value = answers.q1;
+          document.getElementById('q2a').value = answers.q2a || '';
+          document.getElementById('q2b').value = answers.q2b || '';
+          console.log('✅ Loaded answers from GitHub');
+        }
       })
       .catch(e => {
-        console.log('No saved answers found, starting fresh');
+        console.log('GitHub API not available, trying localStorage...');
+        const saved = localStorage.getItem('filteringAnswers');
+        if (saved) {
+          const answers = JSON.parse(saved);
+          document.getElementById('q1').value = answers.q1 || '';
+          document.getElementById('q2a').value = answers.q2a || '';
+          document.getElementById('q2b').value = answers.q2b || '';
+          console.log('✅ Loaded answers from localStorage');
+        }
       });
   }
 
@@ -655,6 +666,11 @@
       q2b: document.getElementById('q2b').value,
     };
 
+    // Always save to localStorage first
+    localStorage.setItem('filteringAnswers', JSON.stringify(answers));
+    console.log('✅ Saved to localStorage');
+
+    // Try to save to GitHub
     fetch('/api/filtering-answers', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -666,12 +682,12 @@
         alert('✅ Answers saved to GitHub! Your team can see them now.');
         console.log('Answers saved to GitHub successfully');
       } else {
-        alert('Error: ' + data.message);
+        alert('⚠️ Saved locally. GitHub save failed: ' + data.message);
       }
     })
     .catch(e => {
-      console.error('Error saving answers:', e);
-      alert('Error saving answers. Please try again.');
+      console.error('GitHub API not available:', e);
+      alert('✅ Answers saved locally on this machine. Set up team sharing for cross-machine sync.');
     });
   }
 

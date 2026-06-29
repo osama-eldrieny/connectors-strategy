@@ -225,16 +225,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 23,
-    "impact": 1,
-    "name": "Guidepoint"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 24,
     "impact": 1,
     "name": "Lever ATS"
@@ -835,26 +825,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 84,
-    "impact": 1,
-    "name": "019 whatsapp"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 85,
-    "impact": 1,
-    "name": "360Messenger for WhatsApp"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 86,
     "impact": 1,
     "name": "AT Invoice"
@@ -888,26 +858,6 @@
     "id": 89,
     "impact": 1,
     "name": "AccountingSuite"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 90,
-    "impact": 1,
-    "name": "Achieve"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 91,
-    "impact": 1,
-    "name": "Achievers"
   },
   {
     "adoption": 1,
@@ -1075,16 +1025,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 108,
-    "impact": 1,
-    "name": "Botit WhatsApp QR API"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 109,
     "impact": 1,
     "name": "BreachRx"
@@ -1165,16 +1105,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 117,
-    "impact": 1,
-    "name": "ChatArchitect WhatsApp"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 118,
     "impact": 1,
     "name": "Citibank"
@@ -1198,86 +1128,6 @@
     "id": 120,
     "impact": 1,
     "name": "ClickBank"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 121,
-    "impact": 1,
-    "name": "Coach Catalyst"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 122,
-    "impact": 1,
-    "name": "Coach by Wonderway"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 123,
-    "impact": 1,
-    "name": "CoachAccountable"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 124,
-    "impact": 1,
-    "name": "CoachConnect"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 125,
-    "impact": 1,
-    "name": "Coachful"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 126,
-    "impact": 1,
-    "name": "Coaching Loft"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 127,
-    "impact": 1,
-    "name": "Cognitive Invoice"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 128,
-    "impact": 1,
-    "name": "Consumeraffairs"
   },
   {
     "adoption": 1,
@@ -1365,116 +1215,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 137,
-    "impact": 1,
-    "name": "Agency Elephant"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 138,
-    "impact": 1,
-    "name": "Agency Razz"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 139,
-    "impact": 1,
-    "name": "Agency Revolution Fuse"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 140,
-    "impact": 1,
-    "name": "AgencyAccess"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 141,
-    "impact": 1,
-    "name": "AgencyBloc"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 142,
-    "impact": 1,
-    "name": "AgencyComp"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 143,
-    "impact": 1,
-    "name": "AgencyPro"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 144,
-    "impact": 1,
-    "name": "AgencyZoom"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 145,
-    "impact": 1,
-    "name": "Agencyjoy"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 146,
-    "impact": 1,
-    "name": "AlterEstate"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 147,
-    "impact": 1,
-    "name": "Antara Mussol"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 148,
     "impact": 1,
     "name": "AssoConnect"
@@ -1525,16 +1265,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 153,
-    "impact": 1,
-    "name": "Better Agency"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 154,
     "impact": 1,
     "name": "Biometric Authentication Plugin"
@@ -1565,16 +1295,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 157,
-    "impact": 1,
-    "name": "Digital Agency Tech"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 158,
     "impact": 1,
     "name": "Estate.Studio"
@@ -1588,16 +1308,6 @@
     "id": 159,
     "impact": 1,
     "name": "FIN Compliance"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 160,
-    "impact": 1,
-    "name": "FuelEconomyGov"
   },
   {
     "adoption": 1,
@@ -1855,36 +1565,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 186,
-    "impact": 1,
-    "name": "AgentLookUp"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 187,
-    "impact": 1,
-    "name": "AgentMail"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 188,
-    "impact": 1,
-    "name": "AgentMethods"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 189,
     "impact": 1,
     "name": "AgentQL"
@@ -1908,36 +1588,6 @@
     "id": 191,
     "impact": 1,
     "name": "Agentalk"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 192,
-    "impact": 1,
-    "name": "Agentcis"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 193,
-    "impact": 1,
-    "name": "Agenthost.ai"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 194,
-    "impact": 1,
-    "name": "Agentifai Assistant Plugin"
   },
   {
     "adoption": 1,
@@ -2025,16 +1675,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 203,
-    "impact": 1,
-    "name": "AltTextLab"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 204,
     "impact": 1,
     "name": "Balabook"
@@ -2085,39 +1725,9 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 209,
-    "impact": 1,
-    "name": "Colabi"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 210,
-    "impact": 1,
-    "name": "Collaborate Space"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 211,
     "impact": 1,
     "name": "Convertlabs"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 212,
-    "impact": 1,
-    "name": "Crescendo Lab"
   },
   {
     "adoption": 1,
@@ -2165,16 +1775,6 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 217,
-    "impact": 1,
-    "name": "Emailable"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 218,
     "impact": 1,
     "name": "Epic AI"
@@ -2195,39 +1795,9 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 220,
-    "impact": 1,
-    "name": "FranchiseLab Recruiter"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 221,
-    "impact": 1,
-    "name": "FraudLabs Pro"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 222,
     "impact": 1,
     "name": "Gallabox"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 223,
-    "impact": 1,
-    "name": "Gallabox Whatsapp API"
   },
   {
     "adoption": 1,
@@ -2385,89 +1955,9 @@
     "collapsed": true,
     "demand": 1,
     "effort": 1,
-    "id": 239,
-    "impact": 1,
-    "name": "Byteplant Address Validator"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 240,
-    "impact": 1,
-    "name": "Byteplant Email Validator"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 241,
-    "impact": 1,
-    "name": "Byteplant Phone Validator"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 242,
-    "impact": 1,
-    "name": "Centerpoint Connect"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 243,
-    "impact": 1,
-    "name": "Copyfactory"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 244,
-    "impact": 1,
-    "name": "Counterpoint"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 245,
-    "impact": 1,
-    "name": "DMM Quality Assurance"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
     "id": 246,
     "impact": 1,
     "name": "DreamzIoT"
-  },
-  {
-    "adoption": 1,
-    "alignment": 1,
-    "collapsed": true,
-    "demand": 1,
-    "effort": 1,
-    "id": 247,
-    "impact": 1,
-    "name": "Dropcontact"
   },
   {
     "adoption": 1,

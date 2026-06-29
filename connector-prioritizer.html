@@ -141,11 +141,8 @@
 
   async function saveConnectors() {
     try {
-      await fetch('/api/connectors', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(connectors)
-      });
+      localStorage.setItem('connectorScores', JSON.stringify(connectors));
+      console.log('Connector scores saved to browser');
     } catch (e) {
       console.error('Error saving connectors:', e);
     }
@@ -153,7 +150,16 @@
 
   async function loadConnectors() {
     try {
-      const response = await fetch('/api/connectors');
+      // First try to load saved scores from localStorage
+      const saved = localStorage.getItem('connectorScores');
+      if (saved) {
+        connectors = JSON.parse(saved);
+        console.log('Loaded connector scores from browser storage');
+        return;
+      }
+
+      // If no saved scores, load from JSON file
+      const response = await fetch('/connectors.json');
       connectors = await response.json();
       // Ensure each connector has a collapsed property
       connectors.forEach(c => {

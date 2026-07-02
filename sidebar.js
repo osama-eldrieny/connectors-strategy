@@ -2,11 +2,13 @@
 const SIDEBAR_HTML = `<div class="side-nav" id="sideNav">
   <div class="side-nav-panel open" id="sideNavPanel">
     <div class="side-nav-header">Nintex Connector Suite</div>
-    <div class="side-nav-section-label">📄 Pages</div>
-    <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon">📋</span> Framework Review</a>
-    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon">⚙️</span> Scoring Tool</a>
+    <div class="side-nav-section-label">Pages</div>
+    <a class="side-nav-link" href="connector-filtering-framework.html" data-page="filtering"><span class="icon"><i data-lucide="filter"></i></span> Filtering Framework</a>
+    <a class="side-nav-link" href="competitors-analysis.html" data-page="competitors"><span class="icon"><i data-lucide="award"></i></span> Competitors Analysis</a>
+    <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><i data-lucide="clipboard-list"></i></span> Framework Review</a>
+    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><i data-lucide="target"></i></span> Connector Scoring</a>
     <div class="side-nav-divider"></div>
-    <div class="side-nav-section-label" id="onPageSection">🔖 On This Page</div>
+    <div class="side-nav-section-label" id="onPageSection">On This Page</div>
     <div id="onPageLinks"></div>
   </div>
 </div>`;
@@ -23,9 +25,13 @@ function detectCurrentPage() {
     pageName = 'framework';
   } else if (pathname.includes('connector-prioritizer.html') || href.includes('connector-prioritizer.html')) {
     pageName = 'prioritizer';
+  } else if (pathname.includes('competitors-analysis.html') || href.includes('competitors-analysis.html')) {
+    pageName = 'competitors';
+  } else if (pathname.includes('connector-filtering-framework.html') || href.includes('connector-filtering-framework.html')) {
+    pageName = 'filtering';
   } else {
     // Default fallback
-    pageName = 'prioritizer';
+    pageName = 'filtering';
   }
 
   return pageName;
@@ -113,7 +119,17 @@ function setupPageLinks(pageKey) {
 
 // Load sidebar when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadSidebar);
+  document.addEventListener('DOMContentLoaded', () => {
+    loadSidebar();
+    // Render Lucide icons after sidebar is loaded
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  });
 } else {
   loadSidebar();
+  // Render Lucide icons after sidebar is loaded
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 }

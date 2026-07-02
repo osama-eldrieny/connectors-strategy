@@ -1,0 +1,1984 @@
+{
+  "competitors": [
+    "Cyclr",
+    "Make",
+    "OutSystems",
+    "Power Automate",
+    "Prismatic",
+    "ServiceNow",
+    "Zapier",
+    "n8n"
+  ],
+  "records": [
+    {
+      "Rank": "1",
+      "Connector Name": "Snowflake",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Make, OutSystems, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "2",
+      "Connector Name": "monday.com",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, Power Automate, ServiceNow, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "3",
+      "Connector Name": "Google Forms",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "4",
+      "Connector Name": "Microsoft Graph",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "OutSystems, Prismatic",
+      "Coverage %": "25%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "5",
+      "Connector Name": "Oracle",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "OutSystems",
+      "Coverage %": "12%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "6",
+      "Connector Name": "Dataverse",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Power Automate",
+      "Coverage %": "12%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "7",
+      "Connector Name": "Microsoft Planner",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "0 out of 8",
+      "Supported By": "",
+      "Coverage %": "0%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "8",
+      "Connector Name": "Microsoft Teams Approvals",
+      "Type": "Customer-Requested",
+      "Requested By Customers": "✅ YES",
+      "Competitor Coverage": "0 out of 8",
+      "Supported By": "",
+      "Coverage %": "0%",
+      "Priority": "P0 - IMMEDIATE"
+    },
+    {
+      "Rank": "9",
+      "Connector Name": "Calendly",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "8 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Power Automate, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "100%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "10",
+      "Connector Name": "GitHub",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "8 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Power Automate, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "100%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "11",
+      "Connector Name": "Intercom",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "7 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "88%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "12",
+      "Connector Name": "Mailchimp",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "7 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "88%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "13",
+      "Connector Name": "Okta",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "7 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "88%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "14",
+      "Connector Name": "PagerDuty",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "7 out of 8",
+      "Supported By": "Cyclr, Make, Power Automate, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "88%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "15",
+      "Connector Name": "AWS S3",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "7 out of 8",
+      "Supported By": "Make, OutSystems, Power Automate, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "88%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "16",
+      "Connector Name": "AWS SQS",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "7 out of 8",
+      "Supported By": "Make, OutSystems, Power Automate, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "88%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "17",
+      "Connector Name": "HubSpot",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Make, OutSystems, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "18",
+      "Connector Name": "Tableau",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "19",
+      "Connector Name": "WooCommerce",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "20",
+      "Connector Name": "Typeform",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "21",
+      "Connector Name": "Klaviyo",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "22",
+      "Connector Name": "Google Cloud Storage",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Prismatic, ServiceNow, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "23",
+      "Connector Name": "AWS Lambda",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Make, OutSystems, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "24",
+      "Connector Name": "AWS SNS",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Make, OutSystems, Prismatic, ServiceNow, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "25",
+      "Connector Name": "DeepSeek",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Prismatic, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "26",
+      "Connector Name": "QuickBooks",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, Power Automate, Prismatic, Zapier, n8n",
+      "Coverage %": "75%",
+      "Priority": "P1 - HIGH"
+    },
+    {
+      "Rank": "27",
+      "Connector Name": "AgencyZoom",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "28",
+      "Connector Name": "Bigin by Zoho CRM",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "29",
+      "Connector Name": "Zoho Invoice",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Power Automate, Zapier",
+      "Coverage %": "38%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "30",
+      "Connector Name": "AgencyZoom",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "31",
+      "Connector Name": "Bigin by Zoho CRM",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "32",
+      "Connector Name": "AgencyZoom",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "33",
+      "Connector Name": "QuickBooks Time",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Prismatic",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "34",
+      "Connector Name": "Zoho Inventory",
+      "Type": "Competitive Gap",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "35",
+      "Connector Name": "GitLab",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "5 out of 8",
+      "Supported By": "Make, Power Automate, ServiceNow, Zapier, n8n",
+      "Coverage %": "62%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "36",
+      "Connector Name": "PayPal",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "5 out of 8",
+      "Supported By": "Cyclr, Make, OutSystems, Zapier, n8n",
+      "Coverage %": "62%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "37",
+      "Connector Name": "WhatsApp",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "5 out of 8",
+      "Supported By": "Make, OutSystems, Prismatic, Zapier, n8n",
+      "Coverage %": "62%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "38",
+      "Connector Name": "MessageBird",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "4 out of 8",
+      "Supported By": "Make, OutSystems, Zapier, n8n",
+      "Coverage %": "50%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "39",
+      "Connector Name": "Perplexity",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "4 out of 8",
+      "Supported By": "Make, OutSystems, Zapier, n8n",
+      "Coverage %": "50%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "40",
+      "Connector Name": "SAP S/4HANA",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "4 out of 8",
+      "Supported By": "Make, Prismatic, ServiceNow, Zapier",
+      "Coverage %": "50%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "41",
+      "Connector Name": "SAP SuccessFactors",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "4 out of 8",
+      "Supported By": "Cyclr, Make, Prismatic, Zapier",
+      "Coverage %": "50%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "42",
+      "Connector Name": "Sage Intacct",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "4 out of 8",
+      "Supported By": "Cyclr, Make, Prismatic, Zapier",
+      "Coverage %": "50%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "43",
+      "Connector Name": "AssemblyAI",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "44",
+      "Connector Name": "CleverReach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "45",
+      "Connector Name": "Dropcontact",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "46",
+      "Connector Name": "ElevenLabs",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "47",
+      "Connector Name": "Foursquare",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "48",
+      "Connector Name": "FreeAgent",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Cyclr, Make, Zapier",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "49",
+      "Connector Name": "Gumroad",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "50",
+      "Connector Name": "HeyReach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "51",
+      "Connector Name": "Invoice Ninja",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "52",
+      "Connector Name": "Invoiced",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "53",
+      "Connector Name": "LiveAgent",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "54",
+      "Connector Name": "Mallabe Barcodes",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "55",
+      "Connector Name": "Mallabe Images",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "56",
+      "Connector Name": "NetSuite",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Cyclr, Make, Zapier",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "57",
+      "Connector Name": "ReachInbox",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "58",
+      "Connector Name": "Referral Factory",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "59",
+      "Connector Name": "SAP ECC",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Cyclr, Prismatic, ServiceNow",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "60",
+      "Connector Name": "Sage Accounting",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Cyclr, Prismatic, Zapier",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "61",
+      "Connector Name": "Square",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Prismatic, Zapier",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "62",
+      "Connector Name": "Taximail",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "63",
+      "Connector Name": "Teachable",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM"
+    },
+    {
+      "Rank": "64",
+      "Connector Name": "Oracle NetSuite",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Prismatic, ServiceNow",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "65",
+      "Connector Name": "AI21 Labs",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "66",
+      "Connector Name": "API Labz",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "67",
+      "Connector Name": "Active Directory",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "OutSystems, Prismatic",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "68",
+      "Connector Name": "Agencyjoy",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "69",
+      "Connector Name": "AgentX",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "70",
+      "Connector Name": "Airship",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, OutSystems",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "71",
+      "Connector Name": "AltTextLab",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "72",
+      "Connector Name": "Assembly",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "73",
+      "Connector Name": "Asset Panda",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "74",
+      "Connector Name": "Bind ERP",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "75",
+      "Connector Name": "Bloomreach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, Make",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "76",
+      "Connector Name": "Byteplant Address Validator",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "77",
+      "Connector Name": "Byteplant Email Validator",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "78",
+      "Connector Name": "Byteplant Phone Validator",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "79",
+      "Connector Name": "Cryptolens",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "80",
+      "Connector Name": "EZOfficeInventory",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "81",
+      "Connector Name": "Emailable",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "82",
+      "Connector Name": "Enterpret",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "83",
+      "Connector Name": "EventSquare",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "84",
+      "Connector Name": "Explorium AgentSource",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "85",
+      "Connector Name": "Form.taxi",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "86",
+      "Connector Name": "FraudLabs Pro",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "87",
+      "Connector Name": "Gallabox",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "88",
+      "Connector Name": "GetMyInvoices",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "89",
+      "Connector Name": "HelloAsso",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "90",
+      "Connector Name": "IPQualityScore",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "91",
+      "Connector Name": "Inistate",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "92",
+      "Connector Name": "InstaCharts",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "93",
+      "Connector Name": "InvoiceBerry",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "94",
+      "Connector Name": "InvoiceXpress",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "OutSystems, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "95",
+      "Connector Name": "Invoicing.plus",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "96",
+      "Connector Name": "JigsawStack",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "97",
+      "Connector Name": "LaGrowthMachine",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "98",
+      "Connector Name": "LeadSquared",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "99",
+      "Connector Name": "LinkMyAgency",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "100",
+      "Connector Name": "Local Falcon",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "101",
+      "Connector Name": "Localazy",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "102",
+      "Connector Name": "Localytics",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "OutSystems, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "103",
+      "Connector Name": "Magento",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "104",
+      "Connector Name": "Magento 2",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "105",
+      "Connector Name": "Magentrix",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "106",
+      "Connector Name": "MemberPress",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "107",
+      "Connector Name": "Moon Invoice",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "108",
+      "Connector Name": "Octanist",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "109",
+      "Connector Name": "Openasset",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "110",
+      "Connector Name": "Outreach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "111",
+      "Connector Name": "Overledger",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "112",
+      "Connector Name": "Oxylabs",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "113",
+      "Connector Name": "People Data Labs",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "114",
+      "Connector Name": "PicDefense",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "115",
+      "Connector Name": "Pointerpro",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "116",
+      "Connector Name": "RepairShopr",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "117",
+      "Connector Name": "Ringover",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "118",
+      "Connector Name": "RocketReach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "119",
+      "Connector Name": "SAP Business One",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Prismatic, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "120",
+      "Connector Name": "SAP Commerce Cloud",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, ServiceNow",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "121",
+      "Connector Name": "SAP Concur",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, ServiceNow",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "122",
+      "Connector Name": "SAP Fieldglass",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, ServiceNow",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "123",
+      "Connector Name": "SMSAPI",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "124",
+      "Connector Name": "SOS Inventory",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "125",
+      "Connector Name": "Sage 200",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, Prismatic",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "126",
+      "Connector Name": "Sage CRM",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Cyclr, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "127",
+      "Connector Name": "Sage Sales Management",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "128",
+      "Connector Name": "Semrush",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "129",
+      "Connector Name": "SimpleLocalize",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "130",
+      "Connector Name": "SmartReach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "131",
+      "Connector Name": "Superpowered",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Zapier, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "132",
+      "Connector Name": "Surplus Lines Tax API",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "133",
+      "Connector Name": "TaxJar",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "134",
+      "Connector Name": "Teachery",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "135",
+      "Connector Name": "Teachworks",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "136",
+      "Connector Name": "TerraReach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "137",
+      "Connector Name": "TopMessage",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "138",
+      "Connector Name": "Twin Web Agent",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "139",
+      "Connector Name": "Uteach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "140",
+      "Connector Name": "Visma eAccounting",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "141",
+      "Connector Name": "Wachete",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "142",
+      "Connector Name": "Yesh Invoice",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "143",
+      "Connector Name": "iAuditor",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, n8n",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "144",
+      "Connector Name": "mailfloss",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "145",
+      "Connector Name": "mallabe Currencies",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "146",
+      "Connector Name": "mallabe Validations",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "147",
+      "Connector Name": "mallabe Websites",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "148",
+      "Connector Name": "manyreach",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "149",
+      "Connector Name": "Oracle Financial Cloud",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "ServiceNow",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "150",
+      "Connector Name": "Oracle NetSuite RESTlet",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Cyclr",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "151",
+      "Connector Name": "Oracle PeopleSoft Financial",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "ServiceNow",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "152",
+      "Connector Name": "019 whatsapp",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Make",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "153",
+      "Connector Name": "21RISK",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "154",
+      "Connector Name": "360Messenger for WhatsApp",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Make",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "155",
+      "Connector Name": "AGENTVIEW",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "156",
+      "Connector Name": "AI Agent",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "n8n",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "157",
+      "Connector Name": "AI Agent Builder",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "OutSystems",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "158",
+      "Connector Name": "AI Agent Tool",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "n8n",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "159",
+      "Connector Name": "AI Receptionist",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "160",
+      "Connector Name": "AT Invoice",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "OutSystems",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "161",
+      "Connector Name": "AWS IoT",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "OutSystems",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "162",
+      "Connector Name": "AWS Machine Learning",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "OutSystems",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "163",
+      "Connector Name": "AccountingBox",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "164",
+      "Connector Name": "AccountingSuite",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "165",
+      "Connector Name": "Acesso gov.br",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "OutSystems",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "166",
+      "Connector Name": "Achieve",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "167",
+      "Connector Name": "Achievers",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Make",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "168",
+      "Connector Name": "ActiveCollab",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "169",
+      "Connector Name": "Adobe Commerce Magento",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Prismatic",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "170",
+      "Connector Name": "Aesthetic Record EMR",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "171",
+      "Connector Name": "Agency Elephant",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "172",
+      "Connector Name": "Agency Razz",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "173",
+      "Connector Name": "Agency Revolution Fuse",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "174",
+      "Connector Name": "AgencyAccess",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "175",
+      "Connector Name": "AgencyBloc",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "176",
+      "Connector Name": "AgencyComp",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "177",
+      "Connector Name": "AgencyPro",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "178",
+      "Connector Name": "Agent 3000",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "179",
+      "Connector Name": "Agent Client Collector",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "ServiceNow",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "180",
+      "Connector Name": "Agent Legend",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "181",
+      "Connector Name": "Agent Response",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "182",
+      "Connector Name": "Agent.AI",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Make",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "183",
+      "Connector Name": "Agent700 Agent",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "n8n",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "184",
+      "Connector Name": "AgentBright",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "185",
+      "Connector Name": "AgentFire",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "186",
+      "Connector Name": "AgentHub",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "187",
+      "Connector Name": "AgentIzzy",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "188",
+      "Connector Name": "AgentLocator",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "189",
+      "Connector Name": "AgentLookUp",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "190",
+      "Connector Name": "AgentMail",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "n8n",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "191",
+      "Connector Name": "AgentMethods",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "192",
+      "Connector Name": "AgentQL",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "193",
+      "Connector Name": "Agentalk",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Make",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "194",
+      "Connector Name": "Agentcis",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "195",
+      "Connector Name": "Agenthost.ai",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "196",
+      "Connector Name": "Agentifai Assistant Plugin",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "OutSystems",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    },
+    {
+      "Rank": "197",
+      "Connector Name": "Agents",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "1 out of 8",
+      "Supported By": "Zapier",
+      "Coverage %": "12%",
+      "Priority": "P3 - LOW"
+    }
+  ]
+}

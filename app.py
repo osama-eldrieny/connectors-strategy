@@ -32,7 +32,7 @@ def load_reviews():
     if os.path.exists(REVIEWS_FILE):
         with open(REVIEWS_FILE, 'r') as f:
             return json.load(f)
-    return {'waseem': {'comment': '', 'approved': False}, 'josh': {'comment': '', 'approved': False}, 'chintan': {'comment': '', 'approved': False}}
+    return {'waseem': {'comment': '', 'approved': False}, 'josh': {'comment': '', 'approved': False}, 'john': {'comment': '', 'approved': False}}
 
 def save_reviews(data):
     with open(REVIEWS_FILE, 'w') as f:

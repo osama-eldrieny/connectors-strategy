@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Competitors Analysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://pointer2.fly.dev/inject.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .competitors-section {
+      background: rgba(0, 102, 204, 0.05);
+      border: 2px solid var(--nintex-blue);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .competitors-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .competitors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      justify-content: start;
+      align-items: center;
+    }
+
+    .competitor-badge {
+      padding: 0.5rem 1rem;
+      background: white;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--nintex-border, #e2e8f0);
+      text-align: center;
+      font-weight: 600;
+      color: var(--nintex-blue);
+      white-space: nowrap;
+    }
+
+    .table-section {
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .table-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .table-controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--nintex-border, #e2e8f0);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--nintex-blue);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .sort-select {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--nintex-border, #e2e8f0);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      background: white;
+      cursor: pointer;
+    }
+
+    .sort-select:focus {
+      outline: none;
+      border-color: var(--nintex-blue);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    thead {
+      background-color: #f8fafc;
+      border-bottom: 2px solid var(--nintex-border, #e2e8f0);
+    }
+
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    th:hover {
+      background-color: rgba(0, 102, 204, 0.05);
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--nintex-border, #e2e8f0);
+      color: var(--text-primary);
+    }
+
+    tbody tr:hover {
+      background-color: rgba(0, 102, 204, 0.02);
+    }
+
+    .rank-cell {
+      font-weight: 700;
+      color: var(--nintex-blue);
+      width: 60px;
+    }
+
+    .type-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .type-requested {
+      background-color: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+    }
+
+    .type-competitive {
+      background-color: rgba(59, 130, 246, 0.1);
+      color: #2563eb;
+    }
+
+    .type-industry {
+      background-color: rgba(168, 85, 247, 0.1);
+      color: #a855f7;
+    }
+
+    .coverage-badge {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: rgba(0, 102, 204, 0.1);
+      color: var(--nintex-blue);
+    }
+
+    .priority-badge {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .priority-p0 {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: #dc2626;
+    }
+
+    .priority-p1 {
+      background-color: rgba(249, 115, 22, 0.1);
+      color: #ea580c;
+    }
+
+    .priority-p2 {
+      background-color: rgba(59, 130, 246, 0.1);
+      color: #2563eb;
+    }
+
+    .priority-p3 {
+      background-color: rgba(107, 114, 128, 0.1);
+      color: #6b7280;
+    }
+
+    .supported-by {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #64748b);
+    }
+
+    .badge-list {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge-list span {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      background-color: #f8fafc;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--nintex-border, #e2e8f0);
+      text-align: center;
+      color: var(--text-secondary, #64748b);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .table-controls {
+        flex-direction: column;
+      }
+
+      .search-input {
+        min-width: 100%;
+      }
+
+      table {
+        font-size: 0.8rem;
+      }
+
+      th, td {
+        padding: 0.75rem 0.5rem;
+      }
+
+      .competitors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+
+    .container {
+      max-width: 1800px !important;
+      padding-top: 5rem !important;
+    }
+
+    :root {
+      --nintex-blue: #0066cc;
+      --nintex-dark: #0f172a;
+      --nintex-border: #e2e8f0;
+    }
+
+    ::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <script src="sidebar.js"></script>
+
+  <!-- NAV -->
+  <nav class="nav-padded">
+    <div class="nav-logo">
+      <span class="dot"></span>
+      Nintex · Connector Strategy
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-header">
+      <div class="doc-status">in review</div>
+      <div class="contributors">
+        <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama"></div>
+        <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem"></div>
+      </div>
+    </div>
+    <h1>Competitors <span class="accent">Analysis</span></h1>
+    <p>Comprehensive analysis of Nintex connectors vs. competitor coverage across 200 integrations</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="big">8</div><div class="label">Competitors Analyzed</div></div>
+      <div class="hero-meta-item"><div class="big">197</div><div class="label">Connectors Evaluated</div></div>
+      <div class="hero-meta-item"><div class="big">75%</div><div class="label">Avg Coverage</div></div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="container">
+    <div class="competitors-section">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <i data-lucide="trophy" style="width: 28px; height: 28px;"></i>
+        <h2 style="margin: 0;">Competitor Platforms Analyzed</h2>
+      </div>
+      <p style="color: var(--text-secondary, #64748b); margin-bottom: 1.5rem;">
+        Below are the 8 leading integration platforms we analyzed to determine competitive gaps and opportunities:
+      </p>
+      <div class="competitors-grid" id="competitorsList">
+        <!-- Populated by JavaScript -->
+      </div>
+
+      <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(0, 102, 204, 0.2);">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+          <i data-lucide="info" style="width: 28px; height: 28px;"></i>
+          <h2 style="margin: 0;">Understanding the Analysis</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div style="padding: 1.25rem; background: white; border-radius: var(--radius-sm); border: 1px solid var(--nintex-border, #e2e8f0);">
+            <h4 style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem; font-size: 0.9rem;">Customer-Requested</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary, #64748b); margin: 0;">Connectors explicitly requested by Nintex customers or prospects via our <a href="https://ideas.nintex.com/" target="_blank" style="color: #16a34a; text-decoration: none; font-weight: 600;">ideas.nintex.com</a> platform. These address direct customer demand and can impact deal closure and retention.</p>
+          </div>
+
+          <div style="padding: 1.25rem; background: white; border-radius: var(--radius-sm); border: 1px solid var(--nintex-border, #e2e8f0);">
+            <h4 style="font-weight: 700; color: #2563eb; margin-bottom: 0.5rem; font-size: 0.9rem;">Competitive Gap</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary, #64748b); margin: 0;">Connectors supported by competitors (<strong>Cyclr</strong>, <strong>Make</strong>, <strong>OutSystems</strong>, <strong>Power Automate</strong>, <strong>Prismatic</strong>, <strong>ServiceNow</strong>, <strong>Zapier</strong>, <strong>n8n</strong>) but missing from Nintex. Closing these gaps improves our competitive positioning.</p>
+          </div>
+
+          <div style="padding: 1.25rem; background: white; border-radius: var(--radius-sm); border: 1px solid var(--nintex-border, #e2e8f0);">
+            <h4 style="font-weight: 700; color: #a855f7; margin-bottom: 0.5rem; font-size: 0.9rem;">Industry Standard</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary, #64748b); margin: 0;">Essential connectors widely supported across industries (<strong>Financial</strong>, <strong>Government</strong>, <strong>Insurance</strong>, <strong>Healthcare</strong>, and <strong>Manufacturing</strong>). Building these expands our integrations portfolio and improves platform capability in key verticals.</p>
+          </div>
+
+          <div style="padding: 1.25rem; background: white; border-radius: var(--radius-sm); border: 1px solid var(--nintex-border, #e2e8f0);">
+            <h4 style="font-weight: 700; color: var(--nintex-blue); margin-bottom: 0.5rem; font-size: 0.9rem;">Competitor Coverage %</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary, #64748b); margin: 0;">Percentage of the 8 analyzed competitors that support each connector. Higher coverage indicates stronger market demand and validates prioritization.</p>
+          </div>
+
+          <div style="padding: 1.25rem; background: white; border-radius: var(--radius-sm); border: 1px solid var(--nintex-border, #e2e8f0);">
+            <h4 style="font-weight: 700; color: #dc2626; margin-bottom: 0.5rem; font-size: 0.9rem;">Priority Levels</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary, #64748b); margin: 0;"><strong>P0 (Immediate):</strong> Critical customer requests. <strong>P1 (High):</strong> Competitive gaps with high coverage. <strong>P2 (Medium):</strong> Industry standards. <strong>P3 (Low):</strong> Emerging integrations.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="table-section">
+      <h2>📊 Connector Coverage Analysis</h2>
+
+      <div class="table-controls">
+        <input
+          type="text"
+          class="search-input"
+          id="searchInput"
+          placeholder="Search connectors by name..."
+        >
+        <select class="sort-select" id="typeFilter">
+          <option value="">All Types</option>
+          <option value="Customer-Requested">Customer-Requested</option>
+          <option value="Competitive Gap">Competitive Gap</option>
+          <option value="Industry">Industry</option>
+        </select>
+        <select class="sort-select" id="priorityFilter">
+          <option value="">All Priorities</option>
+          <option value="P0">P0 - Immediate</option>
+          <option value="P1">P1 - High</option>
+          <option value="P2">P2 - Medium</option>
+          <option value="P3">P3 - Low</option>
+        </select>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="connectorsTable">
+          <thead>
+            <tr>
+              <th style="width: 60px;">Rank</th>
+              <th>Connector Name</th>
+              <th>Type</th>
+              <th>Competitor Coverage</th>
+              <th>Coverage %</th>
+              <th>Priority</th>
+              <th>Supported By</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer">
+        <p>Total Connectors Analyzed: <strong id="totalCount">0</strong> | Filtered: <strong id="filteredCount">0</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allRecords = [];
+
+    async function loadData() {
+      try {
+        const response = await fetch('./competitors-data.json');
+        const data = await response.json();
+
+        allRecords = data.records;
+        renderCompetitors(data.competitors);
+        renderTable(allRecords);
+        setupFilters();
+      } catch (e) {
+        console.error('Error loading data:', e);
+      }
+    }
+
+    function renderCompetitors(competitors) {
+      const container = document.getElementById('competitorsList');
+      container.innerHTML = competitors.map(comp =>
+        `<div class="competitor-badge">${comp}</div>`
+      ).join('');
+    }
+
+    function renderTable(records) {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = records.map(record => {
+        const typeClass = record['Type']?.includes('Customer') ? 'type-requested' :
+                         record['Type']?.includes('Competitive') ? 'type-competitive' :
+                         'type-industry';
+
+        const priorityMatch = record['Priority']?.match(/P[0-3]/);
+        const priorityClass = priorityMatch ? `priority-${priorityMatch[0].toLowerCase()}` : '';
+
+        const supportedByArray = record['Supported By']
+          ? record['Supported By'].split(',').map(s => s.trim()).filter(s => s && s !== '""')
+          : [];
+
+        return `
+          <tr>
+            <td class="rank-cell">${record['Rank']}</td>
+            <td><strong>${record['Connector Name']}</strong></td>
+            <td><span class="type-badge ${typeClass}">${record['Type']}</span></td>
+            <td>${record['Competitor Coverage']}</td>
+            <td><span class="coverage-badge">${record['Coverage %']}</span></td>
+            <td><span class="priority-badge ${priorityClass}">${record['Priority']}</span></td>
+            <td class="supported-by">
+              ${supportedByArray.length > 0
+                ? `<div class="badge-list">${supportedByArray.map(s => `<span>${s}</span>`).join('')}</div>`
+                : '—'
+              }
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      document.getElementById('totalCount').textContent = records.length;
+      document.getElementById('filteredCount').textContent = records.length;
+    }
+
+    function setupFilters() {
+      const searchInput = document.getElementById('searchInput');
+      const typeFilter = document.getElementById('typeFilter');
+      const priorityFilter = document.getElementById('priorityFilter');
+
+      function applyFilters() {
+        let filtered = allRecords.filter(record => {
+          const matchesSearch = !searchInput.value ||
+            record['Connector Name'].toLowerCase().includes(searchInput.value.toLowerCase());
+
+          const matchesType = !typeFilter.value ||
+            record['Type'] === typeFilter.value;
+
+          const matchesPriority = !priorityFilter.value ||
+            record['Priority'].startsWith(priorityFilter.value);
+
+          return matchesSearch && matchesType && matchesPriority;
+        });
+
+        renderTable(filtered);
+      }
+
+      searchInput.addEventListener('input', applyFilters);
+      typeFilter.addEventListener('change', applyFilters);
+      priorityFilter.addEventListener('change', applyFilters);
+    }
+
+    // Load data when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadData);
+    } else {
+      loadData();
+    }
+  </script>
+</body>
+</html>

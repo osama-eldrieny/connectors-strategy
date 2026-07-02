@@ -2,27 +2,27 @@
   {
     "adoption": 5,
     "alignment": 5,
-    "collapsed": false,
+    "collapsed": true,
     "demand": 5,
-    "effort": 5,
+    "effort": 3,
     "id": 1,
     "impact": 5,
     "name": "Shopify"
   },
   {
     "adoption": 3,
-    "alignment": 3,
+    "alignment": 4,
     "collapsed": false,
-    "demand": 3,
+    "demand": 2,
     "effort": 3,
     "id": 2,
-    "impact": 3,
+    "impact": 1,
     "name": "WooCommerce"
   },
   {
     "adoption": 1,
     "alignment": 2,
-    "collapsed": false,
+    "collapsed": true,
     "demand": 4,
     "effort": 3,
     "id": 3,

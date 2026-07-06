@@ -8,6 +8,7 @@ const SIDEBAR_HTML = `<div class="side-nav" id="sideNav">
     <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><i data-lucide="clipboard-list"></i></span> Framework Review</a>
     <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><i data-lucide="target"></i></span> Connector Scoring</a>
     <div class="side-nav-divider"></div>
+    <a class="side-nav-link" href="feedback-questions.html" data-page="feedback"><span class="icon"><i data-lucide="message-circle"></i></span> Feedback Questions</a>
     <div class="side-nav-section-label" id="onPageSection">On This Page</div>
     <div id="onPageLinks"></div>
   </div>
@@ -21,7 +22,9 @@ function detectCurrentPage() {
   const pathname = window.location.pathname;
   const href = window.location.href;
 
-  if (pathname.includes('nintex-connector-framework.html') || href.includes('nintex-connector-framework.html')) {
+  if (pathname.includes('feedback-questions.html') || href.includes('feedback-questions.html')) {
+    pageName = 'feedback';
+  } else if (pathname.includes('nintex-connector-framework.html') || href.includes('nintex-connector-framework.html')) {
     pageName = 'framework';
   } else if (pathname.includes('connector-prioritizer.html') || href.includes('connector-prioritizer.html')) {
     pageName = 'prioritizer';

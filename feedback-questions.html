@@ -82,43 +82,7 @@
       opacity: 0.6;
     }
 
-    .button-group {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    button {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: var(--radius);
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    button.primary {
-      background: #3B82F6;
-      color: white;
-    }
-
-    button.primary:hover {
-      background: #2563EB;
-    }
-
-    button.secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    button.secondary:hover {
-      background: var(--surface);
-      border-color: #60A5FA;
-    }
-
-    .success-message {
+.success-message {
       display: none;
       background: rgba(34, 197, 94, 0.1);
       border: 1px solid rgba(34, 197, 94, 0.3);
@@ -191,9 +155,7 @@
 <section style="background: #fff; padding: 3rem 0;">
   <div class="container">
     <div class="main-content">
-  <div class="success-message" id="successMessage">✓ Feedback saved successfully!</div>
-
-  <div class="feedback-card">
+<div class="feedback-card">
     <h3>
       <span>1️⃣</span>
       Which existing workflow connectors are useful for you?
@@ -229,29 +191,12 @@
     </div>
   </div>
 
-  <div class="button-group">
-    <button class="primary" onclick="saveFeedback()">Save Feedback</button>
-    <button class="secondary" onclick="clearFeedback()">Clear</button>
-  </div>
+
 </div>
   </div>
 </section>
 
 <script>
-  function saveFeedback() {
-    const successMsg = document.getElementById('successMessage');
-    successMsg.classList.add('show');
-    setTimeout(() => successMsg.classList.remove('show'), 3000);
-  }
-
-  function clearFeedback() {
-    if (confirm('Are you sure you want to clear all answers?')) {
-      document.getElementById('usefulConnectors').innerHTML = '';
-      document.getElementById('missingConnectors').innerHTML = '';
-      document.getElementById('feedbackWhy').innerHTML = '';
-    }
-  }
-
   document.querySelectorAll('.side-nav-link').forEach(link => {
     if (link.href.includes('feedback-questions.html')) {
       link.classList.add('active');

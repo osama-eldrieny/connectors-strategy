@@ -53,6 +53,35 @@
       box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
     }
 
+    .answer-placeholder {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .answer-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .answer-content {
+      min-height: 100px;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .answer-content:empty::before {
+      content: "Waiting for answer...";
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
     .button-group {
       display: flex;
       gap: 1rem;
@@ -170,7 +199,10 @@
       Which existing workflow connectors are useful for you?
     </h3>
     <p>Help us understand which connectors your teams actively use and find valuable in your daily workflows.</p>
-    <textarea id="usefulConnectors" placeholder="List the connectors that are most useful to you and why they matter..."></textarea>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="usefulConnectors"></div>
+    </div>
   </div>
 
   <div class="feedback-card">
@@ -179,7 +211,10 @@
       What connectors are missing in Workflow and Apps?
     </h3>
     <p>Tell us which connectors or integrations you wish existed to better support your workflows and business needs.</p>
-    <textarea id="missingConnectors" placeholder="Describe the connectors you need and what problems they would solve..."></textarea>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="missingConnectors"></div>
+    </div>
   </div>
 
   <div class="feedback-card">
@@ -188,7 +223,10 @@
       Why are these connectors important to you?
     </h3>
     <p>Help us prioritize by explaining the business impact and urgency of these connector needs.</p>
-    <textarea id="feedbackWhy" placeholder="Explain the business impact, use cases, and reasons these connectors matter..."></textarea>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="feedbackWhy"></div>
+    </div>
   </div>
 
   <div class="button-group">
@@ -201,40 +239,18 @@
 
 <script>
   function saveFeedback() {
-    const feedback = {
-      usefulConnectors: document.getElementById('usefulConnectors').value,
-      missingConnectors: document.getElementById('missingConnectors').value,
-      feedbackWhy: document.getElementById('feedbackWhy').value,
-      timestamp: new Date().toISOString()
-    };
-
-    localStorage.setItem('connectorFeedback', JSON.stringify(feedback));
-    
     const successMsg = document.getElementById('successMessage');
     successMsg.classList.add('show');
     setTimeout(() => successMsg.classList.remove('show'), 3000);
   }
 
   function clearFeedback() {
-    if (confirm('Are you sure you want to clear all feedback?')) {
-      document.getElementById('usefulConnectors').value = '';
-      document.getElementById('missingConnectors').value = '';
-      document.getElementById('feedbackWhy').value = '';
-      localStorage.removeItem('connectorFeedback');
+    if (confirm('Are you sure you want to clear all answers?')) {
+      document.getElementById('usefulConnectors').innerHTML = '';
+      document.getElementById('missingConnectors').innerHTML = '';
+      document.getElementById('feedbackWhy').innerHTML = '';
     }
   }
-
-  function loadFeedback() {
-    const saved = localStorage.getItem('connectorFeedback');
-    if (saved) {
-      const feedback = JSON.parse(saved);
-      document.getElementById('usefulConnectors').value = feedback.usefulConnectors || '';
-      document.getElementById('missingConnectors').value = feedback.missingConnectors || '';
-      document.getElementById('feedbackWhy').value = feedback.feedbackWhy || '';
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', loadFeedback);
 
   document.querySelectorAll('.side-nav-link').forEach(link => {
     if (link.href.includes('feedback-questions.html')) {

@@ -23,6 +23,18 @@
       margin-bottom: 1rem;
     }
 
+        .optional-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(168, 162, 154, 0.1);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+
         .question-number {
       display: inline-flex;
       align-items: center;
@@ -190,6 +202,18 @@
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">2</div>
+      <h3>How easy or difficult was it to use these connectors?</h3>
+    </div>
+    <p>Tell us about your experience with the setup, configuration, and ongoing usage. Did you need documentation or support?</p>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="connectorEase"></div>
+    </div>
+  </div>
+
+  <div class="feedback-card">
+    <div class="question-header">
+      <div class="question-number">3</div>
       <h3>What connectors are missing in Workflow and Apps?</h3>
     </div>
     <p>Tell us which connectors or integrations you wish existed to better support your workflows and business needs.</p>
@@ -201,7 +225,7 @@
 
   <div class="feedback-card">
     <div class="question-header">
-      <div class="question-number">3</div>
+      <div class="question-number">4</div>
       <h3>Why are these connectors important to you?</h3>
     </div>
     <p>Help us prioritize by explaining the business impact and urgency of these connector needs.</p>
@@ -209,11 +233,70 @@
       <div class="answer-label">Answer:</div>
       <div class="answer-content" id="feedbackWhy"></div>
     </div>
+
+  <div class="feedback-card">
+    <div class="question-header">
+      <div class="question-number">5</div>
+      <h3>How frequently and at what scale do you use these connectors?</h3>
+    </div>
+    <p>Tell us about usage frequency (daily, weekly, monthly) and how many people in your organization benefit from these integrations.</p>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="frequencyScale"></div>
+    </div>
   </div>
 
-
-</div>
+  <div class="feedback-card">
+    <div class="question-header">
+      <div class="question-number">6</div>
+      <h3>What manual workarounds are you currently using?</h3>
+    </div>
+    <p>Describe the manual processes or inefficient workarounds you're using to compensate for missing or inadequate connectors.</p>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="workarounds"></div>
+    </div>
   </div>
+
+  <div class="feedback-card">
+    <div class="question-header">
+      <div class="question-number">7</div>
+      <h3>Which teams/roles are most impacted by these connector gaps?</h3>
+      <span class="optional-label">Optional</span>
+    </div>
+    <p>Identify which departments or roles (Sales, Operations, Finance, Marketing, IT, etc.) would benefit most from these connectors.</p>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="teamRoles"></div>
+    </div>
+  </div>
+
+  <div class="feedback-card">
+    <div class="question-header">
+      <div class="question-number">8</div>
+      <h3>What is your timeline and expected business impact?</h3>
+      <span class="optional-label">Optional</span>
+    </div>
+    <p>When do you need these connectors? What business outcomes or ROI would they enable?</p>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="timeline"></div>
+    </div>
+  </div>
+
+  <div class="feedback-card">
+    <div class="question-header">
+      <div class="question-number">9</div>
+      <h3>How would you measure success?</h3>
+      <span class="optional-label">Optional</span>
+    </div>
+    <p>What metrics matter most to you? (e.g., time saved, cost reduction, accuracy improvement, process velocity, team adoption)</p>
+    <div class="answer-placeholder">
+      <div class="answer-label">Answer:</div>
+      <div class="answer-content" id="successMetrics"></div>
+    </div>
+  </div>
+
 </section>
 
 <script>

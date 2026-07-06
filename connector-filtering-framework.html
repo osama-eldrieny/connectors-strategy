@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <script src="https://pointer2.fly.dev/inject.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .question-card {
       background: var(--surface);
@@ -329,19 +330,6 @@
       display: none !important;
     }
 
-    /* Active sidebar link styling for this page */
-    .side-nav-link.active {
-      background: rgba(59, 130, 246, 0.2);
-      color: #60A5FA;
-    }
-
-    .side-nav-link.active .icon svg {
-      stroke: #60A5FA !important;
-    }
-
-    .side-nav-link.active .icon svg * {
-      stroke: #60A5FA !important;
-    }
 
     @media (max-width: 768px) {
       .hero h1 {
@@ -356,32 +344,8 @@
         display: none;
       }
     }
-  </style>
-</head>
+  </style></head>
 <body>
-
-<!-- SIDEBAR -->
-<div class="side-nav" id="sideNav">
-  <div class="side-nav-panel open" id="sideNavPanel">
-    <div class="side-nav-header">Nintex Connector Suite</div>
-    <div class="side-nav-section-label">Pages</div>
-    <a class="side-nav-link active" href="connector-filtering-framework.html" data-page="filtering"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="filter" aria-hidden="true" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></span> Filtering Framework</a>
-    <a class="side-nav-link" href="competitors-analysis.html" data-page="competitors"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="award" aria-hidden="true" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg></span> Competitors Analysis</a>
-    <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></span> Framework Review</a>
-    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span> Connector Scoring</a>
-    <div class="side-nav-divider"></div>
-    <a class="side-nav-link" href="feedback-questions.html" data-page="feedback"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle" aria-hidden="true" class="lucide lucide-message-circle"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span> Feedback Questions</a>
-    <div class="side-nav-section-label" id="onPageSection">🔖 On This Page</div>
-    <div id="onPageLinks"></div>
-    <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: space-between;">
-      <div class="contributors">
-        <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama"></div>
-        <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem"></div>
-      </div>
-      <div class="doc-status">in review</div>
-    </div>
-  </div>
-</div>
 
 <!-- NAV -->
 <nav class="nav-padded">
@@ -826,7 +790,37 @@
       }, 0);
     });
   });
+
+  function toggleSubmenu(event) {
+    event.stopPropagation();
+    const chevron = event.target.closest('.submenu-chevron');
+    const submenu = document.getElementById('onPageLinks');
+    
+    if (chevron && submenu) {
+      chevron.classList.toggle('collapsed');
+      submenu.classList.toggle('collapsed');
+    }
+  }
+
+  // Auto-expand submenu if page is active
+  function initSubmenu() {
+    const activeLink = document.querySelector('.side-nav-link.active[data-page="filtering"], .side-nav-link.active[data-page="framework"]');
+    if (activeLink) {
+      const submenu = document.getElementById('onPageLinks');
+      if (submenu && submenu.querySelector('.side-nav-link')) {
+        // Submenu has content, so don't collapse it
+        const chevron = document.querySelector('.submenu-chevron');
+        if (chevron) {
+          chevron.classList.remove('collapsed');
+        }
+        submenu.classList.remove('collapsed');
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initSubmenu);
 </script>
 
+  <script src="sidebar.js"></script>
 </body>
 </html>

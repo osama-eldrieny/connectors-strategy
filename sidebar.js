@@ -1,138 +1,235 @@
-// Sidebar HTML content
+// Consolidated Sidebar with Collapsible Submenus - Professional Implementation
+
 const SIDEBAR_HTML = `<div class="side-nav" id="sideNav">
   <div class="side-nav-panel open" id="sideNavPanel">
     <div class="side-nav-header">Nintex Connector Suite</div>
     <div class="side-nav-section-label">Pages</div>
     <a class="side-nav-link" href="connector-filtering-framework.html" data-page="filtering"><span class="icon"><i data-lucide="filter"></i></span> Filtering Framework</a>
     <a class="side-nav-link" href="competitors-analysis.html" data-page="competitors"><span class="icon"><i data-lucide="award"></i></span> Competitors Analysis</a>
-    <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><i data-lucide="clipboard-list"></i></span> Framework Review</a>
-    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><i data-lucide="target"></i></span> Connector Scoring</a>
+    <a class="side-nav-link" href="nintex-connector-framework.html" data-page="framework"><span class="icon"><i data-lucide="clipboard-list"></i></span> Framework Review
+      <span class="submenu-chevron" data-toggle="submenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </a>
+    <div class="submenu" data-submenu="framework"></div>
+    <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><i data-lucide="target"></i></span> Connector Scoring
+      <span class="submenu-chevron" data-toggle="submenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </a>
+    <div class="submenu" data-submenu="prioritizer"></div>
     <div class="side-nav-divider"></div>
     <a class="side-nav-link" href="feedback-questions.html" data-page="feedback"><span class="icon"><i data-lucide="message-circle"></i></span> Feedback Questions</a>
-    <div class="side-nav-section-label" id="onPageSection">On This Page</div>
-    <div id="onPageLinks"></div>
+    <a class="side-nav-link" href="connector-acceleration.html" data-page="acceleration"><span class="icon"><i data-lucide="zap"></i></span> Connector Acceleration</a>
   </div>
 </div>`;
 
-// Detect current page reliably
-function detectCurrentPage() {
-  let pageName = '';
+// Page-specific submenu links
+const SUBMENU_LINKS = {
+  framework: [
+    { href: '#overview', icon: 'building-2', label: 'Overview' },
+    { href: '#why', icon: 'help-circle', label: 'Why Criteria' },
+    { href: '#criteria', icon: 'bar-chart-3', label: 'The 5 Criteria' },
+    { href: '#tiers', icon: 'award', label: 'Priority Tiers' },
+    { href: '#workflow', icon: 'repeat', label: 'Process Steps' },
+    { href: '#examples', icon: 'clipboard-list', label: 'Examples' }
+  ],
+  filtering: [],
+  prioritizer: [
+    { href: '#score', icon: 'settings', label: 'Score Your Connectors' },
+    { href: '#results', icon: 'bar-chart-3', label: 'View Rankings' }
+  ]
+};
 
-  // Try different methods to detect the page
-  const pathname = window.location.pathname;
-  const href = window.location.href;
-
-  if (pathname.includes('feedback-questions.html') || href.includes('feedback-questions.html')) {
-    pageName = 'feedback';
-  } else if (pathname.includes('nintex-connector-framework.html') || href.includes('nintex-connector-framework.html')) {
-    pageName = 'framework';
-  } else if (pathname.includes('connector-prioritizer.html') || href.includes('connector-prioritizer.html')) {
-    pageName = 'prioritizer';
-  } else if (pathname.includes('competitors-analysis.html') || href.includes('competitors-analysis.html')) {
-    pageName = 'competitors';
-  } else if (pathname.includes('connector-filtering-framework.html') || href.includes('connector-filtering-framework.html')) {
-    pageName = 'filtering';
-  } else {
-    // Default fallback
-    pageName = 'filtering';
-  }
-
-  return pageName;
-}
-
-// Load sidebar and set up navigation
-function loadSidebar() {
-  // Create sidebar if it doesn't exist
-  if (!document.getElementById('sideNav')) {
-    const sidebarContainer = document.createElement('div');
-    sidebarContainer.innerHTML = SIDEBAR_HTML;
-    document.body.prepend(sidebarContainer.firstElementChild);
+// Sidebar State Management
+class SidebarManager {
+  constructor() {
+    this.initialized = false;
+    this.currentPage = null;
   }
 
   // Detect current page
-  const currentPageKey = detectCurrentPage();
+  detectCurrentPage() {
+    const pathname = window.location.pathname;
+    const href = window.location.href;
 
-  // Set active state on page links
-  document.querySelectorAll('.side-nav-link[data-page]').forEach(link => {
-    if (link.dataset.page === currentPageKey) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
+    if (pathname.includes('feedback-questions.html') || href.includes('feedback-questions.html')) {
+      return 'feedback';
+    } else if (pathname.includes('connector-acceleration.html') || href.includes('connector-acceleration.html')) {
+      return 'acceleration';
+    } else if (pathname.includes('nintex-connector-framework.html') || href.includes('nintex-connector-framework.html')) {
+      return 'framework';
+    } else if (pathname.includes('connector-prioritizer.html') || href.includes('connector-prioritizer.html')) {
+      return 'prioritizer';
+    } else if (pathname.includes('competitors-analysis.html') || href.includes('competitors-analysis.html')) {
+      return 'competitors';
+    } else if (pathname.includes('connector-filtering-framework.html') || href.includes('connector-filtering-framework.html')) {
+      return 'filtering';
     }
-  });
-
-  // Set up page-specific links
-  setupPageLinks(currentPageKey);
-
-  // Set up smooth scrolling for anchor links
-  document.querySelectorAll('.side-nav-link[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({behavior: 'smooth'});
-      }
-    });
-  });
-}
-
-// Set up page-specific links based on current page
-function setupPageLinks(pageKey) {
-  const onPageLinks = document.getElementById('onPageLinks');
-  const onPageSection = document.getElementById('onPageSection');
-
-  let links = [];
-
-  if (pageKey === 'framework') {
-    links = [
-      { href: '#overview', icon: '🏢', text: 'Overview' },
-      { href: '#why', icon: '❓', text: 'Why Criteria' },
-      { href: '#criteria', icon: '📊', text: 'The 5 Criteria' },
-      { href: '#tiers', icon: '🏆', text: 'Priority Tiers' },
-      { href: '#workflow', icon: '🔄', text: 'Process Steps' },
-      { href: '#examples', icon: '📋', text: 'Examples' }
-    ];
-  } else if (pageKey === 'prioritizer') {
-    links = [
-      { href: '#scoring', icon: '➕', text: 'Add Connector' },
-      { href: '#results', icon: '📊', text: 'View Rankings' }
-    ];
+    return 'filtering';
   }
 
-  if (onPageLinks && links.length > 0) {
-    onPageSection.style.display = 'block';
-    onPageLinks.innerHTML = links.map(link =>
-      `<a class="side-nav-link" href="${link.href}"><span class="icon">${link.icon}</span> ${link.text}</a>`
-    ).join('');
+  // Initialize sidebar
+  loadSidebar() {
+    // Always remove existing sidebar to ensure fresh state on page navigation
+    const existingSidebar = document.getElementById('sideNav');
+    if (existingSidebar) {
+      existingSidebar.remove();
+    }
 
-    // Re-attach smooth scroll listeners to newly created links
-    document.querySelectorAll('#onPageLinks .side-nav-link[href^="#"]').forEach(link => {
+    // Insert new sidebar
+    const sidebarContainer = document.createElement('div');
+    sidebarContainer.innerHTML = SIDEBAR_HTML;
+    document.body.prepend(sidebarContainer.firstElementChild);
+
+    this.currentPage = this.detectCurrentPage();
+    this.setupEventHandlers();
+    this.setActiveLink();
+    this.populateSubmenus();
+    this.initializeSubmenuStates();
+    this.renderIcons();
+    this.setupAnchorLinks();
+  }
+
+  // Setup event delegation for chevron clicks
+  setupEventHandlers() {
+    const sidebar = document.getElementById('sideNav');
+    if (!sidebar) return;
+
+    sidebar.addEventListener('click', (e) => {
+      // Check if click is on chevron or inside it (SVG)
+      const chevron = e.target.closest('.submenu-chevron');
+      if (chevron) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.toggleSubmenu(chevron);
+      }
+    });
+  }
+
+  // Set active link styling
+  setActiveLink() {
+    document.querySelectorAll('.side-nav-link[data-page]').forEach(link => {
+      if (link.dataset.page === this.currentPage) {
+        link.classList.add('active');
+        link.style.pointerEvents = 'none';
+        link.style.cursor = 'default';
+      } else {
+        link.classList.remove('active');
+        link.style.pointerEvents = 'auto';
+        link.style.cursor = 'pointer';
+      }
+    });
+  }
+
+  // Populate submenus with links
+  populateSubmenus() {
+    Object.keys(SUBMENU_LINKS).forEach(pageKey => {
+      const submenuDiv = document.querySelector(`.submenu[data-submenu="${pageKey}"]`);
+      const links = SUBMENU_LINKS[pageKey];
+
+      if (submenuDiv) {
+        if (links.length > 0) {
+          submenuDiv.innerHTML = links.map(link =>
+            `<a class="side-nav-link" href="${link.href}">
+              ${link.label}
+            </a>`
+          ).join('');
+        }
+      }
+    });
+  }
+
+  // Initialize all submenu states - collapsed by default, NO exceptions
+  initializeSubmenuStates() {
+    // ALWAYS collapse ALL submenus and chevrons - no conditions
+    document.querySelectorAll('.submenu').forEach(submenu => {
+      submenu.classList.add('collapsed');
+    });
+
+    document.querySelectorAll('.submenu-chevron').forEach(chevron => {
+      chevron.classList.add('collapsed');
+    });
+  }
+
+  // Toggle submenu collapse/expand
+  toggleSubmenu(chevron) {
+    if (!chevron || !chevron.classList.contains('submenu-chevron')) {
+      console.warn('Invalid chevron element');
+      return;
+    }
+
+    const link = chevron.closest('.side-nav-link');
+    if (!link) {
+      console.warn('Could not find parent link for chevron');
+      return;
+    }
+
+    // Find the submenu that follows this link
+    let submenu = link.nextElementSibling;
+    while (submenu && !submenu.classList.contains('submenu')) {
+      submenu = submenu.nextElementSibling;
+    }
+
+    if (submenu) {
+      const isCollapsed = chevron.classList.contains('collapsed');
+      chevron.classList.toggle('collapsed');
+      submenu.classList.toggle('collapsed');
+      console.log(`Submenu toggled: ${isCollapsed ? 'expanding' : 'collapsing'}`);
+    } else {
+      console.warn('Could not find submenu for this chevron');
+    }
+  }
+
+  // Render Lucide icons
+  renderIcons() {
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      // Render immediately
+      lucide.createIcons();
+      // Retry after DOM settles
+      setTimeout(() => lucide.createIcons(), 50);
+      setTimeout(() => lucide.createIcons(), 200);
+    }
+  }
+
+  // Setup smooth scrolling for anchor links
+  setupAnchorLinks() {
+    document.querySelectorAll('.side-nav-link[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({behavior: 'smooth'});
+          target.scrollIntoView({ behavior: 'smooth' });
         }
       });
     });
-  } else if (onPageSection) {
-    onPageSection.style.display = 'none';
   }
 }
 
-// Load sidebar when DOM is ready
+// Initialize sidebar when DOM is ready
+const sidebarManager = new SidebarManager();
+
+function initSidebarWhenReady() {
+  if (document.body) {
+    sidebarManager.loadSidebar();
+    // Ensure icons render after sidebar is loaded
+    setTimeout(() => {
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    }, 50);
+  } else {
+    setTimeout(initSidebarWhenReady, 10);
+  }
+}
+
+initSidebarWhenReady();
+
+// Ensure icons render after DOM fully loads
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    loadSidebar();
-    // Render Lucide icons after sidebar is loaded
-    if (typeof lucide !== 'undefined') {
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
       lucide.createIcons();
     }
   });
-} else {
-  loadSidebar();
-  // Render Lucide icons after sidebar is loaded
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
 }

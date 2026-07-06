@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feedback: Connector Questions</title>
+  <title>Connector Acceleration</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <script src="https://pointer2.fly.dev/inject.js" defer></script>
@@ -31,18 +31,6 @@
       letter-spacing: 0.05em;
       background: rgba(245, 158, 11, 0.15);
       color: #B45309;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      margin-left: auto;
-    }
-
-    .required-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      background: rgba(239, 68, 68, 0.15);
-      color: #DC2626;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
       margin-left: auto;
@@ -116,7 +104,7 @@
     }
 
     .answer-content {
-      min-height: 60px;
+      min-height: 100px;
       color: var(--text-secondary);
       font-style: italic;
     }
@@ -139,22 +127,6 @@
 
     .success-message.show {
       display: block;
-    }
-
-    .container {
-      max-width: 1300px;
-    }
-
-    .main-content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    @media (max-width: 1024px) {
-      .main-content {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 768px) {
@@ -183,11 +155,11 @@
     <div class="doc-status">in review</div>
     <div class="contributors">
       <div class="avatar" title="Osama"><img src="./imgs/osama.jpg" alt="Osama"></div>
-      <div class="avatar" title="Vanessa"><img src="./imgs/vanessa.jpg" alt="Vanessa"></div>
+      <div class="avatar" title="Waseem"><img src="./imgs/waseem.png" alt="Waseem"></div>
     </div>
   </div>
-  <h1>User Feedback <span class="accent">Questions</span></h1>
-  <p>Gather insights from user interviews about connector needs and usability</p>
+  <h1>Connector <span class="accent">Acceleration</span></h1>
+  <p>Drive connector adoption and success by gathering user feedback and insights</p>
 </div>
 
 <!-- MAIN CONTENT -->
@@ -197,156 +169,99 @@
 <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">1</div>
-      <h3>What was your initial impression of the Integration Hub?</h3>
-      <span class="required-label">Required</span>
+      <h3>Which existing workflow or Apps connectors are useful for you?</h3>
     </div>
-    <p>When you first saw the Integration Hub, was it clear what this feature is for? What were your initial thoughts?</p>
+    <p>Help us understand which connectors your teams actively use and find valuable in your daily workflows.</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q1"></div>
+      <div class="answer-content" id="usefulConnectors"></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">2</div>
-      <h3>Is this your first time using a unified connections management area?</h3>
-      <span class="optional-label">Optional</span>
+      <h3>How easy or difficult was it to use these connectors?</h3>
     </div>
-    <p>Have you used a similar feature before, or is the Integration Hub your first experience with a centralized connections management area?</p>
+    <p>Tell us about your experience with the setup, configuration, and ongoing usage. Did you need documentation or support?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q2"></div>
+      <div class="answer-content" id="connectorEase"></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">3</div>
-      <h3>How intuitive is the tab organization (Unified, Workflow, Apps)?</h3>
-      <span class="required-label">Required</span>
+      <h3>How frequently and at what scale do you use these connectors?</h3>
     </div>
-    <p>Connections are organized into three tabs: "Unified," "Workflow," and "Apps." How intuitive is this organization? Does it make sense why connections are grouped this way?</p>
+    <p>Tell us about usage frequency (daily, weekly, monthly) and how many people in your organization benefit from these integrations.</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q3"></div>
+      <div class="answer-content" id="frequencyScale"></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">4</div>
-      <h3>Is the explanation about how connections are grouped clear and helpful?</h3>
-      <span class="optional-label">Optional</span>
+      <h3>What connectors are missing in Workflow and Apps, and why are they important?</h3>
     </div>
-    <p>The info banner explains that connections are now grouped into three tabs. Is this information helpful and clear, or is it confusing?</p>
+    <p>Tell us which connectors or integrations you wish existed and explain the business impact and urgency of these needs.</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q4"></div>
+      <div class="answer-content" id="missingConnectors"></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">5</div>
-      <h3>Did you expect any connections to be in different tabs?</h3>
-      <span class="required-label">Required</span>
+      <h3>Do you currently use manual workarounds or manual processes?</h3>
     </div>
-    <p>Are there any connections you expected to find in a different tab? If so, which ones and where would you expect them?</p>
+    <p>If you have any manual workarounds or manual processes in place, please describe them. This helps us understand the gaps and inefficiencies.</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q5"></div>
+      <div class="answer-content" id="workarounds"></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">6</div>
-      <h3>How easy is it to find a specific connection?</h3>
+      <h3>Which teams/roles in your company are most impacted by these connector gaps?</h3>
       <span class="optional-label">Optional</span>
     </div>
-    <p>When you need to find a specific connection, how easy or difficult is it to locate it in the current list? What would make it easier?</p>
+    <p>Identify which departments or roles (Sales, Operations, Finance, Marketing, IT, etc.) would benefit most from these connectors.</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q6"></div>
+      <div class="answer-content" id="teamRoles"></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">7</div>
-      <h3>What additional information would be helpful in the connection list?</h3>
-      <span class="required-label">Required</span>
+      <h3>When do you need these connectors and what's the business impact?</h3>
+      <span class="optional-label">Optional</span>
     </div>
-    <p>The list shows Name, Connector type, Date created, and Created by. Are there any other columns or information you'd like to see?</p>
+    <p>When do you need these connectors? What business outcomes or ROI would they enable?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q7"></div>
+      <div class="answer-content" id="timeline"></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">8</div>
-      <h3>How clear are the "Import" and "Create" connection buttons?</h3>
+      <h3>How would you measure success?</h3>
       <span class="optional-label">Optional</span>
     </div>
-    <p>Have you used the "Import connection" or "Create connection" buttons? How clear and intuitive are these actions to you?</p>
+    <p>What metrics matter most to you? (e.g., time saved, cost reduction, accuracy improvement, process velocity, team adoption)</p>
     <div class="answer-placeholder">
       <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q8"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">9</div>
-      <h3>What search or filter capabilities would help?</h3>
-      <span class="required-label">Required</span>
-    </div>
-    <p>Is there a search or filter function you wish existed to help you find connections faster?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q9"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">10</div>
-      <h3>What features are missing from the Integration Hub?</h3>
-      <span class="optional-label">Optional</span>
-    </div>
-    <p>What features or capabilities are missing from the Integration Hub that would make it more useful for your team?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q10"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">11</div>
-      <h3>What ONE change would improve the Integration Hub?</h3>
-      <span class="required-label">Required</span>
-    </div>
-    <p>If you could change ONE thing about the Integration Hub, what would it be and why?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q11"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">12</div>
-      <h3>On a scale of 1-10, how valuable is the Integration Hub?</h3>
-      <span class="optional-label">Optional</span>
-    </div>
-    <p>How valuable is the Integration Hub to your team's daily operations? (1 = Not valuable, 10 = Extremely valuable)</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q12"></div>
+      <div class="answer-content" id="successMetrics"></div>
     </div>
   </div>
 
@@ -354,7 +269,7 @@
 
 <script>
   document.querySelectorAll('.side-nav-link').forEach(link => {
-    if (link.href.includes('feedback-questions.html')) {
+    if (link.href.includes('connector-acceleration.html')) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');

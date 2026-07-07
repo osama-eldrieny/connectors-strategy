@@ -119,13 +119,29 @@
       min-height: 60px;
       color: var(--text-secondary);
       font-style: italic;
-    }
-
-    .answer-content:empty::before {
-      content: "Waiting for answer...";
-      color: var(--text-secondary);
       opacity: 0.6;
     }
+
+    .answer-guide {
+      font-style: normal;
+      font-weight: 500;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: var(--text-secondary);
+    }
+
+    .answer-example {
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    .answer-example::before {
+      content: "Example: ";
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
 
 .success-message {
       display: none;
@@ -187,7 +203,7 @@
     </div>
   </div>
   <h1>User Feedback <span class="accent">Questions</span></h1>
-  <p>Gather insights from user interviews about connector needs and usability</p>
+  <p>Gather insights from trial user interviews about connector needs and usability</p>
 </div>
 
 <!-- MAIN CONTENT -->
@@ -197,156 +213,117 @@
 <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">1</div>
-      <h3>What was your initial impression of the Integration Hub?</h3>
+      <h3>Are you interested in being part of the early access group for Integration Hub?</h3>
       <span class="required-label">Required</span>
     </div>
-    <p>When you first saw the Integration Hub, was it clear what this feature is for? What were your initial thoughts?</p>
+    <p>The Integration Hub is a centralized place to create and manage connections used across all Nintex products. Would you be interested in being part of the early access group? Why or why not?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q1"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q1"><span class="answer-guide">Guide: Count how many users requested access and their main reasons for adoption</span><span class="answer-example">7 out of 9 users are interested in early access</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">2</div>
-      <h3>Is this your first time using a unified connections management area?</h3>
-      <span class="optional-label">Optional</span>
+      <h3>How many connections do you currently create and maintain across your Nintex environment?</h3>
+      <span class="required-label">Required</span>
     </div>
-    <p>Have you used a similar feature before, or is the Integration Hub your first experience with a centralized connections management area?</p>
+    <p>Consider all the connections you set up across different Nintex products. Approximately how many connections do you create and maintain today, and in how many different places?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q2"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q2"><span class="answer-guide">Guide: Identify average connection count and how often they're duplicated across products</span><span class="answer-example">Average: 3-5 connections per organization; duplicated across 2-3 places</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">3</div>
-      <h3>How intuitive is the tab organization (Unified, Workflow, Apps)?</h3>
+      <h3>What are the most used connectors you're currently using in Nintex?</h3>
       <span class="required-label">Required</span>
     </div>
-    <p>Connections are organized into three tabs: "Unified," "Workflow," and "Apps." How intuitive is this organization? Does it make sense why connections are grouped this way?</p>
+    <p>Which connectors are you actively using right now in your Nintex workflows, and how frequently do you use them?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q3"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q3"><span class="answer-guide">Guide: Rank connectors by usage frequency and adoption percentage among users</span><span class="answer-example">Top connectors: Salesforce (89%), Google Sheets (67%), SAP (56%)</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">4</div>
-      <h3>Is the explanation about how connections are grouped clear and helpful?</h3>
-      <span class="optional-label">Optional</span>
+      <h3>What connectors and actions are you missing?</h3>
+      <span class="required-label">Required</span>
     </div>
-    <p>The info banner explains that connections are now grouped into three tabs. Is this information helpful and clear, or is it confusing?</p>
+    <p>Besides the three connectors you mentioned, are there any other connectors you need? And what missing actions or features do you need for your existing connectors? (e.g., better error handling, additional data fields, automation options)</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q4"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q4"><span class="answer-guide">Guide: List most requested connectors and missing features with user demand percentage</span><span class="answer-example">Most requested: Real-time sync (78%), Better error handling (67%), More data fields (56%)</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">5</div>
-      <h3>Did you expect any connections to be in different tabs?</h3>
+      <h3>What's your timeline to need these connectors?</h3>
       <span class="required-label">Required</span>
     </div>
-    <p>Are there any connections you expected to find in a different tab? If so, which ones and where would you expect them?</p>
+    <p>Is this ASAP (critical for your plans), in the next 3 months, 6 months, or just exploring for future consideration?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q5"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q5"><span class="answer-guide">Guide: Segment users by timeline urgency and identify critical vs. future needs</span><span class="answer-example">60% need within 3 months (High priority); 30% ASAP (Critical); 10% Future</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">6</div>
-      <h3>How easy is it to find a specific connection?</h3>
-      <span class="optional-label">Optional</span>
+      <h3>What's the biggest pain point with how you manage connections today?</h3>
+      <span class="required-label">Required</span>
     </div>
-    <p>When you need to find a specific connection, how easy or difficult is it to locate it in the current list? What would make it easier?</p>
+    <p>Are you spending too much time setting up the same connections in multiple places? Dealing with duplicates? Managing credentials across different tools? What frustrates you most?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q6"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q6"><span class="answer-guide">Guide: Categorize pain points and measure severity by percentage of users affected</span><span class="answer-example">Primary pain: Setting up same connections 2-3 times (89%); Credential management (78%)</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">7</div>
-      <h3>What additional information would be helpful in the connection list?</h3>
-      <span class="required-label">Required</span>
+      <h3>How many people in your organization would need to create and manage unified connections?</h3>
+      <span class="optional-label">Optional</span>
     </div>
-    <p>The list shows Name, Connector type, Date created, and Created by. Are there any other columns or information you'd like to see?</p>
+    <p>Would just a few admins manage all connections, or would multiple teams need to create and manage their own unified connections?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q7"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q7"><span class="answer-guide">Guide: Identify typical team size and roles responsible for managing connections</span><span class="answer-example">Typically: 2-5 people manage connections per organization</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">8</div>
-      <h3>How clear are the "Import" and "Create" connection buttons?</h3>
+      <h3>Would unified connections reduce work and maintenance for your team?</h3>
       <span class="optional-label">Optional</span>
     </div>
-    <p>Have you used the "Import connection" or "Create connection" buttons? How clear and intuitive are these actions to you?</p>
+    <p>How much time would you save if you only had to configure a connection once instead of multiple times? What would change?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q8"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q8"><span class="answer-guide">Guide: Calculate estimated time savings and ROI for unified connection management</span><span class="answer-example">Expected time savings: 40-60% per team; ~5 hours/month per person</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">9</div>
-      <h3>What search or filter capabilities would help?</h3>
-      <span class="required-label">Required</span>
-    </div>
-    <p>Is there a search or filter function you wish existed to help you find connections faster?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q9"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">10</div>
-      <h3>What features are missing from the Integration Hub?</h3>
+      <h3>Can we count you as a reference customer if we build these connectors?</h3>
       <span class="optional-label">Optional</span>
     </div>
-    <p>What features or capabilities are missing from the Integration Hub that would make it more useful for your team?</p>
+    <p>If we deliver the connectors you need, would you be willing to share your success story with other potential customers?</p>
     <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q10"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">11</div>
-      <h3>What ONE change would improve the Integration Hub?</h3>
-      <span class="required-label">Required</span>
-    </div>
-    <p>If you could change ONE thing about the Integration Hub, what would it be and why?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q11"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">12</div>
-      <h3>On a scale of 1-10, how valuable is the Integration Hub?</h3>
-      <span class="optional-label">Optional</span>
-    </div>
-    <p>How valuable is the Integration Hub to your team's daily operations? (1 = Not valuable, 10 = Extremely valuable)</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="q12"></div>
+      <div class="answer-label">Findings:</div>
+      <div class="answer-content" id="q9"><span class="answer-guide">Guide: Track reference customer interest and willingness to share success stories</span><span class="answer-example">8 out of 9 willing to be reference customers</span></div>
     </div>
   </div>
 

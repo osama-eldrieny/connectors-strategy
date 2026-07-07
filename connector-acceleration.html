@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connector Acceleration</title>
+  <title>Connector Acceleration - Integration Hub Discovery</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <script src="https://pointer2.fly.dev/inject.js" defer></script>
@@ -19,12 +19,11 @@
 
     .question-header {
       display: flex;
-      align-items: center;
       gap: 1rem;
       margin-bottom: 1rem;
     }
 
-        .optional-label {
+    .optional-label {
       font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -34,9 +33,23 @@
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
       margin-left: auto;
+      height: fit-content;
     }
 
-        .nav-logo span.dot {
+    .required-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(239, 68, 68, 0.15);
+      color: #DC2626;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-left: auto;
+      height: fit-content;
+    }
+
+    .nav-logo span.dot {
       background: rgb(59, 130, 246);
     }
 
@@ -75,7 +88,7 @@
       flex-shrink: 0;
     }
 
-        .feedback-card h3 {
+    .feedback-card h3 {
       font-size: 1.1rem;
       font-weight: 600;
       color: var(--text);
@@ -89,24 +102,24 @@
       line-height: 1.6;
     }
 
-    textarea {
-      width: 100%;
-      min-height: 150px;
-      padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--bg);
-      color: var(--text);
-      font-family: inherit;
-      font-size: 0.95rem;
-      resize: vertical;
-      transition: border-color 0.2s;
+    .section-theme {
+      background: rgba(59, 130, 246, 0.05);
+      border-left: 4px solid var(--nintex-blue);
+      padding: 1.5rem;
+      margin: 2rem 0 1.5rem 0;
+      border-radius: 4px;
     }
 
-    textarea:focus {
-      outline: none;
-      border-color: #60A5FA;
-      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+    .section-theme h2 {
+      color: var(--nintex-blue);
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .section-theme p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0;
     }
 
     .answer-placeholder {
@@ -127,18 +140,36 @@
     }
 
     .answer-content {
-      min-height: 100px;
+      min-height: 60px;
       color: var(--text-secondary);
       font-style: italic;
-    }
-
-    .answer-content:empty::before {
-      content: "Waiting for answer...";
-      color: var(--text-secondary);
       opacity: 0.6;
+      font-size: 0.85rem;
     }
 
-.success-message {
+    .answer-guide {
+      font-style: normal;
+      font-weight: 500;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .answer-example {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .answer-example::before {
+      content: "Example: ";
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    .success-message {
       display: none;
       background: rgba(34, 197, 94, 0.1);
       border: 1px solid rgba(34, 197, 94, 0.3);
@@ -150,6 +181,22 @@
 
     .success-message.show {
       display: block;
+    }
+
+    .container {
+      max-width: 1300px;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
@@ -182,112 +229,233 @@
     </div>
   </div>
   <h1>Connector <span class="accent">Acceleration</span></h1>
-  <p>Drive connector adoption and success by gathering user feedback and insights</p>
+  <p>Deep-dive discovery interview covering Integration Hub adoption, UX clarity, and cross-environment workflows</p>
 </div>
 
 <!-- MAIN CONTENT -->
 <section style="background: #fff; padding: 3rem 0;">
   <div class="container">
     <div class="main-content">
+
+<!-- SECTION 1: CURRENT USAGE -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>📊 Current Connector Usage</h2>
+  <p>Understanding which connectors are actively used and how teams currently work with integrations</p>
+</div>
+
 <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">1</div>
-      <h3>Which existing workflow or Apps connectors are useful for you?</h3>
-    </div>
-    <p>Help us understand which connectors your teams actively use and find valuable in your daily workflows.</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="usefulConnectors"></div>
+  <div class="question-header">
+    <div class="question-number">1</div>
+    <h3>Which existing connectors are you currently using?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>Which connectors in Workflows or Apps are your teams actively using in production today?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Identify currently active connectors and adoption rate by team</span><span class="answer-example">Salesforce (100%), Google Sheets (80%), SAP (60%)</span></div>
+  </div>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">2</div>
+    <h3>How easy or difficult was it to set up and use these connectors?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>Describe your experience: Was setup clear? Did you need support? Are there ongoing pain points?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Evaluate ease of use and identify friction points in connector setup/maintenance</span><span class="answer-example">Setup was easy (7/10); Ongoing maintenance requires manual credential updates monthly</span></div>
+  </div>
+</div>
+
+<!-- SECTION 2: CONNECTION TYPE UNDERSTANDING -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>🔄 Connection Type Comprehension</h2>
+  <p>Assessing user understanding of Unified, Workflow, and Apps connection types</p>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">3</div>
+    <h3>Do you understand the difference between Unified, Workflow, and Apps connections?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>Unified connections work across both Workflows & Apps (no duplication). Workflow/Apps connections are type-specific. Do you understand this distinction?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Assess user comprehension of connection type architecture and value of Unified approach</span><span class="answer-example">7 out of 9 users understand difference; 2 were confused about when to use each type</span></div>
+  </div>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">4</div>
+    <h3>Have you been confused about which connection type to create?</h3>
+    <span class="optional-label">Optional</span>
+  </div>
+  <p>When creating a connection, did you struggle deciding between Unified, Workflow, or Apps? Why?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Identify confusion points and UX gaps in connection type selection</span><span class="answer-example">5 users confused about when to use Unified vs Workflow; Wanted clearer guidance</span></div>
+  </div>
+</div>
+
+<!-- SECTION 3: CONNECTOR DISCOVERABILITY -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>🔍 Connector Discovery & Search</h2>
+  <p>Understanding whether users can easily find the connectors they need</p>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">5</div>
+    <h3>Is it easy to find the connector you're looking for?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>When searching for a specific connector, how easy is it to find? Do you know which tab it's in (Unified, Workflow, Apps)?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Measure discoverability and identify search/navigation challenges</span><span class="answer-example">8/10 easy when searching; 3 users couldn't find connectors across tabs; 2 confused about Unified vs legacy availability</span></div>
+  </div>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">6</div>
+    <h3>Would you need better search, filters, or connectors organized differently?</h3>
+    <span class="optional-label">Optional</span>
+  </div>
+  <p>Would filters (by type, use case, industry) help? Is the search dropdown sufficient? Should connectors be grouped differently?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Identify desired improvements for connector discovery experience</span><span class="answer-example">Need filters by "Unified-supported"; Want search history; Grouping by industry would help</span></div>
+  </div>
+</div>
+
+<!-- SECTION 4: MISSING CONNECTORS/ACTIONS -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>🎯 Missing Connectors & Actions</h2>
+  <p>Identifying missing connectors and missing actions for existing connectors</p>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">7</div>
+    <h3>What connectors and actions are you missing?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>Beyond connectors you mentioned, are there other connectors you need? What missing actions/features for existing connectors?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: List most requested missing connectors and missing actions for existing connectors with demand %</span><span class="answer-example">Missing connectors: HubSpot (89%), Stripe (67%); Missing actions: Update row in Google Sheets (56%)</span></div>
+  </div>
+</div>
+
+<!-- SECTION 5: CROSS-ENVIRONMENT WORKFLOWS -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>🌍 Multi-Environment & Export/Import</h2>
+  <p>Understanding how users move connections between environments (Dev, Test, Prod)</p>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">8</div>
+    <h3>How do you move connections between environments?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>Do you export/import connections between Development, Test, and Production? Is the process clear?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Assess export/import workflow clarity and identify multi-environment process pain points</span><span class="answer-example">6 users export/import regularly; Process clear but time-consuming; 3 users wished for simpler migration</span></div>
+  </div>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">9</div>
+    <h3>Is it clear what tenant/environment you're currently viewing?</h3>
+    <span class="optional-label">Optional</span>
+  </div>
+  <p>When switching between Development, Test, and Production environments, is it obvious which one you're in?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Evaluate environment visibility and switching clarity</span><span class="answer-example">Tenant dropdown clear (8/10); One user accidentally modified Production connections</span></div>
+  </div>
+</div>
+
+<!-- SECTION 6: SHARING & GOVERNANCE -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>👥 Connection Sharing & Permissions</h2>
+  <p>Understanding user sharing needs and permission clarity</p>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">10</div>
+    <h3>Do you share connections with other team members? Is it clear how to do this?</h3>
+    <span class="optional-label">Optional</span>
+  </div>
+  <p>Do you need to share connections? Is it clear how to assign Owners and Users? Any governance concerns?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Assess connection sharing patterns and permission model clarity</span><span class="answer-example">5 users share connections; Permissions interface clear; Need better audit trail</span></div>
+  </div>
+</div>
+
+<!-- SECTION 7: TIMELINE & IMPACT -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>⏰ Timeline & Business Impact</h2>
+  <p>Understanding urgency and quantifying business value</p>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">11</div>
+    <h3>What's your timeline to need these connectors/improvements?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>Is this ASAP (critical), within 3 months (high priority), or 6+ months (planning)?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Segment users by timeline urgency and identify critical vs. future needs</span><span class="answer-example">60% need within 3 months; 30% ASAP (blocking projects); 10% exploring</span></div>
+  </div>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">12</div>
+    <h3>What's the business impact if you can't get these connectors/improvements?</h3>
+    <span class="required-label">Required</span>
+  </div>
+  <p>How does this affect your teams? What's the cost (time, money, errors, delays)?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Quantify impact: manual work hours, cost, revenue impact, error rate, or delay</span><span class="answer-example">Spending 15 hours/week on manual syncs; Could save $50k/year; Slowing time-to-deployment</span></div>
+  </div>
+</div>
+
+<!-- SECTION 8: OVERALL SENTIMENT -->
+<div class="section-theme" style="grid-column: 1 / -1;">
+  <h2>💡 Overall Experience & Next Steps</h2>
+  <p>Wrapping up the discovery conversation</p>
+</div>
+
+<div class="feedback-card">
+  <div class="question-header">
+    <div class="question-number">13</div>
+    <h3>Can we count you as a reference customer if we deliver these improvements?</h3>
+    <span class="optional-label">Optional</span>
+  </div>
+  <p>If we build the connectors and features you need, would you share your success story with other customers?</p>
+  <div class="answer-placeholder">
+    <div class="answer-label">Findings:</div>
+    <div class="answer-content"><span class="answer-guide">Guide: Identify willing reference customers and case study opportunities</span><span class="answer-example">8 out of 9 users willing to be reference customers</span></div>
+  </div>
+</div>
+
     </div>
   </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">2</div>
-      <h3>How easy or difficult was it to use these connectors?</h3>
-    </div>
-    <p>Tell us about your experience with the setup, configuration, and ongoing usage. Did you need documentation or support?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="connectorEase"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">3</div>
-      <h3>How frequently and at what scale do you use these connectors?</h3>
-    </div>
-    <p>Tell us about usage frequency (daily, weekly, monthly) and how many people in your organization benefit from these integrations.</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="frequencyScale"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">4</div>
-      <h3>What connectors are missing in Workflow and Apps, and why are they important?</h3>
-    </div>
-    <p>Tell us which connectors or integrations you wish existed and explain the business impact and urgency of these needs.</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="missingConnectors"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">5</div>
-      <h3>Do you currently use manual workarounds or manual processes?</h3>
-    </div>
-    <p>If you have any manual workarounds or manual processes in place, please describe them. This helps us understand the gaps and inefficiencies.</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="workarounds"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">6</div>
-      <h3>Which teams/roles in your company are most impacted by these connector gaps?</h3>
-      <span class="optional-label">Optional</span>
-    </div>
-    <p>Identify which departments or roles (Sales, Operations, Finance, Marketing, IT, etc.) would benefit most from these connectors.</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="teamRoles"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">7</div>
-      <h3>When do you need these connectors and what's the business impact?</h3>
-      <span class="optional-label">Optional</span>
-    </div>
-    <p>When do you need these connectors? What business outcomes or ROI would they enable?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="timeline"></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">8</div>
-      <h3>How would you measure success?</h3>
-      <span class="optional-label">Optional</span>
-    </div>
-    <p>What metrics matter most to you? (e.g., time saved, cost reduction, accuracy improvement, process velocity, team adoption)</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Answer:</div>
-      <div class="answer-content" id="successMetrics"></div>
-    </div>
-  </div>
-
 </section>
 
 <script>

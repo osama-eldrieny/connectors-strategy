@@ -3,40 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connector Acceleration - Integration Hub Discovery</title>
+  <title>Connector Acceleration - UX Research Specification</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <script src="https://pointer2.fly.dev/inject.js" defer></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    .feedback-card {
+    .question-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .question-header {
       display: flex;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
     }
 
-    .optional-label {
-      font-size: 0.75rem;
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: var(--nintex-blue);
+      color: white;
+      border-radius: 50%;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .question-title {
+      flex: 1;
+    }
+
+    .question-title h3 {
+      font-size: 1.1rem;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      background: rgba(245, 158, 11, 0.15);
-      color: #B45309;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      margin-left: auto;
-      height: fit-content;
+      color: var(--text);
+      margin: 0 0 0.25rem 0;
     }
 
-    .required-label {
+    .question-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .required-badge {
       font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -45,8 +66,113 @@
       color: #DC2626;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
-      margin-left: auto;
       height: fit-content;
+    }
+
+    .optional-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(245, 158, 11, 0.15);
+      color: #B45309;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      height: fit-content;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .spec-item {
+      background: var(--bg);
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .spec-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--nintex-blue);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-content {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .options-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .options-list li {
+      padding: 0.4rem 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .options-list li::before {
+      content: "• ";
+      color: var(--nintex-blue);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .flow-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--nintex-blue);
+      padding: 0.4rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .location-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(139, 92, 246, 0.15);
+      color: #7c3aed;
+      padding: 0.4rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-theme {
+      background: rgba(59, 130, 246, 0.05);
+      border-left: 4px solid var(--nintex-blue);
+      padding: 1.5rem;
+      margin: 3rem 0 2rem 0;
+      border-radius: 4px;
+    }
+
+    .section-theme h2 {
+      color: var(--nintex-blue);
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .section-theme p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0;
     }
 
     .nav-logo span.dot {
@@ -72,140 +198,23 @@
       background: rgb(59, 130, 246) !important;
     }
 
-    .question-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
-      background: var(--nintex-blue);
-      color: white;
-      border-radius: 50%;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .feedback-card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin: 0;
-    }
-
-    .feedback-card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .section-theme {
-      background: rgba(59, 130, 246, 0.05);
-      border-left: 4px solid var(--nintex-blue);
-      padding: 1.5rem;
-      margin: 2rem 0 1.5rem 0;
-      border-radius: 4px;
-    }
-
-    .section-theme h2 {
-      color: var(--nintex-blue);
-      font-size: 1.2rem;
-      margin: 0 0 0.5rem 0;
-    }
-
-    .section-theme p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    .answer-placeholder {
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .answer-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-    }
-
-    .answer-content {
-      min-height: 60px;
-      color: var(--text-secondary);
-      font-style: italic;
-      opacity: 0.6;
-      font-size: 0.85rem;
-    }
-
-    .answer-guide {
-      font-style: normal;
-      font-weight: 500;
-      opacity: 0.8;
-      margin-bottom: 0.5rem;
-      display: block;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-    }
-
-    .answer-example {
-      display: block;
-      margin-top: 0.25rem;
-      font-size: 0.85rem;
-    }
-
-    .answer-example::before {
-      content: "Example: ";
-      font-weight: 600;
-      opacity: 0.85;
-    }
-
-    .success-message {
-      display: none;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      color: #22C55E;
-      padding: 1rem;
-      border-radius: var(--radius);
-      margin-bottom: 2rem;
-    }
-
-    .success-message.show {
-      display: block;
-    }
-
     .container {
-      max-width: 1300px;
+      max-width: 1200px;
     }
 
     .main-content {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    @media (max-width: 1024px) {
-      .main-content {
-        grid-template-columns: 1fr;
-      }
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     @media (max-width: 768px) {
-      .feedback-card {
-        padding: 1.5rem;
+      .spec-grid {
+        grid-template-columns: 1fr;
       }
 
-      button {
-        flex: 1;
+      .question-card {
+        padding: 1.5rem;
       }
     }
   </style></head>
@@ -229,7 +238,7 @@
     </div>
   </div>
   <h1>Connector <span class="accent">Acceleration</span></h1>
-  <p>Deep-dive discovery interview covering Integration Hub adoption, UX clarity, and cross-environment workflows</p>
+  <p>UX Research Specification: Integration Hub Discovery Interview with implementation details for Userflow deployment</p>
 </div>
 
 <!-- MAIN CONTENT -->
@@ -243,29 +252,99 @@
   <p>Understanding which connectors are actively used and how teams currently work with integrations</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">1</div>
-    <h3>Which existing connectors are you currently using?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>Which existing connectors are you currently using?</h3>
+      <p class="question-subtitle">Identify active connectors in Workflows and Apps</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>Which connectors in Workflows or Apps are your teams actively using in production today?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Identify currently active connectors and adoption rate by team</span><span class="answer-example">Salesforce (100%), Google Sheets (80%), SAP (60%)</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">After user completes Integration Hub tour or views Unified/Workflow/Apps tabs for first time (30 seconds after page load)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Establish baseline of current connector adoption and understand existing integration patterns before asking about gaps</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Salesforce</li>
+          <li>Google Sheets</li>
+          <li>Microsoft Excel</li>
+          <li>SAP</li>
+          <li>Other (open text)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Flow + Multi-Select</div>
+      <div class="spec-content">Interactive flow with checkbox selection and autocomplete search for connector names</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Main Connections Page</div>
+      <div class="spec-content">After user views the main Connections list (Unified tab)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Timing</div>
+      <div class="spec-content">30 seconds after page load if user has viewed ≥5 connections; OR after tab switching</div>
+    </div>
   </div>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">2</div>
-    <h3>How easy or difficult was it to set up and use these connectors?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>How easy or difficult was it to set up and use these connectors?</h3>
+      <p class="question-subtitle">Evaluate ease of use and identify friction points</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>Describe your experience: Was setup clear? Did you need support? Are there ongoing pain points?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Evaluate ease of use and identify friction points in connector setup/maintenance</span><span class="answer-example">Setup was easy (7/10); Ongoing maintenance requires manual credential updates monthly</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">Immediately after Q1 (within same flow, no delay)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Understand setup pain points and identify UX improvements needed for connector creation workflow</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Very Easy (1)</li>
+          <li>Easy (2)</li>
+          <li>Neutral (3)</li>
+          <li>Difficult (4)</li>
+          <li>Very Difficult (5)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">NPS-Style 5-Point Scale</div>
+      <div class="spec-content">Single-question survey with emoji scale (😄 to 😢) for quick sentiment capture</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Inline (same flow as Q1)</div>
+      <div class="spec-content">Continue same flow without modal interruption</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">If score ≤2: Skip to Q3; If score ≥4: Show follow-up "What was difficult?" open text</div>
+    </div>
   </div>
 </div>
 
@@ -275,29 +354,98 @@
   <p>Assessing user understanding of Unified, Workflow, and Apps connection types</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">3</div>
-    <h3>Do you understand the difference between Unified, Workflow, and Apps connections?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>Do you understand the difference between Unified, Workflow, and Apps connections?</h3>
+      <p class="question-subtitle">Assess Unified connection architecture understanding</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>Unified connections work across both Workflows & Apps (no duplication). Workflow/Apps connections are type-specific. Do you understand this distinction?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Assess user comprehension of connection type architecture and value of Unified approach</span><span class="answer-example">7 out of 9 users understand difference; 2 were confused about when to use each type</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">After user clicks on Workflow or Apps tab (switching between tabs triggers this)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Critical to understand if users comprehend the value of Unified connections (eliminates duplication) vs. creating separate Workflow/Apps connections</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Yes, I understand the difference</li>
+          <li>Somewhat, but confused about when to use each</li>
+          <li>No, I'm confused about the three types</li>
+          <li>Skip - already familiar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Inline Flow + Branching</div>
+      <div class="spec-content">Single-select radio buttons with optional educational tooltip on hover showing "Unified = both Workflows & Apps"</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Tab Navigation Area</div>
+      <div class="spec-content">Appears as tooltip/callout near the 3 tabs (Unified, Workflow, Apps) when user hovers or clicks tab</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">If "No/Somewhat": Show Q4 (confusion follow-up); If "Yes/Skip": Jump to Q5</div>
+    </div>
   </div>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">4</div>
-    <h3>Have you been confused about which connection type to create?</h3>
-    <span class="optional-label">Optional</span>
+    <div class="question-title">
+      <h3>Have you been confused about which connection type to create?</h3>
+      <p class="question-subtitle">Identify specific confusion points in connection type selection</p>
+    </div>
+    <div class="optional-badge">Optional</div>
   </div>
-  <p>When creating a connection, did you struggle deciding between Unified, Workflow, or Apps? Why?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Identify confusion points and UX gaps in connection type selection</span><span class="answer-example">5 users confused about when to use Unified vs Workflow; Wanted clearer guidance</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">Only shows if Q3 answer was "Somewhat confused" or "No" (conditional branching)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Deep dive into specific UX/messaging gaps that cause confusion when creating new connections</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>When choosing between Unified vs Workflow</li>
+          <li>When choosing between Unified vs Apps</li>
+          <li>Not sure if a connector supports Unified</li>
+          <li>Didn't understand the tooltip/guidance</li>
+          <li>Other (open text)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Flow + Multi-Select</div>
+      <div class="spec-content">Multiple choice checkboxes (user can select multiple confusion areas)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Inline (continuation of Q3 flow)</div>
+      <div class="spec-content">Same flow context, appears right after Q3 answer</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Timing</div>
+      <div class="spec-content">Display immediately after Q3 (no delay)</div>
+    </div>
   </div>
 </div>
 
@@ -307,29 +455,100 @@
   <p>Understanding whether users can easily find the connectors they need</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">5</div>
-    <h3>Is it easy to find the connector you're looking for?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>Is it easy to find the connector you're looking for?</h3>
+      <p class="question-subtitle">Measure connector discoverability across tabs</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>When searching for a specific connector, how easy is it to find? Do you know which tab it's in (Unified, Workflow, Apps)?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Measure discoverability and identify search/navigation challenges</span><span class="answer-example">8/10 easy when searching; 3 users couldn't find connectors across tabs; 2 confused about Unified vs legacy availability</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">When user is in the "Select Connector" dropdown menu (during connection creation)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Understand if users can discover needed connectors or if search/organization is confusing</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Very Easy - Found it immediately</li>
+          <li>Easy - Found it with one search</li>
+          <li>Neutral - Had to look around</li>
+          <li>Difficult - Took multiple searches</li>
+          <li>Very Difficult - Couldn't find it</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Toast/Modal NPS Scale</div>
+      <div class="spec-content">Small toast notification with 5-point scale appearing over the connector dropdown (non-intrusive)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Inside Create Connection Modal</div>
+      <div class="spec-content">Toast appears over the "Select Connector" dropdown when dropdown is opened</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Timing</div>
+      <div class="spec-content">Appears 3 seconds after dropdown is opened (give user time to search first)</div>
+    </div>
   </div>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">6</div>
-    <h3>Would you need better search, filters, or connectors organized differently?</h3>
-    <span class="optional-label">Optional</span>
+    <div class="question-title">
+      <h3>Would you need better search, filters, or different connector organization?</h3>
+      <p class="question-subtitle">Identify desired improvements for connector discovery</p>
+    </div>
+    <div class="optional-badge">Optional</div>
   </div>
-  <p>Would filters (by type, use case, industry) help? Is the search dropdown sufficient? Should connectors be grouped differently?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Identify desired improvements for connector discovery experience</span><span class="answer-example">Need filters by "Unified-supported"; Want search history; Grouping by industry would help</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">After user answers Q5 (if score is 3-5: "difficult to very difficult")</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Gather specific feature requests for improving connector search/organization UX</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Filter by "Unified-supported only"</li>
+          <li>Filter by industry/use case</li>
+          <li>Search history</li>
+          <li>Group connectors by category</li>
+          <li>Show recently used first</li>
+          <li>Other (open text)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Inline Flow + Multi-Select Checkboxes</div>
+      <div class="spec-content">Multiple choice allowing users to select all applicable improvements</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Same Modal - Below Dropdown</div>
+      <div class="spec-content">Appear in the same Create Connection modal but below the connector dropdown</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">Only show if Q5 score ≥ 3 (user found it somewhat difficult or worse)</div>
+    </div>
   </div>
 </div>
 
@@ -339,16 +558,49 @@
   <p>Identifying missing connectors and missing actions for existing connectors</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">7</div>
-    <h3>What connectors and actions are you missing?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>What connectors and actions are you missing?</h3>
+      <p class="question-subtitle">List missing connectors and missing actions for existing connectors</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>Beyond connectors you mentioned, are there other connectors you need? What missing actions/features for existing connectors?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: List most requested missing connectors and missing actions for existing connectors with demand %</span><span class="answer-example">Missing connectors: HubSpot (89%), Stripe (67%); Missing actions: Update row in Google Sheets (56%)</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">After user completes connection setup or when viewing the Connections list (after ≥2 connections viewed)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Identify roadmap priorities - which connectors are most requested and what actions are missing from existing connectors</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Missing connectors (open text with autocomplete from full connector list)</li>
+          <li>Missing actions for [selected connector] (e.g., "Update row" for Google Sheets)</li>
+          <li>Both (multi-step)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Flow + Multi-Step</div>
+      <div class="spec-content">Step 1: Text input with autocomplete for missing connectors; Step 2: For each connector selected, ask what actions are missing</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Main Connections Page</div>
+      <div class="spec-content">Flow triggers on main Connections page (Unified tab) after viewing list</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Timing</div>
+      <div class="spec-content">After user views ≥2 connections or after 1 minute on the page (whichever comes first)</div>
+    </div>
   </div>
 </div>
 
@@ -358,29 +610,98 @@
   <p>Understanding how users move connections between environments (Dev, Test, Prod)</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">8</div>
-    <h3>How do you move connections between environments?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>How do you move connections between environments?</h3>
+      <p class="question-subtitle">Assess export/import workflow clarity</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>Do you export/import connections between Development, Test, and Production? Is the process clear?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Assess export/import workflow clarity and identify multi-environment process pain points</span><span class="answer-example">6 users export/import regularly; Process clear but time-consuming; 3 users wished for simpler migration</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">When user clicks tenant/environment dropdown (Development, Test, Production)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Understand multi-environment workflows and identify pain points in connection migration</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>I use export/import JSON</li>
+          <li>I recreate connections manually</li>
+          <li>I haven't moved connections between environments</li>
+          <li>I use a different method</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Inline Flow + Single-Select</div>
+      <div class="spec-content">Radio buttons appearing as a tooltip/inline prompt when tenant dropdown opens</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Near Tenant Dropdown</div>
+      <div class="spec-content">Tooltip/inline flow that appears when user clicks the tenant/environment dropdown in header</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Timing</div>
+      <div class="spec-content">Show when tenant dropdown is clicked; Only show once per session</div>
+    </div>
   </div>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">9</div>
-    <h3>Is it clear what tenant/environment you're currently viewing?</h3>
-    <span class="optional-label">Optional</span>
+    <div class="question-title">
+      <h3>Is the export/import process clear and easy?</h3>
+      <p class="question-subtitle">Evaluate multi-environment migration clarity</p>
+    </div>
+    <div class="optional-badge">Optional</div>
   </div>
-  <p>When switching between Development, Test, and Production environments, is it obvious which one you're in?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Evaluate environment visibility and switching clarity</span><span class="answer-example">Tenant dropdown clear (8/10); One user accidentally modified Production connections</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">Only if Q8 answer was "I use export/import JSON" (conditional)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Get specific feedback on export/import UX and identify if process needs improvement</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Very Easy</li>
+          <li>Easy</li>
+          <li>Neutral</li>
+          <li>Difficult</li>
+          <li>Very Difficult</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">NPS 5-Point Scale</div>
+      <div class="spec-content">Inline rating scale (same flow as Q8)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Inline (continuation of Q8)</div>
+      <div class="spec-content">Appears immediately after Q8 answer in same flow</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">If ≥4: Show "What was difficult?" follow-up; If 1-2: Show "What improvements would help?"</div>
+    </div>
   </div>
 </div>
 
@@ -390,16 +711,50 @@
   <p>Understanding user sharing needs and permission clarity</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">10</div>
-    <h3>Do you share connections with other team members? Is it clear how to do this?</h3>
-    <span class="optional-label">Optional</span>
+    <div class="question-title">
+      <h3>Do you share connections with team members? Is it clear how?</h3>
+      <p class="question-subtitle">Assess connection sharing patterns and permissions clarity</p>
+    </div>
+    <div class="optional-badge">Optional</div>
   </div>
-  <p>Do you need to share connections? Is it clear how to assign Owners and Users? Any governance concerns?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Assess connection sharing patterns and permission model clarity</span><span class="answer-example">5 users share connections; Permissions interface clear; Need better audit trail</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">When user clicks on a connection row's menu (3-dot button) - if connection has sharing icon visible</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Understand sharing patterns and whether permission model (Owners/Users) is intuitive</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Yes, and it's clear how</li>
+          <li>Yes, but the process is confusing</li>
+          <li>No, I don't share connections</li>
+          <li>I need to share but don't know how</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Inline Flow + Single-Select</div>
+      <div class="spec-content">Radio buttons appearing in a tooltip when user hovers over connection menu</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Connection Row Context Menu</div>
+      <div class="spec-content">Tooltip appears when user clicks menu on any connection row</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Timing</div>
+      <div class="spec-content">Show on first click to connection menu; Can show multiple times but max once per connection</div>
+    </div>
   </div>
 </div>
 
@@ -409,48 +764,150 @@
   <p>Understanding urgency and quantifying business value</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">11</div>
-    <h3>What's your timeline to need these connectors/improvements?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>What's your timeline to need these connectors/improvements?</h3>
+      <p class="question-subtitle">Segment users by urgency</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>Is this ASAP (critical), within 3 months (high priority), or 6+ months (planning)?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Segment users by timeline urgency and identify critical vs. future needs</span><span class="answer-example">60% need within 3 months; 30% ASAP (blocking projects); 10% exploring</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">Exit flow - when user is about to close/leave the Integrations page or after 5 minutes on page</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Identify critical/blocking needs vs. future enhancements - roadmap prioritization</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>ASAP (blocking current projects)</li>
+          <li>High Priority (within 1-3 months)</li>
+          <li>Medium Priority (within 3-6 months)</li>
+          <li>Low Priority (exploring/future)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Exit-Intent Modal</div>
+      <div class="spec-content">Modal that appears when user attempts to close/navigate away from page</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Full-Page Modal</div>
+      <div class="spec-content">Centered modal blocking page exit (user can dismiss with X or answer question)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Timing</div>
+      <div class="spec-content">Trigger on exit-intent (mouse to close/back button) OR after 5 minutes on page, whichever comes first</div>
+    </div>
   </div>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">12</div>
-    <h3>What's the business impact if you can't get these connectors/improvements?</h3>
-    <span class="required-label">Required</span>
+    <div class="question-title">
+      <h3>What's the business impact if you can't get these connectors/improvements?</h3>
+      <p class="question-subtitle">Quantify impact and ROI</p>
+    </div>
+    <div class="required-badge">Required</div>
   </div>
-  <p>How does this affect your teams? What's the cost (time, money, errors, delays)?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Quantify impact: manual work hours, cost, revenue impact, error rate, or delay</span><span class="answer-example">Spending 15 hours/week on manual syncs; Could save $50k/year; Slowing time-to-deployment</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">Immediately after Q11 (continue same exit-intent modal)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Quantify value/impact - critical for prioritization and business case building</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Time: Manual workarounds consume X hours/week</li>
+          <li>Cost: Would save ~$X in annual costs</li>
+          <li>Revenue: Would enable ~$X in new revenue</li>
+          <li>Risk: Would reduce errors/delays that impact customers</li>
+          <li>Other (open text)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Multi-Select Checkboxes + Open Text</div>
+      <div class="spec-content">Multiple choice + optional number input for quantified impact</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Same Exit-Intent Modal</div>
+      <div class="spec-content">Appears below Q11 in the same modal</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">If user selects "Time", "Cost", or "Revenue": Show optional number input field</div>
+    </div>
   </div>
 </div>
 
-<!-- SECTION 8: OVERALL SENTIMENT -->
+<!-- SECTION 8: WRAP-UP -->
 <div class="section-theme" style="grid-column: 1 / -1;">
-  <h2>💡 Overall Experience & Next Steps</h2>
-  <p>Wrapping up the discovery conversation</p>
+  <h2>✨ Thank You & Follow-Up</h2>
+  <p>Close the research session and capture willingness for future engagement</p>
 </div>
 
-<div class="feedback-card">
+<div class="question-card">
   <div class="question-header">
     <div class="question-number">13</div>
-    <h3>Can we count you as a reference customer if we deliver these improvements?</h3>
-    <span class="optional-label">Optional</span>
+    <div class="question-title">
+      <h3>Can we count you as a reference customer if we deliver these improvements?</h3>
+      <p class="question-subtitle">Identify potential case studies and advocates</p>
+    </div>
+    <div class="optional-badge">Optional</div>
   </div>
-  <p>If we build the connectors and features you need, would you share your success story with other customers?</p>
-  <div class="answer-placeholder">
-    <div class="answer-label">Findings:</div>
-    <div class="answer-content"><span class="answer-guide">Guide: Identify willing reference customers and case study opportunities</span><span class="answer-example">8 out of 9 users willing to be reference customers</span></div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="spec-content">After Q12 answer (final question in exit-intent modal)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Build case study pipeline and identify product advocates for future announcements</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">
+        <ul class="options-list">
+          <li>Yes, absolutely</li>
+          <li>Maybe - ask me later</li>
+          <li>No thanks</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">User Flow Type</div>
+      <div class="flow-badge">Single-Select Radio + Optional Email Capture</div>
+      <div class="spec-content">Simple yes/no with conditional email field if user selects "Yes"</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Location</div>
+      <div class="location-badge">Same Exit-Intent Modal</div>
+      <div class="spec-content">Final question in modal - appears after Q12</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Follow-Up</div>
+      <div class="spec-content">If "Yes": Capture email and add to "Case Study Candidates" segment in Userflow</div>
+    </div>
   </div>
 </div>
 

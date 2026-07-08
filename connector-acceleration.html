@@ -411,7 +411,7 @@ Q2a: "What would help find connectors more easily?" (Conditional, if Q2 rating �
         <ul class="options-list">
           <li>If ≥7 (Easy): Skip Q1a → Proceed directly to Q2 (finding connectors)</li>
           <li>If 4-6 (Neutral/Some friction): Show Q1a "What was difficult?" → Then proceed to Q2</li>
-          <li>If 1-3 (Very Difficult): Show Q1a "What was difficult?" → Route to Q10 (skip Q2-Q9, escalate to customer dev call)</li>
+          <li>If 1-3 (Very Difficult): Show Q1a "What was difficult?" → Route to Q8 (skip Q2-Q9, escalate to customer dev call)</li>
         </ul>
       </div>
     </div>
@@ -448,7 +448,7 @@ Q2a: "What would help find connectors more easily?" (Conditional, if Q2 rating �
     </div>
     <div class="spec-item">
       <div class="spec-label">Branching</div>
-      <div class="spec-content">If Q1 was 4-6: Proceed to Q2 after answer; If Q1 was 1-3: Proceed to Q10 (customer dev call) after answer</div>
+      <div class="spec-content">If Q1 was 4-6: Proceed to Q2 after answer; If Q1 was 1-3: Proceed to Q8 (customer dev call) after answer</div>
     </div>
   </div>
 </div>
@@ -534,20 +534,18 @@ Q2a: "What would help find connectors more easily?" (Conditional, if Q2 rating �
 <!-- JOURNEY 2: EXISTING USER - PRIMARY FOCUS -->
 <div class="journey-section" style="grid-column: 1 / -1;">
   <h2>👥 Journey 2: Existing User - PRIMARY FOCUS: MISSING GAPS <span class="priority-badge">70% RESEARCH</span></h2>
-  <p>User has 1+ connections - we focus on gaps: missing connectors, missing actions, business impact</p>
-  <div class="journey-flow">User views Connections list (has ≥1 active connections)
+  <p>User has 3+ connections - we focus on gaps: missing connectors, missing actions, business impact</p>
+  <div class="journey-flow">User views Connections list (has ≥3 active connections)
   ↓
 Q4: "Which connectors are you CURRENTLY using regularly?" (Multi-select)
   ↓
-Q5: "What connectors are you MISSING?" (Open text + autocomplete from catalog)
+Q4a: "For the connectors you're using, what actions/features are missing?" (Open text per-connector)
   ↓
-Q6: "For the missing connectors, what actions/features do you need?" (Open text)
+Q5: "What connectors are you MISSING that you need?" (Open text + autocomplete from catalog)
   ↓
-Q7: "How critical/important are these missing connectors/actions?" (Business impact)
+Q6: "How critical are these missing connectors, and what's the business impact?" (Rating + Impact)
   ↓
-Q8: "Why do you need these specific connectors?" (Use cases & business value)
-  ↓
-Q9: "Timeline - when do you need these?" (Urgency)</div>
+Q7: "Timeline - when do you need these?" (Urgency)</div>
 </div>
 
 <div class="question-card">
@@ -563,8 +561,8 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
   <div class="spec-grid">
     <div class="spec-item">
       <div class="spec-label">When</div>
-      <div class="flow-badge">Below Connections List</div>
-      <div class="spec-content">User views Connections list with ≥1 connections; inline flow appears below their connections table after viewing for 2+ sec</div>
+      <div class="flow-badge">Launcher Widget</div>
+      <div class="spec-content">User views Connections list with ≥3 connections; Launcher widget appears (bottom-right corner) after viewing for 2+ sec - user can open/close as needed</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Why</div>
@@ -572,16 +570,52 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Multi-Select with Frequency</div>
-      <div class="spec-content">Checkboxes + dropdown for frequency per connector</div>
+      <div class="flow-badge">Flow + Multi-Select with Search</div>
+      <div class="spec-content">Searchable checkboxes from complete existing Nintex connector list</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Options</div>
-      <div class="spec-content">Multi-checkboxes of each connector in their list (Salesforce, Google Sheets, etc.) + frequency: Daily, Weekly, Monthly, As-needed</div>
+      <div class="spec-content">Multi-checkboxes from complete existing Nintex connector list. Users can indicate which connectors they're actively using.</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Timing</div>
-      <div class="spec-content">Auto-trigger after 2+ sec viewing list; or manual trigger via info button</div>
+      <div class="spec-content">Launcher appears after 2+ sec of viewing connections list; user opens launcher widget when ready to provide feedback</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">4a</div>
+    <div class="question-title">
+      <h3>For the connectors you're using, what specific actions or features are missing?</h3>
+      <p class="question-subtitle">PRIMARY: Identify missing actions in currently used connectors</p>
+    </div>
+    <div class="required-badge">Required</div>
+  </div>
+
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">When</div>
+      <div class="flow-badge">Launcher Flow - Step 2</div>
+      <div class="spec-content">After Q4 answer within Launcher — continuation in the same launcher flow</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Why</div>
+      <div class="spec-content">Users already rely on these connectors — missing actions may block workflows. Critical to understand what features and actions would unlock more value in existing connectors (easier wins than new connectors)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Flow + Open Text (Per-Connector)</div>
+      <div class="spec-content">Progressive disclosure - for each connector selected in Q4, ask what actions are missing</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">Open text input for each selected connector: "What specific actions or features are missing for [Connector Name]? (e.g., Update action, Real-time sync, Bulk operations, etc.)"</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">Always shows after Q4; proceeds to Q5 after completion</div>
     </div>
   </div>
 </div>
@@ -599,8 +633,8 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
   <div class="spec-grid">
     <div class="spec-item">
       <div class="spec-label">When</div>
-      <div class="flow-badge">Same Flow - Below Q4</div>
-      <div class="spec-content">After Q4 answer — inline continuation in the same flow</div>
+      <div class="flow-badge">Launcher Flow - Step 3</div>
+      <div class="spec-content">After Q4a answer within Launcher — continuation in the same launcher flow</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Why</div>
@@ -608,16 +642,16 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Open Text with Autocomplete</div>
-      <div class="spec-content">Text input with searchable connector list dropdown</div>
+      <div class="flow-badge">Flow + Open Text with Autocomplete & Free-Form Entry</div>
+      <div class="spec-content">Text input with searchable connector list (197 connectors) dropdown + ability to add custom connector names not in the list</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Options</div>
-      <div class="spec-content">Open text input with autocomplete from complete connector catalog (197 connectors searchable) - multiple entries allowed</div>
+      <div class="spec-content">Users can select from new Nintex connector list (197 connectors) via autocomplete search, OR manually enter connector names not yet in the product roadmap - multiple entries allowed</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Branching</div>
-      <div class="spec-content">If ≥1 connector selected → Show Q6 (what actions needed); If 0 → Skip to Q9</div>
+      <div class="spec-content">If ≥1 connector selected → Show Q6 (criticality & business impact); If 0 → Skip to Q7 (timeline)</div>
     </div>
   </div>
 </div>
@@ -626,8 +660,8 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
   <div class="question-header">
     <div class="question-number">6</div>
     <div class="question-title">
-      <h3>For those missing connectors, what specific actions/features do you need?</h3>
-      <p class="question-subtitle">PRIMARY: Identify missing actions in target connectors</p>
+      <h3>How critical are these missing connectors, and what's the business impact?</h3>
+      <p class="question-subtitle">PRIMARY: Understand urgency and business value for roadmap prioritization</p>
     </div>
     <div class="required-badge">Required</div>
   </div>
@@ -635,25 +669,39 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
   <div class="spec-grid">
     <div class="spec-item">
       <div class="spec-label">When</div>
-      <div class="flow-badge">Same Flow - Below Q5</div>
-      <div class="spec-content">After Q5 selection (if ≥1 connector selected) — inline, progressive disclosure per connector</div>
+      <div class="flow-badge">Launcher Flow - Step 4</div>
+      <div class="spec-content">After Q5 answer within Launcher (if ≥1 connector selected) — continuation in the same launcher flow</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Why</div>
-      <div class="spec-content">CRITICAL - many connectors exist but lack actions users need. Understand feature gaps within existing connectors</div>
+      <div class="spec-content">Capture both criticality LEVEL and real BUSINESS IMPACT - prioritize roadmap based on what matters most: time saved, revenue, errors prevented, compliance, etc.</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Multi-Step (Per-Connector)</div>
-      <div class="spec-content">Multi-select checkboxes for each selected connector's available actions</div>
+      <div class="flow-badge">Flow + Multi-Part (Rating + Open Text)</div>
+      <div class="spec-content">Part 1: Single select rating per connector; Part 2: Open text for business impact details</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Options</div>
-      <div class="spec-content">For EACH connector selected in Q5: show list of available actions with checkboxes for "missing" + open text for custom actions not listed</div>
+      <div class="spec-content">
+        <div style="margin-bottom: 1rem;">
+          <strong>Part 1 - Criticality Rating (Radio buttons per connector):</strong>
+          <ul class="options-list">
+            <li>BLOCKING - Can't achieve our goals without it</li>
+            <li>CRITICAL - High priority, plan to use soon</li>
+            <li>IMPORTANT - Would improve efficiency</li>
+            <li>NICE TO HAVE - Would be useful someday</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Part 2 - Business Impact (Open text):</strong>
+          <span style="display: block; margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">"What's the business impact if you don't have these connectors? (e.g., X hours/week of manual work, $X cost savings, Y% error reduction, compliance requirements, revenue impact, etc.)"</span>
+        </div>
+      </div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Branching</div>
-      <div class="spec-content">Show action list for each Q5 selection; allow custom "other" text input</div>
+      <div class="spec-content">Always shows after Q5 (if ≥1 connector selected); proceeds to Q7 (timeline) after completion</div>
     </div>
   </div>
 </div>
@@ -661,85 +709,6 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
 <div class="question-card">
   <div class="question-header">
     <div class="question-number">7</div>
-    <div class="question-title">
-      <h3>How critical/important are these missing connectors and actions?</h3>
-      <p class="question-subtitle">PRIMARY: Prioritize by business impact</p>
-    </div>
-    <div class="required-badge">Required</div>
-  </div>
-
-  <div class="spec-grid">
-    <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="flow-badge">Same Flow - Below Q6</div>
-      <div class="spec-content">After Q6 answer — one rating per connector mentioned in Q5</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Understand severity - is this "nice to have" or "blocking adoption"? Roadmap prioritization</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Single Select (Per-Connector)</div>
-      <div class="spec-content">Radio buttons for each Q5 connector selection</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">
-        <ul class="options-list">
-          <li>BLOCKING - Can't achieve our goals without it</li>
-          <li>CRITICAL - High priority, plan to use soon</li>
-          <li>IMPORTANT - Would improve efficiency</li>
-          <li>NICE TO HAVE - Would be useful someday</li>
-        </ul>
-      </div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">If "BLOCKING" → Show Q8; If lower priority → Optional to show Q8</div>
-    </div>
-  </div>
-</div>
-
-<div class="question-card">
-  <div class="question-header">
-    <div class="question-number">8</div>
-    <div class="question-title">
-      <h3>Why do you need these specific connectors? What's the use case?</h3>
-      <p class="question-subtitle">PRIMARY: Understand business value & use cases</p>
-    </div>
-    <div class="required-badge">Required</div>
-  </div>
-
-  <div class="spec-grid">
-    <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="flow-badge">Same Flow - Below Q7</div>
-      <div class="spec-content">After Q7 (if priority = BLOCKING or CRITICAL) — text input area for each BLOCKING/CRITICAL connector</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">CRITICAL CONTEXT - understand the "why" behind each connector need. Use cases drive product decisions</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Multi-Step Open Text</div>
-      <div class="spec-content">Per-connector text area for use case description</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">Open text: "Describe how you plan to use these connectors and what business problem they solve"</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">Only show for BLOCKING/CRITICAL; skip for lower priorities</div>
-    </div>
-  </div>
-</div>
-
-<div class="question-card">
-  <div class="question-header">
-    <div class="question-number">9</div>
     <div class="question-title">
       <h3>When do you need these missing connectors?</h3>
       <p class="question-subtitle">Understand timeline and urgency</p>
@@ -751,7 +720,7 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
     <div class="spec-item">
       <div class="spec-label">When</div>
       <div class="flow-badge">Same Flow - Final Question</div>
-      <div class="spec-content">After Q8 (or Q7 if Q8 was skipped) — conclusion to the gaps flow</div>
+      <div class="spec-content">After Q6 answer (or directly after Q5 if user selected 0 connectors in Q5) — conclusion to the gaps flow</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Why</div>
@@ -786,12 +755,12 @@ Q9: "Timeline - when do you need these?" (Urgency)</div>
   <p>Last chance to capture data before user navigates away</p>
   <div class="journey-flow">User attempts to leave page (close, back, navigate away)
   ↓
-Q10: "Would you be willing to share more details about your integration needs?" (Convert to customer development call)</div>
+Q8: "Can we schedule a 15-minute call to learn more about your integration needs?" (Convert to customer development call)</div>
 </div>
 
 <div class="question-card">
   <div class="question-header">
-    <div class="question-number">10</div>
+    <div class="question-number">8</div>
     <div class="question-title">
       <h3>Can we schedule a 15-minute call to learn more about your integration needs?</h3>
       <p class="question-subtitle">Convert research to deeper engagement</p>
@@ -802,17 +771,17 @@ Q10: "Would you be willing to share more details about your integration needs?" 
   <div class="spec-grid">
     <div class="spec-item">
       <div class="spec-label">When</div>
-      <div class="flow-badge">Full-Page Modal Overlay</div>
-      <div class="spec-content">Exit-intent: User moves to close/navigate away (after Q4-Q9) — centered modal blocking exit</div>
+      <div class="flow-badge">Launcher Widget</div>
+      <div class="spec-content">After Q7 completion (Journey 2 end) OR after Q1a (Journey 1 critical path) OR exit-intent (user leaving) — Launcher appears; also triggers as exit-intent if user tries to navigate away</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Why</div>
-      <div class="spec-content">Convert research interest into customer development meetings - get deeper context on BLOCKING connectors</div>
+      <div class="spec-content">Convert research interest into customer development meetings - get deeper context on BLOCKING connectors or critical gaps. Non-blocking launcher allows users to engage at their own pace while also catching exit-intent as fallback</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Exit-Intent Modal + Booking Link</div>
-      <div class="spec-content">Modal with Calendly/booking link if "Yes" selected</div>
+      <div class="flow-badge">Launcher Widget + Exit-Intent Trigger</div>
+      <div class="spec-content">Launcher with Calendly/booking link if "Yes" selected; also shows as exit-intent if user attempts to leave without engaging</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Options</div>

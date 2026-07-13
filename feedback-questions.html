@@ -187,6 +187,50 @@
         flex: 1;
       }
     }
+
+    .introduction-section {
+      background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+      border: 1px solid rgba(0, 102, 204, 0.1);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .introduction-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .introduction-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--nintex-blue);
+      color: white;
+      border-radius: 8px;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .introduction-section p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0;
+      max-width: 100%;
+    }
+
+    .introduction-highlight {
+      color: var(--nintex-blue);
+      font-weight: 600;
+    }
   </style></head>
 <body>
 
@@ -214,6 +258,17 @@
 <!-- MAIN CONTENT -->
 <section style="background: #fff; padding: 3rem 0;">
   <div class="container">
+    <!-- INTRODUCTION -->
+    <div class="introduction-section">
+      <h2>
+        <div class="introduction-icon">🔗</div>
+        About Integrations
+      </h2>
+      <p>
+        <span class="introduction-highlight">Integrations</span> is Nintex's centralized platform for creating and managing all your connections to third-party applications and services. Instead of setting up the same connections repeatedly across different Nintex products and environments (Workflows, Apps, etc.), Integrations allows you to configure a connection once and reuse it everywhere. This means your team can work more efficiently, maintain consistent credentials across your entire Nintex ecosystem, and reduce the time spent on repetitive setup and maintenance tasks.
+      </p>
+    </div>
+
     <div class="main-content">
 <div class="feedback-card">
     <div class="question-header">
@@ -231,58 +286,19 @@
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">2</div>
-      <h3>How many connections do you currently create and maintain across your Nintex environment?</h3>
+      <h3>What connections do you use in Workflows that you also need in Apps?</h3>
       <span class="required-label">Required</span>
     </div>
-    <p>Consider all the connections you set up across different Nintex products. Approximately how many connections do you create and maintain today, and in how many different places?</p>
+    <p>Tell us about the connections you're already using in Nintex Workflows. Which of these connections do you also need to use in Nintex Apps? Why is it important to have these connections available across both products?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q2"><span class="answer-guide">Guide: Identify average connection count and how often they're duplicated across products</span><span class="answer-example">Average: 3-5 connections per organization; duplicated across 2-3 places</span></div>
+      <div class="answer-content" id="q3"><span class="answer-guide">Guide: Identify connections with cross-product demand (Workflows → Apps) and user's reasons for adoption</span><span class="answer-example">Top cross-product connectors: Salesforce (89%), Google Sheets (67%); Reasons: data consistency, single connection management</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">3</div>
-      <h3>What are the most used connectors you're currently using in Nintex?</h3>
-      <span class="required-label">Required</span>
-    </div>
-    <p>Which connectors are you actively using right now in your Nintex workflows & Apps, and how frequently do you use them?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q3"><span class="answer-guide">Guide: Rank connectors by usage frequency and adoption percentage among users</span><span class="answer-example">Top connectors: Salesforce (89%), Google Sheets (67%), SAP (56%)</span></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">4</div>
-      <h3>What connectors and actions are you missing?</h3>
-      <span class="required-label">Required</span>
-    </div>
-    <p>Besides the most used connectors you mentioned, are there any other connectors you need? And what missing actions or features do you need for your existing connectors?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q4"><span class="answer-guide">Guide: List most requested missing connectors and missing actions for existing connectors with user demand percentage</span><span class="answer-example">Missing connectors: HubSpot (89%), Stripe (67%); Missing actions: Update row action for Google Sheets (56%)</span></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">5</div>
-      <h3>What's your timeline to need these connectors?</h3>
-      <span class="required-label">Required</span>
-    </div>
-    <p>Is this ASAP (critical for your plans), in the next 3 months, 6 months, or just exploring for future consideration?</p>
-    <div class="answer-placeholder">
-      <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q5"><span class="answer-guide">Guide: Segment users by timeline urgency and identify critical vs. future needs</span><span class="answer-example">60% need within 3 months (High priority); 30% ASAP (Critical); 10% Future</span></div>
-    </div>
-  </div>
-
-  <div class="feedback-card">
-    <div class="question-header">
-      <div class="question-number">6</div>
       <h3>Can we count you as a reference customer if we build these connectors?</h3>
       <span class="required-label">Required</span>
     </div>
@@ -295,9 +311,9 @@
 
   <div class="feedback-card">
     <div class="question-header">
-      <div class="question-number">7</div>
+      <div class="question-number">4</div>
       <h3>What's the biggest pain point with how you manage connections today?</h3>
-      <span class="required-label">Required</span>
+      <span class="optional-label">Optional</span>
     </div>
     <p>Are you spending too much time setting up the same connections in multiple places? Dealing with duplicates? Managing credentials across different tools? What frustrates you most?</p>
     <div class="answer-placeholder">
@@ -308,27 +324,27 @@
 
   <div class="feedback-card">
     <div class="question-header">
-      <div class="question-number">8</div>
-      <h3>How many people in your organization would need to create and manage unified connections?</h3>
+      <div class="question-number">5</div>
+      <h3>What's your timeline to need these connectors?</h3>
       <span class="optional-label">Optional</span>
     </div>
-    <p>Would just a few admins manage all connections, or would multiple teams need to create and manage their own unified connections?</p>
+    <p>Is this ASAP (critical for your plans), in the next 3 months, 6 months, or just exploring for future consideration?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q8"><span class="answer-guide">Guide: Identify typical team size and roles responsible for managing connections</span><span class="answer-example">Typically: 2-5 people manage connections per organization</span></div>
+      <div class="answer-content" id="q5"><span class="answer-guide">Guide: Segment users by timeline urgency and identify critical vs. future needs</span><span class="answer-example">60% need within 3 months (High priority); 30% ASAP (Critical); 10% Future</span></div>
     </div>
   </div>
 
   <div class="feedback-card">
     <div class="question-header">
-      <div class="question-number">9</div>
-      <h3>Would unified connections reduce work and maintenance for your team?</h3>
+      <div class="question-number">6</div>
+      <h3>What connectors and actions are you missing?</h3>
       <span class="optional-label">Optional</span>
     </div>
-    <p>How much time would you save if you only had to configure a connection once instead of multiple times? What would change?</p>
+    <p>Besides the most used connectors you mentioned, are there any other connectors you need? And what missing actions or features do you need for your existing connectors?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q9"><span class="answer-guide">Guide: Calculate estimated time savings and ROI for unified connection management</span><span class="answer-example">Expected time savings: 40-60% per team; ~5 hours/month per person</span></div>
+      <div class="answer-content" id="q4"><span class="answer-guide">Guide: List most requested missing connectors and missing actions for existing connectors with user demand percentage</span><span class="answer-example">Missing connectors: HubSpot (89%), Stripe (67%); Missing actions: Update row action for Google Sheets (56%)</span></div>
     </div>
   </div>
 

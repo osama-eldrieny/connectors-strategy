@@ -7,6 +7,7 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 CONNECTORS_FILE = 'connectors.json'
 FILTERING_FILE = 'filtering-answers.json'
 REVIEWS_FILE = 'reviews.json'
+FEEDBACK_FILE = 'feedback-answers.json'
 
 def load_connectors():
     if os.path.exists(CONNECTORS_FILE):
@@ -36,6 +37,16 @@ def load_reviews():
 
 def save_reviews(data):
     with open(REVIEWS_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+
+def load_feedback_answers():
+    if os.path.exists(FEEDBACK_FILE):
+        with open(FEEDBACK_FILE, 'r') as f:
+            return json.load(f)
+    return {}
+
+def save_feedback_answers(data):
+    with open(FEEDBACK_FILE, 'w') as f:
         json.dump(data, f, indent=2)
 
 @app.route('/connector-prioritizer.html')
@@ -91,6 +102,16 @@ def get_filtering_answers():
 def save_filtering():
     data = request.get_json()
     save_filtering_answers(data)
+    return jsonify({'status': 'saved', 'data': data})
+
+@app.route('/api/feedback-answers', methods=['GET'])
+def get_feedback_answers():
+    return jsonify(load_feedback_answers())
+
+@app.route('/api/feedback-answers', methods=['POST'])
+def save_feedback():
+    data = request.get_json()
+    save_feedback_answers(data)
     return jsonify({'status': 'saved', 'data': data})
 
 @app.route('/api/framework-review', methods=['GET'])

@@ -269,7 +269,7 @@
       </p>
     </div>
 
-    <div class="main-content">
+    <div class="main-content" id="feedbackForm">
 <div class="feedback-card">
     <div class="question-header">
       <div class="question-number">1</div>
@@ -279,7 +279,9 @@
     <p>The Integration Hub is a centralized place to create and manage connections used across all Nintex products. Would you be interested in being part of the early access group? Why or why not?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q1"><span class="answer-guide">Guide: Count how many users requested access and their main reasons for adoption</span><span class="answer-example">7 out of 9 users are interested in early access</span></div>
+      <textarea id="q1" placeholder="Enter findings..."></textarea>
+      <div class="answer-label" style="margin-top: 0.75rem;">Guide:</div>
+      <div class="answer-content"><span class="answer-guide">Count how many users requested access and their main reasons for adoption</span><span class="answer-example">Example: 7 out of 9 users are interested in early access</span></div>
     </div>
   </div>
 
@@ -292,7 +294,9 @@
     <p>Tell us about the connections you're already using in Nintex Workflows. Which of these connections do you also need to use in Nintex Apps? Why is it important to have these connections available across both products?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q3"><span class="answer-guide">Guide: Identify connections with cross-product demand (Workflows → Apps) and user's reasons for adoption</span><span class="answer-example">Top cross-product connectors: Salesforce (89%), Google Sheets (67%); Reasons: data consistency, single connection management</span></div>
+      <textarea id="q2" placeholder="Enter findings..."></textarea>
+      <div class="answer-label" style="margin-top: 0.75rem;">Guide:</div>
+      <div class="answer-content"><span class="answer-guide">Identify connections with cross-product demand (Workflows → Apps) and user's reasons for adoption</span><span class="answer-example">Example: Top cross-product connectors: Salesforce (89%), Google Sheets (67%); Reasons: data consistency, single connection management</span></div>
     </div>
   </div>
 
@@ -305,7 +309,9 @@
     <p>If we deliver the connectors you need, would you be willing to share your success story with other potential customers?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q6"><span class="answer-guide">Guide: Track reference customer interest and willingness to share success stories</span><span class="answer-example">8 out of 9 willing to be reference customers</span></div>
+      <textarea id="q3" placeholder="Enter findings..."></textarea>
+      <div class="answer-label" style="margin-top: 0.75rem;">Guide:</div>
+      <div class="answer-content"><span class="answer-guide">Track reference customer interest and willingness to share success stories</span><span class="answer-example">Example: 8 out of 9 willing to be reference customers</span></div>
     </div>
   </div>
 
@@ -318,7 +324,9 @@
     <p>Are you spending too much time setting up the same connections in multiple places? Dealing with duplicates? Managing credentials across different tools? What frustrates you most?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q7"><span class="answer-guide">Guide: Categorize pain points and measure severity by percentage of users affected</span><span class="answer-example">Primary pain: Setting up same connections 2-3 times (89%); Credential management (78%)</span></div>
+      <textarea id="q4" placeholder="Enter findings..."></textarea>
+      <div class="answer-label" style="margin-top: 0.75rem;">Guide:</div>
+      <div class="answer-content"><span class="answer-guide">Categorize pain points and measure severity by percentage of users affected</span><span class="answer-example">Example: Primary pain: Setting up same connections 2-3 times (89%); Credential management (78%)</span></div>
     </div>
   </div>
 
@@ -331,7 +339,9 @@
     <p>Is this ASAP (critical for your plans), in the next 3 months, 6 months, or just exploring for future consideration?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q5"><span class="answer-guide">Guide: Segment users by timeline urgency and identify critical vs. future needs</span><span class="answer-example">60% need within 3 months (High priority); 30% ASAP (Critical); 10% Future</span></div>
+      <textarea id="q5" placeholder="Enter findings..."></textarea>
+      <div class="answer-label" style="margin-top: 0.75rem;">Guide:</div>
+      <div class="answer-content"><span class="answer-guide">Segment users by timeline urgency and identify critical vs. future needs</span><span class="answer-example">Example: 60% need within 3 months (High priority); 30% ASAP (Critical); 10% Future</span></div>
     </div>
   </div>
 
@@ -344,7 +354,9 @@
     <p>Besides the most used connectors you mentioned, are there any other connectors you need? And what missing actions or features do you need for your existing connectors?</p>
     <div class="answer-placeholder">
       <div class="answer-label">Findings:</div>
-      <div class="answer-content" id="q4"><span class="answer-guide">Guide: List most requested missing connectors and missing actions for existing connectors with user demand percentage</span><span class="answer-example">Missing connectors: HubSpot (89%), Stripe (67%); Missing actions: Update row action for Google Sheets (56%)</span></div>
+      <textarea id="q6" placeholder="Enter findings..."></textarea>
+      <div class="answer-label" style="margin-top: 0.75rem;">Guide:</div>
+      <div class="answer-content"><span class="answer-guide">List most requested missing connectors and missing actions for existing connectors with user demand percentage</span><span class="answer-example">Example: Missing connectors: HubSpot (89%), Stripe (67%); Missing actions: Update row action for Google Sheets (56%)</span></div>
     </div>
   </div>
 
@@ -357,6 +369,105 @@
     } else {
       link.classList.remove('active');
     }
+  });
+
+  function prefillAnswers() {
+    // Load answers from API first, fallback to localStorage
+    fetch('/api/feedback-answers')
+      .then(r => r.json())
+      .then(answers => {
+        if (answers && Object.keys(answers).length > 0) {
+          for (let i = 1; i <= 6; i++) {
+            const el = document.getElementById('q' + i);
+            if (el && answers['q' + i]) {
+              el.value = answers['q' + i];
+            }
+          }
+          console.log('✅ Loaded answers from API');
+        }
+      })
+      .catch(e => {
+        console.log('API not available, trying localStorage...');
+        const saved = localStorage.getItem('feedbackAnswers');
+        if (saved) {
+          const answers = JSON.parse(saved);
+          for (let i = 1; i <= 6; i++) {
+            const el = document.getElementById('q' + i);
+            if (el && answers['q' + i]) {
+              el.value = answers['q' + i];
+            }
+          }
+          console.log('✅ Loaded answers from localStorage');
+        }
+      });
+  }
+
+  function saveAnswers() {
+    const answers = {};
+    for (let i = 1; i <= 6; i++) {
+      const el = document.getElementById('q' + i);
+      if (el) {
+        answers['q' + i] = el.value;
+      }
+    }
+
+    // Always save to localStorage first
+    localStorage.setItem('feedbackAnswers', JSON.stringify(answers));
+    console.log('✅ Saved to localStorage');
+
+    // Try to save to API
+    fetch('/api/feedback-answers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(answers)
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.status === 'saved') {
+        console.log('Answers saved to server successfully');
+      }
+    })
+    .catch(e => {
+      console.error('API not available:', e);
+    });
+  }
+
+  // Load saved answers on page load
+  window.addEventListener('load', function() {
+    prefillAnswers();
+
+    // Save answers on input change
+    for (let i = 1; i <= 6; i++) {
+      const el = document.getElementById('q' + i);
+      if (el) {
+        el.addEventListener('blur', saveAnswers);
+      }
+    }
+  });
+
+  // Auto-fit textarea height
+  function autoFitTextarea(textarea) {
+    textarea.style.height = '80px';
+    const scrollHeight = textarea.scrollHeight;
+    const maxHeight = window.innerHeight * 0.8;
+    textarea.style.height = Math.min(scrollHeight, maxHeight) + 'px';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach(textarea => {
+      textarea.addEventListener('input', function() {
+        autoFitTextarea(this);
+      });
+      textarea.addEventListener('focus', function() {
+        autoFitTextarea(this);
+      });
+      setTimeout(() => {
+        if (textarea.value) {
+          autoFitTextarea(textarea);
+        }
+      }, 0);
+    });
   });
 </script>
 

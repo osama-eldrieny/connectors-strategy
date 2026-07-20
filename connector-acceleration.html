@@ -65,24 +65,23 @@
 
     .question-header {
       display: flex;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
       margin-bottom: 1.5rem;
       align-items: flex-start;
     }
 
     .question-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
+      display: inline-block;
       background: var(--nintex-blue);
       color: white;
-      border-radius: 50%;
-      font-family: 'Syne', sans-serif;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       flex-shrink: 0;
     }
 
@@ -134,6 +133,18 @@
       letter-spacing: 0.05em;
       background: rgba(6, 182, 212, 0.15);
       color: #0891b2;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      height: fit-content;
+    }
+
+    .system-logic-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(139, 92, 246, 0.15);
+      color: #7c3aed;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
       height: fit-content;
@@ -310,442 +321,422 @@
 
 <!-- JOURNEY 1: FIRST-TIME USER -->
 <div class="journey-section" style="grid-column: 1 / -1;">
-  <h2>👤 Journey 1: First-Time User (Creates First Connection) <span class="priority-badge" style="background: rgba(139, 92, 246, 0.15); color: #7c3aed;">SECONDARY (30%)</span></h2>
-  <p>User learns about connection types first, then creates their first connection</p>
-  <div class="journey-flow">User lands on empty Connections page
-  ↓
-L1: Launcher flow appears: "Create your first connection now! Unified (works in Workflows & Apps, all environments) | Workflows (Workflows only) | Apps (Apps only)"
-  ↓
-User clicks "Create Connection" button → Selects connection type from dropdown
-  ↓
-User selects connector → Fills credentials
-  ↓
-Q1: "How easy was it to create this connection?" (Post-success toast)
-  ↓
-Q1a: "What was difficult?" (Conditional, if Q1 rating ≤6)
-  ↓
-Q2: "How easy was it to find the connector you needed?" (Same toast)
-  ↓
-Q2a: "What would help find connectors more easily?" (Conditional, if Q2 rating ≤6)</div>
+  <h2>👤 Journey 1: First-Time User (Tooltip Tour) <span class="priority-badge" style="background: rgba(139, 92, 246, 0.15); color: #7c3aed;">SECONDARY (30%)</span></h2>
+  <p>9-step in-app tooltip tour with conditional gates on form field completion</p>
+  <div class="journey-flow">Step 1: Connection types overview
+  → Step 2: Click Create connection
+  → Step 3: Select Connection type
+  → Step 4: Open Connector dropdown
+  → Step 5: Search for connector
+  → Step 6: Enter connection name
+  → Step 7: Click Connect
+  → Step 8: Click Done
+  → Step 9: Congratulations modal</div>
 </div>
 
 <div class="question-card">
   <div class="question-header">
-    <div class="question-number">L1</div>
+    <div class="question-number">Step 1</div>
     <div class="question-title">
-      <h3>Create your first connection now!</h3>
-      <p class="question-subtitle">Educate about connection types before creation</p>
+      <h3>Connection types overview</h3>
+      <p class="question-subtitle">Educate about Unified/Workflow/Apps types</p>
     </div>
-    <div class="optional-badge">Optional</div>
   </div>
-
   <div class="spec-grid">
     <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="spec-content">User lands on empty Connections page</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Educate users about the three connection types (Unified/Workflows/Apps) before they attempt to create, increasing awareness and preventing confusion</div>
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">Tour starts when user attribute "First time user" = true</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Launcher Icon + Hover Tooltip</div>
-      <div class="spec-content">Info icon near "Create Connection" button. Hovering shows tooltip with connection type info and CTA</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at Connections panel with Unified/Workflow/Apps chips</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">🎯 Connections are now grouped into three types: Unified (works in Workflows & Apps, all environments) / Workflow (Workflow only) / Apps (Apps only) + "Create your first connection now!"</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Options</div>
-      <div class="spec-content">
-        <ul class="options-list">
-          <li>Tooltip text: "Connection types: Unified (Workflows & Apps, all environments) | Workflows (Workflows only) | Apps (Apps only)"</li>
-          <li>CTA button: "Create Connection" (highlights main button on page)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">User clicks CTA in tooltip → Goes to Create Connection button (highlights for visibility)</div>
+      <div class="spec-content">Button: "Get Started"</div>
     </div>
   </div>
 </div>
 
 <div class="question-card">
   <div class="question-header">
-    <div class="question-number">1</div>
+    <div class="question-number">Step 2</div>
+    <div class="question-title">
+      <h3>Click Create connection button</h3>
+      <p class="question-subtitle">Guide to open creation menu</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 1 completion</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at "Create connection" button</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">Click Create connection to open the creation menu.</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 3</div>
+
+    <div class="question-title">
+      <h3>Select Connection type</h3>
+      <p class="question-subtitle">Choose from Unified/Workflow/Apps options</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 2 completion</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at dropdown menu items</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">Click a connection type in the dropdown menu.</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">Unified, Workflow, Apps</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 4</div>
+    <div class="question-title">
+      <h3>Open Connector dropdown</h3>
+      <p class="question-subtitle">Access the connector selection dropdown</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 3 completion</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at Connector dropdown field</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">Select a connector from the dropdown menu.</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 5</div>
+
+    <div class="question-title">
+      <h3>Search for connector by name</h3>
+      <p class="question-subtitle">Search capability with conditional gate</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 4 completion</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at Select connector search field</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">Search for connector by type connector name for example "Google sheet"</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">CONDITIONAL GATE: Connection name field must be "is present" to advance to Step 6</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 6</div>
+    <div class="question-title">
+      <h3>Enter connection name</h3>
+      <p class="question-subtitle">Fill in connection name field with conditional gate</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 5 (when name field is present)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at Connection name text field</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">Enter a name for your connection in the Connection name field.</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">CONDITIONAL GATE: User must fill in the name field before advancing to Step 7</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 7</div>
+    <div class="question-title">
+      <h3>Click Connect button</h3>
+      <p class="question-subtitle">Complete connection setup</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 6 (user fills in name)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at Connect button</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">Click "Connect" and complete your connection.</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 8</div>
+
+    <div class="question-title">
+      <h3>Click Done to grant permissions</h3>
+      <p class="question-subtitle">Finalize connection with permissions</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 7 (Connect clicked)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Tooltip</div>
+      <div class="spec-content">Tooltip pointing at Done buttons in permissions dialog</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Text</div>
+      <div class="spec-content">Click Done to grant permissions and finalize your connection.</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 9</div>
+    <div class="question-title">
+      <h3>Congratulations modal</h3>
+      <p class="question-subtitle">Success confirmation after completing tour</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 8 (Done clicked)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Modal</div>
+      <div class="spec-content">Full-screen modal with heading and body text</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Heading</div>
+      <div class="spec-content">🎉 Congratulations!</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Body</div>
+      <div class="spec-content">You've successfully created your first connection.</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">Button: "Close"</div>
+    </div>
+  </div>
+</div>
+
+<!-- JOURNEY 2: EXISTING USER - FEEDBACK SURVEY -->
+<div class="journey-section" style="grid-column: 1 / -1;">
+  <h2>👥 Journey 2: Existing User (Connection Creation Feedback) <span class="priority-badge">Primary 70%</span></h2>
+  <p>9-step feedback survey with score-based branching on creation and discovery ease</p>
+  <div class="journey-flow">Step 1: How easy was it to create this connection?
+  → Step 2: [Hidden - Branching: if ≤3 go to Step 3 | if 4-6 go to Step 3 | if ≥7 go to Step 6]
+  → Step 3: What was difficult about creating this connection?
+  → Step 4: [Hidden - Branching: if ≤3 go to Step 5 | if 4-6 go to Step 6]
+  → Step 5: Can we schedule a 15-minute call to learn more about your integration needs?
+  → Step 6: How easy was it to find the connector you needed?
+  → Step 7: [Hidden - Branching: if ≤6 go to Step 8 | if ≥7 go to Step 9]
+  → Step 8: What would help you find connectors more easily?
+  → Step 9: Thank you!</div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 1</div>
     <div class="question-title">
       <h3>How easy was it to create this connection?</h3>
-      <p class="question-subtitle">Understand creation UX friction</p>
+      <p class="question-subtitle">Creation ease rating with score-based branching</p>
     </div>
-    <div class="required-badge">Required</div>
   </div>
-
   <div class="spec-grid">
     <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="spec-content">Immediately after the success toast message appears (connection created successfully)</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Capture setup UX friction while experience is fresh - inform UI/UX improvements</div>
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">User clicks "Done" button in permissions dialog (3-second delay, once per user)</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Likert Scale (1-10) + Text Area</div>
-      <div class="spec-content">Numeric 1-10 rating scale with optional text area for user to add details if needed</div>
+      <div class="flow-badge">Rating Scale (1-10)</div>
+      <div class="spec-content">1–10 numeric scale with NO custom anchor labels</div>
     </div>
     <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">
-        <ul class="options-list">
-          <li>1 - Very Difficult</li>
-          <li>2-3 - Difficult</li>
-          <li>4-6 - Neutral</li>
-          <li>7-8 - Easy</li>
-          <li>9-10 - Very Easy</li>
-        </ul>
-      </div>
+      <div class="spec-label">Lead-in Text</div>
+      <div class="spec-content">🎉 Nice work! You've successfully created a connection.</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Saved to Attribute</div>
+      <div class="spec-content">"Create Connection Scale"</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Branching</div>
-      <div class="spec-content">
-        <ul class="options-list">
-          <li>If ≥7 (Easy): Skip Q1a → Proceed directly to Q2 (finding connectors)</li>
-          <li>If 4-6 (Neutral/Some friction): Show Q1a "What was difficult?" → Then proceed to Q2</li>
-          <li>If 1-3 (Very Difficult): Show Q1a "What was difficult?" → Route to Q8 (skip Q2-Q9, escalate to customer dev call)</li>
-        </ul>
-      </div>
+      <div class="spec-content">If ≤3: Go to Step 3 → Step 5 → Step 9 | If 4-6: Go to Step 3 → Step 6 | If ≥7: Skip to Step 6</div>
     </div>
   </div>
 </div>
 
 <div class="question-card">
-  <div class="question-header">
-    <div class="question-number">1a</div>
+  <div class="question-header" style="position: relative;">
+    <div class="question-number">Step 2</div>
+    <div class="question-title">
+      <h3>[Hidden] Branching based on Creation Ease Rating</h3>
+      <p class="question-subtitle">Routes user based on Step 1 score</p>
+    </div>
+    <div class="system-logic-badge" style="position: absolute; top: 0; right: 0;">System Logic</div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Conditional Branch</div>
+      <div class="spec-content">Logic gate based on Create Connection Scale attribute</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Condition 1</div>
+      <div class="spec-content">If Create Connection Scale ≤ 3 → Go to Step 3</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Condition 2</div>
+      <div class="spec-content">If Create Connection Scale is 4-6 → Go to Step 3</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Condition 3</div>
+      <div class="spec-content">If Create Connection Scale ≥ 7 → Go to Step 6</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header" style="position: relative;">
+    <div class="question-number">Step 3</div>
     <div class="question-title">
       <h3>What was difficult about creating this connection?</h3>
-      <p class="question-subtitle">Understand specific friction points</p>
+      <p class="question-subtitle">Difficulty follow-up (conditional if Step 1 ≤ 6)</p>
     </div>
-    <div class="conditional-badge">Conditional</div>
+    <div class="conditional-badge" style="position: absolute; top: 0; right: 0;">Conditional</div>
   </div>
-
   <div class="spec-grid">
     <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="spec-content">Triggered only if Q1 rating ≤6 (4-6: moderate friction, 1-3: critical friction)</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Diagnose specific UX problems preventing smooth connection creation - inform priority fixes</div>
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">Shows only if Step 1 score ≤ 6 (both 4-6 and 1-3 ranges)</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Follow-up Flow + Open Text</div>
-      <div class="spec-content">Open text input for user to describe what was difficult</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">Open text input: "What was the most difficult part of creating this connection? (e.g., entering credentials, understanding the form, etc.)"</div>
+      <div class="flow-badge">Open Text Input</div>
+      <div class="spec-content">Free-form text field with "Submit" button</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Branching</div>
-      <div class="spec-content">If Q1 was 4-6: Proceed to Q2 after answer; If Q1 was 1-3: Proceed to Q8 (customer dev call) after answer</div>
+      <div class="spec-content">After Step 3 answer: if Step 1 ≤3 go to Step 5 (Modal) | if Step 1 is 4-6 go to Step 6 (Discovery)</div>
     </div>
   </div>
 </div>
 
 <div class="question-card">
-  <div class="question-header">
-    <div class="question-number">2</div>
+  <div class="question-header" style="position: relative;">
+    <div class="question-number">Step 4</div>
     <div class="question-title">
-      <h3>How easy was it to find the connector you needed?</h3>
-      <p class="question-subtitle">Understand connector discovery UX</p>
+      <h3>[Hidden] Branching after Difficulty Follow-up</h3>
+      <p class="question-subtitle">Routes user based on original Step 1 score</p>
     </div>
-    <div class="required-badge">Required</div>
+    <div class="system-logic-badge" style="position: absolute; top: 0; right: 0;">System Logic</div>
   </div>
-
   <div class="spec-grid">
     <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="spec-content">After successful creation (appears after Q1 flow completes)</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Identify search/discovery friction - critical for improving connector findability</div>
-    </div>
-    <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Likert Scale (1-10) + Text Area</div>
-      <div class="spec-content">Numeric 1-10 rating scale with optional text area for user to add details if needed</div>
+      <div class="flow-badge">Conditional Branch</div>
+      <div class="spec-content">Logic gate based on Create Connection Scale attribute</div>
     </div>
     <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">
-        <ul class="options-list">
-          <li>1 - Very Difficult (couldn't find it)</li>
-          <li>2-3 - Difficult (multiple searches)</li>
-          <li>4-6 - Neutral (had to browse)</li>
-          <li>7-8 - Easy (one or two searches)</li>
-          <li>9-10 - Very Easy (found immediately)</li>
-        </ul>
-      </div>
+      <div class="spec-label">Condition 1</div>
+      <div class="spec-content">If Create Connection Scale ≤ 3 → Go to Step 5 (Modal)</div>
     </div>
     <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">If ≥7: Skip Q2a → Proceed to Q4; If ≤6: Show Q2a "What would help find connectors?"</div>
+      <div class="spec-label">Condition 2</div>
+      <div class="spec-content">If Create Connection Scale is 4-6 → Go to Step 6 (Skip Modal)</div>
     </div>
   </div>
 </div>
 
 <div class="question-card">
   <div class="question-header">
-    <div class="question-number">2a</div>
-    <div class="question-title">
-      <h3>What would help you find connectors more easily?</h3>
-      <p class="question-subtitle">Understand discovery improvement opportunities</p>
-    </div>
-    <div class="conditional-badge">Conditional</div>
-  </div>
-
-  <div class="spec-grid">
-    <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="spec-content">Triggered only if Q2 rating ≤6 (had difficulty finding connector)</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Identify specific improvements needed for connector discovery UX - inform search/filter/navigation enhancements</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Type</div>
-      <div class="flow-badge">Follow-up Flow + Open Text</div>
-      <div class="spec-content">Open text input for user suggestions on improving discovery</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">Open text input: "What features or improvements would help? (e.g., better search, filters, categories, suggestions)"</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">After answer → Journey 1 complete (first-time user flow ends)</div>
-    </div>
-  </div>
-</div>
-
-<!-- JOURNEY 2: EXISTING USER - PRIMARY FOCUS -->
-<div class="journey-section" style="grid-column: 1 / -1;">
-  <h2>👥 Journey 2: Existing User - PRIMARY FOCUS: MISSING GAPS <span class="priority-badge">Primary 70%</span></h2>
-  <p>User has 3+ connections - we focus on gaps: missing connectors, missing actions, business impact</p>
-  <div class="journey-flow">User views Connections list (has ≥3 active connections)
-  ↓
-Q4: "Which connectors are you CURRENTLY using regularly?" (Multi-select)
-  ↓
-Q4a: "For the connectors you're using, what actions/features are missing?" (Open text per-connector)
-  ↓
-Q5: "What connectors are you MISSING that you need?" (Open text + autocomplete from catalog)
-  ↓
-Q6: "How critical are these missing connectors, and what's the business impact?" (Rating + Impact)
-  ↓
-Q7: "Timeline - when do you need these?" (Urgency)</div>
-</div>
-
-<div class="question-card">
-  <div class="question-header">
-    <div class="question-number">4</div>
-    <div class="question-title">
-      <h3>For the connectors you're using, what specific actions or features are missing?</h3>
-      <p class="question-subtitle">PRIMARY: Identify missing actions in currently used connectors</p>
-    </div>
-    <div class="required-badge">Required</div>
-  </div>
-
-  <div class="spec-grid">
-    <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="flow-badge">Launcher Flow - Step 2</div>
-      <div class="spec-content">After Q4 answer within Launcher — continuation in the same launcher flow</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Users already rely on these connectors — missing actions may block workflows. Critical to understand what features and actions would unlock more value in existing connectors (easier wins than new connectors)</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Open Text (Per-Connector)</div>
-      <div class="spec-content">Progressive disclosure - for each connector selected in Q4, ask what actions are missing</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">Open text input for each selected connector: "What specific actions or features are missing for [Connector Name]? (e.g., Update action, Real-time sync, Bulk operations, etc.)"</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">Always shows after Q4; proceeds to Q5 after completion</div>
-    </div>
-  </div>
-</div>
-
-<div class="question-card">
-  <div class="question-header">
-    <div class="question-number">5</div>
-    <div class="question-title">
-      <h3>What connectors are you MISSING that you need?</h3>
-      <p class="question-subtitle">PRIMARY: Identify missing connectors for roadmap</p>
-    </div>
-    <div class="required-badge">Required</div>
-  </div>
-
-  <div class="spec-grid">
-    <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="flow-badge">Launcher Flow - Step 3</div>
-      <div class="spec-content">After Q4a answer within Launcher — continuation in the same launcher flow</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">THE MOST CRITICAL DATA - which connectors drive adoption decisions and roadmap value</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Open Text with Autocomplete & Free-Form Entry</div>
-      <div class="spec-content">Text input with searchable connector list (197 connectors) dropdown + ability to add custom connector names not in the list</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">Users can select from new Nintex connector list (197 connectors) via autocomplete search, OR manually enter connector names not yet in the product roadmap - multiple entries allowed</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">If ≥1 connector selected → Show Q6 (criticality & business impact); If 0 → Skip to Q7 (timeline)</div>
-    </div>
-  </div>
-</div>
-
-<div class="question-card">
-  <div class="question-header">
-    <div class="question-number">6</div>
-    <div class="question-title">
-      <h3>How critical are these missing connectors, and what's the business impact?</h3>
-      <p class="question-subtitle">PRIMARY: Understand urgency and business value for roadmap prioritization</p>
-    </div>
-    <div class="required-badge">Required</div>
-  </div>
-
-  <div class="spec-grid">
-    <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="flow-badge">Launcher Flow - Step 4</div>
-      <div class="spec-content">After Q5 answer within Launcher (if ≥1 connector selected) — continuation in the same launcher flow</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Capture both criticality LEVEL and real BUSINESS IMPACT - prioritize roadmap based on what matters most: time saved, revenue, errors prevented, compliance, etc.</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Multi-Part (Rating + Open Text)</div>
-      <div class="spec-content">Part 1: Single select rating per connector; Part 2: Open text for business impact details</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">
-        <div style="margin-bottom: 1rem;">
-          <strong>Part 1 - Criticality Rating (Radio buttons per connector):</strong>
-          <ul class="options-list">
-            <li>BLOCKING - Can't achieve our goals without it</li>
-            <li>CRITICAL - High priority, plan to use soon</li>
-            <li>IMPORTANT - Would improve efficiency</li>
-            <li>NICE TO HAVE - Would be useful someday</li>
-          </ul>
-        </div>
-        <div>
-          <strong>Part 2 - Business Impact (Open text):</strong>
-          <span style="display: block; margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">"What's the business impact if you don't have these connectors? (e.g., X hours/week of manual work, $X cost savings, Y% error reduction, compliance requirements, revenue impact, etc.)"</span>
-        </div>
-      </div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Branching</div>
-      <div class="spec-content">Always shows after Q5 (if ≥1 connector selected); proceeds to Q7 (timeline) after completion</div>
-    </div>
-  </div>
-</div>
-
-<div class="question-card">
-  <div class="question-header">
-    <div class="question-number">7</div>
-    <div class="question-title">
-      <h3>When do you need these missing connectors?</h3>
-      <p class="question-subtitle">Understand timeline and urgency</p>
-    </div>
-    <div class="required-badge">Required</div>
-  </div>
-
-  <div class="spec-grid">
-    <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="flow-badge">Same Flow - Final Question</div>
-      <div class="spec-content">After Q6 answer (or directly after Q5 if user selected 0 connectors in Q5) — conclusion to the gaps flow</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Prioritize roadmap - understand which gaps are urgent vs. eventual</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Type</div>
-      <div class="flow-badge">Flow + Single Select</div>
-      <div class="spec-content">Radio buttons for timeline</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Options</div>
-      <div class="spec-content">
-        <ul class="options-list">
-          <li>ASAP - Blocking immediate projects (within 2 weeks)</li>
-          <li>Soon - High priority (within 1-3 months)</li>
-          <li>This quarter - Planned (3-6 months)</li>
-          <li>Future - Exploring/not urgent</li>
-        </ul>
-      </div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Timing</div>
-      <div class="spec-content">After gaps inventory complete</div>
-    </div>
-  </div>
-</div>
-
-<!-- JOURNEY 3: EXIT INTENT -->
-<div class="journey-section" style="grid-column: 1 / -1;">
-  <h2>👋 Journey 3: Exit-Intent (User Leaving)</h2>
-  <p>Last chance to capture data before user navigates away</p>
-  <div class="journey-flow">User attempts to leave page (close, back, navigate away)
-  ↓
-Q8: "Can we schedule a 15-minute call to learn more about your integration needs?" (Convert to customer development call)</div>
-</div>
-
-<div class="question-card">
-  <div class="question-header">
-    <div class="question-number">8</div>
+    <div class="question-number">Step 5</div>
     <div class="question-title">
       <h3>Can we schedule a 15-minute call to learn more about your integration needs?</h3>
-      <p class="question-subtitle">Convert research to deeper engagement</p>
+      <p class="question-subtitle">Call-scheduling offer (all paths funnel here)</p>
     </div>
-    <div class="optional-badge">Optional</div>
   </div>
-
   <div class="spec-grid">
     <div class="spec-item">
-      <div class="spec-label">When</div>
-      <div class="flow-badge">Launcher Widget</div>
-      <div class="spec-content">After Q7 completion (Journey 2 end) OR after Q1a (Journey 1 critical path) OR exit-intent (user leaving) — Launcher appears; also triggers as exit-intent if user tries to navigate away</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-label">Why</div>
-      <div class="spec-content">Convert research interest into customer development meetings - get deeper context on BLOCKING connectors or critical gaps. Non-blocking launcher allows users to engage at their own pace while also catching exit-intent as fallback</div>
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">If Step 1 scale ≤ 3 go to Step 3 then Step 5</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Type</div>
-      <div class="flow-badge">Launcher Widget + Exit-Intent Trigger</div>
-      <div class="spec-content">Launcher with Calendly/booking link if "Yes" selected; also shows as exit-intent if user attempts to leave without engaging</div>
+      <div class="flow-badge">Modal</div>
+      <div class="spec-content">Modal dialog with heading and three button options</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Heading</div>
+      <div class="spec-content">Can we schedule a 15-minute call to learn more about your integration needs?</div>
     </div>
     <div class="spec-item">
       <div class="spec-label">Options</div>
@@ -758,13 +749,316 @@ Q8: "Can we schedule a 15-minute call to learn more about your integration needs
       </div>
     </div>
     <div class="spec-item">
-      <div class="spec-label">Timing</div>
-      <div class="spec-content">Exit-intent trigger</div>
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">Redirect to Step 9</div>
     </div>
   </div>
 </div>
 
+<div class="question-card">
+  <div class="question-header" style="position: relative;">
+    <div class="question-number">Step 6</div>
+    <div class="question-title">
+      <h3>How easy was it to find the connector you needed?</h3>
+      <p class="question-subtitle">Connector discovery ease rating with score-based branching</p>
     </div>
+    <div class="conditional-badge" style="position: absolute; top: 0; right: 0;">Conditional</div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After call-scheduling modal (all three options funnel here)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Rating Scale (1-10)</div>
+      <div class="spec-content">1–10 numeric scale with NO custom anchor labels</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Saved to Attribute</div>
+      <div class="spec-content">"Find Connection Scale"</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">If ≥7: Skip Step 8 → Go directly to Step 9 (Thank You) | If ≤6: Show Step 8 → Then Step 9</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header" style="position: relative;">
+    <div class="question-number">Step 7</div>
+    <div class="question-title">
+      <h3>[Hidden] Branching based on Discovery Ease Rating</h3>
+      <p class="question-subtitle">Routes user based on Step 6 score</p>
+    </div>
+    <div class="system-logic-badge" style="position: absolute; top: 0; right: 0;">System Logic</div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Conditional Branch</div>
+      <div class="spec-content">Logic gate based on Find Connection Scale attribute</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Condition 1</div>
+      <div class="spec-content">If Find Connection Scale ≤ 6 → Go to Step 8</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Condition 2</div>
+      <div class="spec-content">If Find Connection Scale ≥ 7 → Go to Step 9</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header" style="position: relative;">
+    <div class="question-number">Step 8</div>
+    <div class="question-title">
+      <h3>What would help you find connectors more easily?</h3>
+      <p class="question-subtitle">Discovery improvement follow-up (conditional if Step 6 ≤ 6)</p>
+    </div>
+    <div class="conditional-badge" style="position: absolute; top: 0; right: 0;">Conditional</div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">Shows only if Step 6 score ≤ 6</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Open Text Input</div>
+      <div class="spec-content">Free-form text field with "Submit" button</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 9</div>
+    <div class="question-title">
+      <h3>Thank you for your feedback!</h3>
+      <p class="question-subtitle">Survey completion thank you message</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 6 (if ≥7 skip Step 8) or after Step 8 (if ≤6)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Modal</div>
+      <div class="spec-content">Thank you modal with closing message</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Heading</div>
+      <div class="spec-content">🎉 Thank you for your feedback!</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Body</div>
+      <div class="spec-content">Your insights help us improve the connector experience.</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Button</div>
+      <div class="spec-content">"Close"</div>
+    </div>
+  </div>
+</div>
+
+<!-- JOURNEY 3: EXISTING USER - GAP ANALYSIS SURVEY -->
+<div class="journey-section" style="grid-column: 1 / -1;">
+  <h2>👥 Journey 3: Existing User (Gap Analysis Survey) <span class="priority-badge">Primary 70%</span></h2>
+  <p>7-step linear gap-analysis survey triggered when user visits integrations page</p>
+  <div class="journey-flow">Step 1: Speech bubble trigger on integrations page
+  → Step 2: For connectors you're using, what actions/features are missing?
+  → Step 3: What connectors are you MISSING that you need?
+  → Step 4: How critical are these missing connectors?
+  → Step 5: What's the business impact if you don't have these connectors?
+  → Step 6: When do you need these missing connectors?
+  → Step 7: Thank you modal</div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 1</div>
+    <div class="question-title">
+      <h3>Speech Bubble Trigger</h3>
+      <p class="question-subtitle">Entry point: Invite user to start gap analysis survey</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">User visits integrations/connections page (once per user)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Speech Bubble</div>
+      <div class="spec-content">Speech bubble popup with message and CTA button</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Message</div>
+      <div class="spec-content">We're building connectors based on your needs. Tell us what's missing.</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Button</div>
+      <div class="spec-content">"Start Feedback"</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Frequency</div>
+      <div class="spec-content">Once per user</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 2</div>
+    <div class="question-title">
+      <h3>For the connectors you're using, what specific actions or features are missing?</h3>
+      <p class="question-subtitle">Missing actions/features inventory</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 1 answer (fully linear, no branching)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Open Text Input</div>
+      <div class="spec-content">Free-form text with "Submit" button and placeholder</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 3</div>
+    <div class="question-title">
+      <h3>What connectors are you MISSING that you need?</h3>
+      <p class="question-subtitle">Missing connectors inventory</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 2 answer (fully linear)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Open Text Input</div>
+      <div class="spec-content">Free-form text with "Submit" button and placeholder</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 4</div>
+    <div class="question-title">
+      <h3>How critical are these missing connectors?</h3>
+      <p class="question-subtitle">Criticality rating (4 single-choice options)</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 3 answer (fully linear)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Single-Choice Rating</div>
+      <div class="spec-content">No descriptions attached to options</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">Nice to have, Important, Critical, Blocking</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 5</div>
+    <div class="question-title">
+      <h3>What's the business impact if you don't have these connectors?</h3>
+      <p class="question-subtitle">Business impact quantification</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 4 answer (fully linear)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Open Text Input</div>
+      <div class="spec-content">Free-form text with "Submit" button and placeholder</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 6</div>
+    <div class="question-title">
+      <h3>When do you need these missing connectors?</h3>
+      <p class="question-subtitle">Urgency/timeline (4 single-choice options)</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 5 answer (final question before closing modal)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Single-Choice Select</div>
+      <div class="spec-content">Radio buttons with time-based options</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">ASAP (within 2 weeks), Soon (within 1-3 months), This quarter (3-6 months), Future (not urgent)</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 7</div>
+    <div class="question-title">
+      <h3>Thank you for helping us!</h3>
+      <p class="question-subtitle">Survey completion thank you message</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 6 answer (final step)</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Modal</div>
+      <div class="spec-content">Thank you modal with closing message</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Heading</div>
+      <div class="spec-content">🎉 Thank you for your feedback!</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Body</div>
+      <div class="spec-content">Your insights help us prioritize and build the connectors you need most.</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Button</div>
+      <div class="spec-content">"Close"</div>
+    </div>
+  </div>
+</div>
+
+</div>
   </div>
 </section>
 

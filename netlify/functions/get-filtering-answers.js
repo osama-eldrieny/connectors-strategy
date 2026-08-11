@@ -1,19 +1,4 @@
 exports.handler = async (event, context) => {
-  const corsHeaders = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
-  };
-
-  if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers: corsHeaders,
-      body: ''
-    };
-  }
-
   try {
     const githubToken = process.env.GITHUB_TOKEN;
     const repo = 'Osama-Eldrieny_nintex/connectors-strategy';
@@ -34,7 +19,7 @@ exports.handler = async (event, context) => {
       // If file doesn't exist yet, return default answers
       return {
         statusCode: 200,
-        headers: corsHeaders,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           q1: '',
           q2a: '',
@@ -48,14 +33,13 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      headers: corsHeaders,
+      headers: { 'Content-Type': 'application/json' },
       body: answersData
     };
   } catch (error) {
     console.error('Error loading filtering answers:', error);
     return {
       statusCode: 500,
-      headers: corsHeaders,
       body: JSON.stringify({ error: 'Error loading answers: ' + error.message })
     };
   }

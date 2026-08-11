@@ -1,23 +1,7 @@
 exports.handler = async (event, context) => {
-  const corsHeaders = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
-  };
-
-  if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers: corsHeaders,
-      body: ''
-    };
-  }
-
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers: corsHeaders,
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
@@ -32,7 +16,7 @@ exports.handler = async (event, context) => {
       console.warn('GITHUB_TOKEN not set, answers not persisted');
       return {
         statusCode: 200,
-        headers: corsHeaders,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           success: true,
           message: 'Answers saved locally (not persisted to GitHub)',
@@ -90,7 +74,7 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      headers: corsHeaders,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         success: true,
         message: 'Answers saved to GitHub successfully',
@@ -101,7 +85,6 @@ exports.handler = async (event, context) => {
     console.error('Error saving answers:', error);
     return {
       statusCode: 500,
-      headers: corsHeaders,
       body: JSON.stringify({
         error: 'Error saving answers: ' + error.message,
         hint: 'Make sure GITHUB_TOKEN is set in Netlify environment variables'

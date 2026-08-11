@@ -3,21 +3,6 @@ exports.handler = async (event, context) => {
   const repo = 'Osama-Eldrieny_nintex/connectors-strategy';
   const filePath = 'filtering-answers.json';
 
-  const corsHeaders = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
-  };
-
-  if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers: corsHeaders,
-      body: ''
-    };
-  }
-
   // GET request - fetch answers
   if (event.httpMethod === 'GET' || event.httpMethod !== 'POST') {
     try {
@@ -34,7 +19,7 @@ exports.handler = async (event, context) => {
       if (!response.ok) {
         return {
           statusCode: 200,
-          headers: corsHeaders,
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             q1: '',
             q2a: '',
@@ -48,14 +33,13 @@ exports.handler = async (event, context) => {
 
       return {
         statusCode: 200,
-        headers: corsHeaders,
+        headers: { 'Content-Type': 'application/json' },
         body: answersData
       };
     } catch (error) {
       console.error('Error loading filtering answers:', error);
       return {
         statusCode: 500,
-        headers: corsHeaders,
         body: JSON.stringify({ error: 'Error loading answers: ' + error.message })
       };
     }
@@ -70,7 +54,7 @@ exports.handler = async (event, context) => {
         console.warn('GITHUB_TOKEN not set, answers not persisted');
         return {
           statusCode: 200,
-          headers: corsHeaders,
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             success: true,
             message: 'Answers saved locally (not persisted to GitHub)',
@@ -128,7 +112,7 @@ exports.handler = async (event, context) => {
 
       return {
         statusCode: 200,
-        headers: corsHeaders,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           success: true,
           message: 'Answers saved to GitHub successfully',
@@ -139,7 +123,6 @@ exports.handler = async (event, context) => {
       console.error('Error saving answers:', error);
       return {
         statusCode: 500,
-        headers: corsHeaders,
         body: JSON.stringify({
           error: 'Error saving answers: ' + error.message,
           hint: 'Make sure GITHUB_TOKEN is set in Netlify environment variables'

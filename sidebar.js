@@ -6,12 +6,6 @@ const SIDEBAR_HTML = `<div class="side-nav" id="sideNav">
     <div class="side-nav-section-label">Pages</div>
     <a class="side-nav-link" href="connector-filtering-framework.html" data-page="filtering"><span class="icon"><i data-lucide="filter"></i></span> Filtering Framework</a>
     <a class="side-nav-link" href="competitors-analysis.html" data-page="competitors"><span class="icon"><i data-lucide="award"></i></span> Competitors Analysis</a>
-    <a class="side-nav-link" href="connector-filtering-framework.html" data-page="framework"><span class="icon"><i data-lucide="clipboard-list"></i></span> Framework Review
-      <span class="submenu-chevron" data-toggle="submenu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </span>
-    </a>
-    <div class="submenu" data-submenu="framework"></div>
     <a class="side-nav-link" href="connector-prioritizer.html" data-page="prioritizer"><span class="icon"><i data-lucide="target"></i></span> Connector Scoring
       <span class="submenu-chevron" data-toggle="submenu">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>

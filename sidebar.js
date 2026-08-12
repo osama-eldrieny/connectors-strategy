@@ -52,13 +52,11 @@ class SidebarManager {
     } else if (pathname.includes('connector-acceleration.html') || href.includes('connector-acceleration.html')) {
       return 'acceleration';
     } else if (pathname.includes('connector-filtering-framework.html') || href.includes('connector-filtering-framework.html')) {
-      return 'framework';
+      return 'filtering';
     } else if (pathname.includes('connector-prioritizer.html') || href.includes('connector-prioritizer.html')) {
       return 'prioritizer';
     } else if (pathname.includes('competitors-analysis.html') || href.includes('competitors-analysis.html')) {
       return 'competitors';
-    } else if (pathname.includes('connector-filtering-framework.html') || href.includes('connector-filtering-framework.html')) {
-      return 'filtering';
     }
     return 'filtering';
   }

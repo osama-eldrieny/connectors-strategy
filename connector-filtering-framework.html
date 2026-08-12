@@ -35,7 +35,9 @@
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       font-size: 1.1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
+      margin-right: 1rem;
+      float: left;
     }
 
     .question-card h3 {
@@ -43,18 +45,21 @@
       font-weight: 600;
       margin-bottom: 0.75rem;
       color: var(--text-primary);
+      display: inline;
     }
 
     .question-card p {
       color: var(--text-secondary);
       margin-bottom: 1.25rem;
       font-size: 0.9rem;
+      clear: left;
     }
 
     .input-group {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      clear: left;
     }
 
     .input-label {
@@ -254,7 +259,7 @@
       border-radius: var(--radius);
       padding: 1.5rem;
       margin-top: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 5rem;
     }
 
     .summary-section h3 {
@@ -375,25 +380,74 @@
 <section style="background: #fff; padding: 3rem 0;">
   <div class="container">
     <div class="section">
+      <div class="section-intro">
+        <h2>Establish Your Filtering Criteria</h2>
+      <p>Before evaluating individual connectors, your team needs to define the strategic context. Answer these questions once — they become the framework for filtering down from 12,000 connectors to 200 that matter most.</p>
+    </div>
+
       <div class="summary-section">
     <h3>How This Filters to Your Focus Set</h3>
     <div class="summary-text">
       Once your team answers these 2 questions, you have a filtering framework:
     </div>
 
-    <div class="flow-diagram">
-      <div class="flow-step">Target Industries</div>
-      <div class="flow-arrow">+</div>
-      <div class="flow-step">Customer Demand</div>
-      <div class="flow-arrow">+</div>
-      <div class="flow-step">Competitive Parity</div>
+    <div style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0; padding: 2rem 1rem;">
+      <!-- Level 1: Start (12,000) - Narrowest -->
+      <div style="width: 100%; text-align: center;">
+        <div style="background: white; border: 2px solid #e0e8f0; border-radius: 14px; padding: 1rem 0.8rem; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); width: 100%;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: #0066cc; line-height: 1.5;">12,000</div>
+          <div style="font-size: 0.95rem; color: #0066cc; font-weight: 500;">Total Connectors</div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div style="font-size: 1.5rem; color: #0066cc; margin: 0.5rem 0;">↓</div>
+
+      <!-- Level 2: Filters (Parallel) - WIDEST -->
+      <div style="width: 75%; display: flex; justify-content: center; align-items: center; gap: 1.5rem; text-align: center;">
+        <div style="flex: 1;">
+          <div style="background: white; border: 2px solid #e0e8f0; border-radius: 14px; padding: 1rem 0.8rem; text-align: center; width: 100%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+            <div style="display: inline-block; background: #e8f1ff; color: #0066cc; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">Filter 1</div>
+            <div style="font-size: 1.05rem; font-weight: 700; color: #0066cc; margin-top: 0.25rem;">Target Industries</div>
+            <div style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Your market focus</div>
+          </div>
+        </div>
+
+        <div style="font-size: 1.8rem; color: #0066cc; opacity: 0.4;">+</div>
+
+        <div style="flex: 1;">
+          <div style="background: white; border: 2px solid #e0e8f0; border-radius: 14px; padding: 1rem 0.8rem; text-align: center; width: 100%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+            <div style="display: inline-block; background: #e8f1ff; color: #0066cc; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">Filter 2</div>
+            <div style="font-size: 1.05rem; font-weight: 700; color: #0066cc; margin-top: 0.25rem;">Customer Demand</div>
+            <div style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">What customers need</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div style="font-size: 1.5rem; color: #0066cc; margin: 0.5rem 0;">↓</div>
+
+      <!-- Level 4: Competitive Analysis - Even Narrower -->
+      <div style="width: 50%; text-align: center;">
+        <div style="background: white; border: 2px solid #e0e8f0; border-radius: 14px; padding: 1rem 1rem; text-align: center; width: 100%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+          <div style="display: inline-block; background: #fff3cd; color: #ff9800; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">Analysis</div>
+          <div style="font-size: 1.05rem; font-weight: 700; color: #0066cc; margin-top: 0.25rem;">Find Competitive Gap</div>
+          <div style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Compare with competitors</div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div style="font-size: 1.5rem; color: #0066cc; margin: 0.5rem 0;">↓</div>
+
+      <!-- Level 5: Final Result - Narrowest -->
+      <div style="width: 25%; text-align: center;">
+        <div style="background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%); border-radius: 16px; padding: 1rem 2.5rem; text-align: center; box-shadow: 0 12px 30px rgba(0, 102, 204, 0.25); width: 100%;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: white; line-height: 1.5;">200</div>
+          <div style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); font-weight: 500;">Priority Roadmap</div>
+        </div>
+      </div>
     </div>
   </div>
-
-      <div class="section-intro">
-        <h2>Establish Your Filtering Criteria</h2>
-      <p>Before evaluating individual connectors, your team needs to define the strategic context. Answer these questions once — they become the framework for filtering down from 12,000 connectors to 200 that matter most.</p>
-    </div>
 
     <form id="filteringForm">
       <!-- Question 1 -->
@@ -422,29 +476,8 @@
         <p>Balance two critical signals: customer demand from the Nintex Ideas Portal (requested connectors and feedback) with competitive offerings (what competitors already support). This is your market reality.</p>
         <div class="input-group">
           <label class="input-label">Customer Requests</label>
-          <div id="q2a" style="padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; color: #2563eb;">
-            Oracle, Dataverse, Snowflake, Microsoft Graph, Microsoft Planner, Monday.com, Google Forms, Microsoft Teams Approvals
-          </div>
-        </div>
-        <div class="input-group" style="margin-top: 1rem;">
-          <label class="input-label">Competitor Support</label>
-          <div id="q2b" style="padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; color: #2563eb; line-height: 1.6;">
-            <strong>Zapier</strong> supports all (8/8).<br><br>
-            <strong>Make</strong> supports (7/8): All except Microsoft Planner.<br><br>
-            <strong>Workato</strong> supports (5/8): Oracle, Dataverse, Snowflake, Microsoft Graph, Teams Approvals.<br><br>
-            <strong>Power Automate</strong> (4/8 - Microsoft-focused): supports Dataverse, Microsoft Graph, Planner, Teams Approvals.<br><br>
-            <strong>n8n</strong> supports (4/8): Oracle, Snowflake, Monday.com, Google Forms.
-          </div>
-        </div>
-
-        <!-- Requested Connectors Table -->
-        <div style="margin-top: 2rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 0;">🔗 New Connectors Customers Requested</h4>
-            <button id="expandConnectorsBtn" type="button" onclick="toggleConnectors()" style="background: var(--nintex-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">Show all 18 ↓</button>
-          </div>
-          <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-sm);">
-            <table id="connectorsTable" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <div id="q2a" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; color: #2563eb; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
               <thead>
                 <tr style="background-color: #f5f7fa; border-bottom: 2px solid var(--border);">
                   <th style="padding: 0.75rem; text-align: left; font-weight: 600; color: var(--text-primary); border-right: 1px solid var(--border);">Connector Name</th>
@@ -453,66 +486,71 @@
                   <th style="padding: 0.75rem; text-align: left; font-weight: 600; color: var(--text-primary);">Request</th>
                 </tr>
               </thead>
-              <tbody id="connectorsTableBody">
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Oracle</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">20</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Add Oracle Connector to Nintex Workflow Cloud</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Dataverse</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">13</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Dataverse Connector</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Snowflake</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">12</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Add support for Snowflake connector</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Microsoft Graph</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">8</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Microsoft Graph Integration - Connector / Directory / Actions</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Microsoft Planner</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">7</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #e3f2fd; color: #0066cc; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Open for voting</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Add Connection - Microsoft Planner</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Microsoft Teams Approvals</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">6</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Ability to Integrate with Microsoft Teams Approvals app</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Monday.com</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">5</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Add Connection Monday.com</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Google Forms</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">4</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Google Forms Connection</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">PostgreSQL (Azure)</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">3</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Adding a new connector for PostGreSQL DB azure</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Azure Databricks</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">3</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Add a connector for Azure Databricks</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">ArcGIS Online</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">2</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">ArcGIS Online Connections</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Zoom</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">2</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Zoom Connector</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">FreshService</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">2</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">FreshService Connector</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Xero</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">2</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Use the Xero connector to interface with POs and Contacts</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Autodesk BIM 360</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">1</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">A Workflow Cloud connector to Autodesk BIM 360</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Microsoft Access (On-Premise)</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">1</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Add a connection for NWC to on premise Microsoft Access Database</td></tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Sharefile</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">1</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Sharefile Connector</td></tr>
+                <tr style="background-color: rgb(250, 251, 252);"><td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">MS Project Online</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">1</td><td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: #ffe8e8; color: #c00; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">Not Planned</span></td><td style="padding: 0.75rem; color: var(--text-secondary);">Add connector for MS Project Online (MS365)</td></tr>
               </tbody>
             </table>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem;">📊 Data source: Nintex Ideas Portal - 18 new connectors requested by customers (out of 118 total feature requests) - sorted by votes</p>
+        </div>
+        <div class="input-group" style="margin-top: 2rem;">
+          <label class="input-label">Competitor Support</label>
+          <div id="q2b" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; color: #2563eb; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <thead>
+                <tr style="background-color: #f5f7fa; border-bottom: 2px solid var(--border);">
+                  <th style="padding: 0.75rem; text-align: left; font-weight: 600; color: var(--text-primary); border-right: 1px solid var(--border);">Platform</th>
+                  <th style="padding: 0.75rem; text-align: center; font-weight: 600; color: var(--text-primary); border-right: 1px solid var(--border);">Support</th>
+                  <th style="padding: 0.75rem; text-align: left; font-weight: 600; color: var(--text-primary);">Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);">
+                  <td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Zapier</td>
+                  <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">8/8</td>
+                  <td style="padding: 0.75rem; color: var(--text-secondary);">Supports all</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);">
+                  <td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Make</td>
+                  <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">7/8</td>
+                  <td style="padding: 0.75rem; color: var(--text-secondary);">All except Microsoft Planner</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(255, 255, 255);">
+                  <td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Workato</td>
+                  <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">5/8</td>
+                  <td style="padding: 0.75rem; color: var(--text-secondary);">Oracle, Dataverse, Snowflake, Microsoft Graph, Teams Approvals</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: rgb(250, 251, 252);">
+                  <td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">Power Automate</td>
+                  <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">4/8</td>
+                  <td style="padding: 0.75rem; color: var(--text-secondary);">Dataverse, Microsoft Graph, Planner, Teams Approvals (Microsoft-focused)</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                  <td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">n8n</td>
+                  <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">4/8</td>
+                  <td style="padding: 0.75rem; color: var(--text-secondary);">Oracle, Snowflake, Monday.com, Google Forms</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <script>
-          // NEW Connectors requested by customers (filtered from Nintex Ideas Portal)
-          const allConnectors = JSON.parse(`[{"name":"Oracle","votes":20,"status":"Not Planned","request":"Add Oracle Connector to Nintex Workflow Cloud"},{"name":"Dataverse","votes":13,"status":"Not Planned","request":"Dataverse Connector"},{"name":"Snowflake","votes":12,"status":"Not Planned","request":"Add support for Snowflake connector"},{"name":"Microsoft Graph","votes":8,"status":"Not Planned","request":"Microsoft Graph Integration - Connector / Directory / Actions"},{"name":"Microsoft Planner","votes":7,"status":"Open for voting","request":"Add Connection - Microsoft Planner"},{"name":"Microsoft Teams Approvals","votes":6,"status":"Not Planned","request":"Ability to Integrate with Microsoft Teams Approvals app"},{"name":"Monday.com","votes":5,"status":"Not Planned","request":"Add Connection Monday.com"},{"name":"Google Forms","votes":4,"status":"Not Planned","request":"Google Forms Connection"},{"name":"PostgreSQL (Azure)","votes":3,"status":"Not Planned","request":"Adding a new connector for PostGreSQL DB azure"},{"name":"Azure Databricks","votes":3,"status":"Not Planned","request":"Add a connector for Azure Databricks"},{"name":"ArcGIS Online","votes":2,"status":"Not Planned","request":"ArcGIS Online Connections"},{"name":"Zoom","votes":2,"status":"Not Planned","request":"Zoom Connector"},{"name":"FreshService","votes":2,"status":"Not Planned","request":"FreshService Connector"},{"name":"Xero","votes":2,"status":"Not Planned","request":"Use the Xero connector to interface with POs and Contacts"},{"name":"Autodesk BIM 360","votes":1,"status":"Not Planned","request":"A Workflow Cloud connector to Autodesk BIM 360"},{"name":"Microsoft Access (On-Premise)","votes":1,"status":"Not Planned","request":"Add a connection for NWC to on premise Microsoft Access Database"},{"name":"Sharefile","votes":1,"status":"Not Planned","request":"Sharefile Connector"},{"name":"MS Project Online","votes":1,"status":"Not Planned","request":"Add connector for MS Project Online (MS365)"}]`);
-          let connectorsExpanded = false;
-
-          function getStatusColor(status) {
-            if (!status) return { bg: '#f0f0f0', text: '#666' };
-            if (status.includes('Open')) return { bg: '#e3f2fd', text: '#0066cc' };
-            if (status.includes('Under Review')) return { bg: '#fff3cd', text: '#856404' };
-            return { bg: '#ffe8e8', text: '#c00' };
-          }
-
-          function getShortStatus(status) {
-            if (!status) return 'Unknown';
-            return status.split(',')[0].trim();
-          }
-
-          function renderConnectors() {
-            const tbody = document.getElementById('connectorsTableBody');
-            const maxRows = connectorsExpanded ? allConnectors.length : 8;
-
-            tbody.innerHTML = '';
-            for (let i = 0; i < Math.min(maxRows, allConnectors.length); i++) {
-              const d = allConnectors[i];
-              const colors = getStatusColor(d.status);
-              const bgColor = i % 2 === 0 ? '#fff' : '#fafbfc';
-
-              const row = document.createElement('tr');
-              row.style.borderBottom = '1px solid var(--border)';
-              row.style.backgroundColor = bgColor;
-
-              const shortStatus = getShortStatus(d.status);
-
-              row.innerHTML = `
-                <td style="padding: 0.75rem; border-right: 1px solid var(--border); color: var(--text-primary);">${d.name}</td>
-                <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border); color: var(--text-secondary);">${d.votes}</td>
-                <td style="padding: 0.75rem; text-align: center; border-right: 1px solid var(--border);"><span style="background-color: ${colors.bg}; color: ${colors.text}; padding: 0.25rem 0.5rem; border-radius: 3px; font-size: 0.85rem; white-space: nowrap;">${shortStatus}</span></td>
-                <td style="padding: 0.75rem; color: var(--text-secondary);">${d.request}</td>
-              `;
-              tbody.appendChild(row);
-            }
-          }
-
-          function toggleConnectors() {
-            connectorsExpanded = !connectorsExpanded;
-            const btn = document.getElementById('expandConnectorsBtn');
-            btn.textContent = connectorsExpanded ? 'Hide rest ↑' : 'Show all 118 ↓';
-            renderConnectors();
-          }
-
-          // Initialize
-          document.addEventListener('DOMContentLoaded', renderConnectors);
-        </script>
       </div>
 
     </form>

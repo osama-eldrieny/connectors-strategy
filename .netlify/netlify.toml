@@ -1,5 +1,5 @@
 functionsDirectory = "/Users/osamaeldrieny/Sandbox/Nintex Connector Priotrizer/netlify/functions"
-functionsDirectoryOrigin = "default"
+functionsDirectoryOrigin = "config-v1"
 redirectsOrigin = "config"
 plugins = []
 headers = []
@@ -26,6 +26,18 @@ functions = "/Users/osamaeldrieny/Sandbox/Nintex Connector Priotrizer/netlify/fu
 [functions]
 
 [functions."*"]
+
+[[redirects]]
+from = "/"
+to = "/connector-filtering-framework.html"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
 
 [[redirects]]
 from = "/api/*"

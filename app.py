@@ -59,7 +59,7 @@ def connector_filtering_framework_v1():
 
 @app.route('/nintex-connector-framework.html')
 def framework():
-    return send_file('nintex-connector-framework.html')
+    return redirect('/connector-filtering-framework.html')
 
 @app.route('/<path:filename>')
 def serve_static(filename):

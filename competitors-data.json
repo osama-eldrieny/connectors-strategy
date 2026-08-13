@@ -18,7 +18,8 @@
       "Competitor Coverage": "6 out of 8",
       "Supported By": "Make, OutSystems, Prismatic, ServiceNow, Zapier, n8n",
       "Coverage %": "75%",
-      "Priority": "P0 - IMMEDIATE"
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     },
     {
       "Rank": "2",
@@ -358,7 +359,8 @@
       "Competitor Coverage": "4 out of 8",
       "Supported By": "Make, Prismatic, ServiceNow, Zapier",
       "Coverage %": "50%",
-      "Priority": "P2 - MEDIUM"
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     },
     {
       "Rank": "36",
@@ -518,7 +520,8 @@
       "Competitor Coverage": "3 out of 8",
       "Supported By": "Cyclr, Make, Zapier",
       "Coverage %": "38%",
-      "Priority": "P2 - MEDIUM"
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     },
     {
       "Rank": "52",
@@ -1961,54 +1964,59 @@
       "Priority": "P3 - LOW"
     },
     {
-      "Rank": "196",
-      "Connector Name": "Agentalk",
+      "Rank": "201",
+      "Connector Name": "Databricks",
       "Type": "Industry",
       "Requested By Customers": "",
-      "Competitor Coverage": "1 out of 8",
-      "Supported By": "Make",
-      "Coverage %": "12%",
-      "Priority": "P3 - LOW"
+      "Competitor Coverage": "0 out of 8",
+      "Supported By": "",
+      "Coverage %": "0%",
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     },
     {
-      "Rank": "197",
-      "Connector Name": "Agentcis",
+      "Rank": "202",
+      "Connector Name": "Workday",
       "Type": "Industry",
       "Requested By Customers": "",
-      "Competitor Coverage": "1 out of 8",
-      "Supported By": "Zapier",
-      "Coverage %": "12%",
-      "Priority": "P3 - LOW"
+      "Competitor Coverage": "0 out of 8",
+      "Supported By": "",
+      "Coverage %": "0%",
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     },
     {
-      "Rank": "198",
-      "Connector Name": "Agenthost.ai",
+      "Rank": "203",
+      "Connector Name": "UKG",
       "Type": "Industry",
       "Requested By Customers": "",
-      "Competitor Coverage": "1 out of 8",
-      "Supported By": "Zapier",
-      "Coverage %": "12%",
-      "Priority": "P3 - LOW"
+      "Competitor Coverage": "0 out of 8",
+      "Supported By": "",
+      "Coverage %": "0%",
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     },
     {
-      "Rank": "199",
-      "Connector Name": "Agentifai Assistant Plugin",
+      "Rank": "204",
+      "Connector Name": "Dynamics CRM",
       "Type": "Industry",
       "Requested By Customers": "",
-      "Competitor Coverage": "1 out of 8",
-      "Supported By": "OutSystems",
-      "Coverage %": "12%",
-      "Priority": "P3 - LOW"
+      "Competitor Coverage": "0 out of 8",
+      "Supported By": "",
+      "Coverage %": "0%",
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     },
     {
-      "Rank": "200",
-      "Connector Name": "Agents",
+      "Rank": "205",
+      "Connector Name": "Salesforce",
       "Type": "Industry",
       "Requested By Customers": "",
-      "Competitor Coverage": "1 out of 8",
-      "Supported By": "Zapier",
-      "Coverage %": "12%",
-      "Priority": "P3 - LOW"
+      "Competitor Coverage": "0 out of 8",
+      "Supported By": "",
+      "Coverage %": "0%",
+      "Priority": "P0 - IMMEDIATE",
+      "F8": true
     }
   ]
 }

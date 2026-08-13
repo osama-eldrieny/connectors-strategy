@@ -141,7 +141,7 @@
       background-color: rgba(0, 102, 204, 0.02);
     }
 
-    .rank-cell {
+    .order-cell {
       font-weight: 700;
       color: var(--nintex-blue);
       width: 60px;
@@ -229,6 +229,18 @@
       border-radius: 4px;
       font-size: 0.75rem;
       white-space: nowrap;
+    }
+
+    .f8-badge {
+      display: inline-block;
+      padding: 0.3rem 0.7rem;
+      background-color: rgba(249, 115, 22, 0.15);
+      color: #ea580c;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
     }
 
     .footer {
@@ -384,6 +396,7 @@
           <option value="Customer-Requested">Customer-Requested</option>
           <option value="Competitive Gap">Competitive Gap</option>
           <option value="Industry">Industry</option>
+          <option value="F8">F8</option>
         </select>
         <select class="sort-select" id="priorityFilter">
           <option value="">All Priorities</option>
@@ -398,7 +411,7 @@
         <table id="connectorsTable">
           <thead>
             <tr>
-              <th style="width: 60px;">Rank</th>
+              <th style="width: 60px;">#</th>
               <th>Connector Name</th>
               <th>Type</th>
               <th>Competitor Coverage</th>
@@ -428,6 +441,8 @@
         const data = await response.json();
 
         allRecords = data.records;
+        console.log('Loaded records:', allRecords.length);
+        console.log('Last 5 records:', allRecords.slice(-5).map(r => r['Connector Name']));
         renderCompetitors(data.competitors);
         renderTable(allRecords);
         setupFilters();
@@ -444,8 +459,15 @@
     }
 
     function renderTable(records) {
+      // Sort: F8 connectors first, then by rank
+      const sortedRecords = records.sort((a, b) => {
+        if (a['F8'] && !b['F8']) return -1;
+        if (!a['F8'] && b['F8']) return 1;
+        return parseInt(a['Rank']) - parseInt(b['Rank']);
+      });
+
       const tbody = document.getElementById('tableBody');
-      tbody.innerHTML = records.map(record => {
+      tbody.innerHTML = sortedRecords.map((record, index) => {
         const typeClass = record['Type']?.includes('Customer') ? 'type-requested' :
                          record['Type']?.includes('Competitive') ? 'type-competitive' :
                          'type-industry';
@@ -459,9 +481,12 @@
 
         return `
           <tr>
-            <td class="rank-cell">${record['Rank']}</td>
+            <td class="order-cell">${index + 1}</td>
             <td><strong>${record['Connector Name']}</strong></td>
-            <td><span class="type-badge ${typeClass}">${record['Type']}</span></td>
+            <td>
+              <span class="type-badge ${typeClass}">${record['Type']}</span>
+              ${record['F8'] ? '<span class="f8-badge">F8</span>' : ''}
+            </td>
             <td>${record['Competitor Coverage']}</td>
             <td><span class="coverage-badge">${record['Coverage %']}</span></td>
             <td><span class="priority-badge ${priorityClass}">${record['Priority']}</span></td>
@@ -490,7 +515,7 @@
             record['Connector Name'].toLowerCase().includes(searchInput.value.toLowerCase());
 
           const matchesType = !typeFilter.value ||
-            record['Type'] === typeFilter.value;
+            (typeFilter.value === 'F8' ? record['F8'] === true : record['Type'] === typeFilter.value);
 
           const matchesPriority = !priorityFilter.value ||
             record['Priority'].startsWith(priorityFilter.value);

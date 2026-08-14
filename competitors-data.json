@@ -2285,17 +2285,6 @@
       "Status": "Built"
     },
     {
-      "Rank": "215",
-      "Connector Name": "Github",
-      "Type": "Industry",
-      "Requested By Customers": "",
-      "Competitor Coverage": "5 out of 8",
-      "Supported By": "Make, Zapier, Power Automate, ServiceNow, n8n",
-      "Coverage %": "62%",
-      "Priority": "P1 - HIGH",
-      "Status": "Built"
-    },
-    {
       "Rank": "216",
       "Connector Name": "GitHub-action",
       "Type": "Industry",
@@ -2307,17 +2296,6 @@
       "Status": "Built"
     },
     {
-      "Rank": "217",
-      "Connector Name": "Gitlab",
-      "Type": "Industry",
-      "Requested By Customers": "",
-      "Competitor Coverage": "5 out of 8",
-      "Supported By": "Make, Zapier, Power Automate, ServiceNow, n8n",
-      "Coverage %": "62%",
-      "Priority": "P1 - HIGH",
-      "Status": "Built"
-    },
-    {
       "Rank": "218",
       "Connector Name": "Infobip",
       "Type": "Industry",
@@ -2326,17 +2304,6 @@
       "Supported By": "Make, Zapier",
       "Coverage %": "25%",
       "Priority": "P2 - MEDIUM",
-      "Status": "Built"
-    },
-    {
-      "Rank": "219",
-      "Connector Name": "MailChimp",
-      "Type": "Industry",
-      "Requested By Customers": "",
-      "Competitor Coverage": "6 out of 8",
-      "Supported By": "Cyclr, Make, Zapier, Power Automate, Prismatic, n8n",
-      "Coverage %": "75%",
-      "Priority": "P0 - IMMEDIATE",
       "Status": "Built"
     },
     {

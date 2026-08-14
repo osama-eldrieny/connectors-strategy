@@ -2404,17 +2404,6 @@
       "Coverage %": "38%",
       "Priority": "P2 - MEDIUM",
       "Status": "Built"
-    },
-    {
-      "Rank": "226",
-      "Connector Name": "Whatsapp",
-      "Type": "Industry",
-      "Requested By Customers": "",
-      "Competitor Coverage": "4 out of 8",
-      "Supported By": "Make, Zapier, OutSystems, Power Automate",
-      "Coverage %": "50%",
-      "Priority": "P1 - HIGH",
-      "Status": "Built"
     }
   ]
 }

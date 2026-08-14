@@ -2217,6 +2217,237 @@
       "Priority": "P0 - IMMEDIATE",
       "F8": true,
       "Status": "Not started"
+    },
+    {
+      "Rank": "206",
+      "Connector Name": "Apollo",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "207",
+      "Connector Name": "AzureServiceBus",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, OutSystems, Power Automate",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "208",
+      "Connector Name": "Capsule",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "209",
+      "Connector Name": "Chargebee",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "210",
+      "Connector Name": "Confluence",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "4 out of 8",
+      "Supported By": "Make, Zapier, ServiceNow, n8n",
+      "Coverage %": "50%",
+      "Priority": "P1 - HIGH",
+      "Status": "Built"
+    },
+    {
+      "Rank": "211",
+      "Connector Name": "ConfluentKafka",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, OutSystems",
+      "Coverage %": "25%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "212",
+      "Connector Name": "Customer.io",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "213",
+      "Connector Name": "Eventbrite",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "214",
+      "Connector Name": "Freshservice",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, ServiceNow",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "215",
+      "Connector Name": "Github",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "5 out of 8",
+      "Supported By": "Make, Zapier, Power Automate, ServiceNow, n8n",
+      "Coverage %": "62%",
+      "Priority": "P1 - HIGH",
+      "Status": "Built"
+    },
+    {
+      "Rank": "216",
+      "Connector Name": "GitHub-action",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "217",
+      "Connector Name": "Gitlab",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "5 out of 8",
+      "Supported By": "Make, Zapier, Power Automate, ServiceNow, n8n",
+      "Coverage %": "62%",
+      "Priority": "P1 - HIGH",
+      "Status": "Built"
+    },
+    {
+      "Rank": "218",
+      "Connector Name": "Infobip",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "219",
+      "Connector Name": "MailChimp",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "6 out of 8",
+      "Supported By": "Cyclr, Make, Zapier, Power Automate, Prismatic, n8n",
+      "Coverage %": "75%",
+      "Priority": "P0 - IMMEDIATE",
+      "Status": "Built"
+    },
+    {
+      "Rank": "220",
+      "Connector Name": "MailerLite",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "221",
+      "Connector Name": "Notion",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "5 out of 8",
+      "Supported By": "Make, Zapier, Power Automate, Prismatic, n8n",
+      "Coverage %": "62%",
+      "Priority": "P1 - HIGH",
+      "Status": "Built"
+    },
+    {
+      "Rank": "222",
+      "Connector Name": "Pinecone",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "223",
+      "Connector Name": "Pipedrive",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, Power Automate",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "224",
+      "Connector Name": "SurveyMonkey",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "2 out of 8",
+      "Supported By": "Make, Zapier",
+      "Coverage %": "25%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "225",
+      "Connector Name": "Todoist",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "3 out of 8",
+      "Supported By": "Make, Zapier, n8n",
+      "Coverage %": "38%",
+      "Priority": "P2 - MEDIUM",
+      "Status": "Built"
+    },
+    {
+      "Rank": "226",
+      "Connector Name": "Whatsapp",
+      "Type": "Industry",
+      "Requested By Customers": "",
+      "Competitor Coverage": "4 out of 8",
+      "Supported By": "Make, Zapier, OutSystems, Power Automate",
+      "Coverage %": "50%",
+      "Priority": "P1 - HIGH",
+      "Status": "Built"
     }
   ]
 }

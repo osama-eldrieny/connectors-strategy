@@ -685,39 +685,6 @@
       "Status": "Not started"
     },
     {
-      "Rank": "62",
-      "Connector Name": "AgencyZoom",
-      "Type": "Competitive Gap",
-      "Requested By Customers": "",
-      "Competitor Coverage": "2 out of 8",
-      "Supported By": "Make, Zapier",
-      "Coverage %": "25%",
-      "Priority": "P3 - LOW",
-      "Status": "Not started"
-    },
-    {
-      "Rank": "63",
-      "Connector Name": "Bigin by Zoho CRM",
-      "Type": "Competitive Gap",
-      "Requested By Customers": "",
-      "Competitor Coverage": "2 out of 8",
-      "Supported By": "Make, Zapier",
-      "Coverage %": "25%",
-      "Priority": "P3 - LOW",
-      "Status": "Not started"
-    },
-    {
-      "Rank": "64",
-      "Connector Name": "AgencyZoom",
-      "Type": "Competitive Gap",
-      "Requested By Customers": "",
-      "Competitor Coverage": "2 out of 8",
-      "Supported By": "Make, Zapier",
-      "Coverage %": "25%",
-      "Priority": "P3 - LOW",
-      "Status": "Not started"
-    },
-    {
       "Rank": "65",
       "Connector Name": "QuickBooks Time",
       "Type": "Competitive Gap",

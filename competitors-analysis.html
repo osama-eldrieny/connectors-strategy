@@ -211,6 +211,29 @@
       color: #6b7280;
     }
 
+    .status-badge {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .status-built {
+      background-color: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+    }
+
+    .status-in-progress {
+      background-color: rgba(249, 115, 22, 0.1);
+      color: #ea580c;
+    }
+
+    .status-not-started {
+      background-color: rgba(107, 114, 128, 0.1);
+      color: #6b7280;
+    }
+
     .supported-by {
       font-size: 0.85rem;
       color: var(--text-secondary, #64748b);
@@ -405,6 +428,12 @@
           <option value="P2">P2 - Medium</option>
           <option value="P3">P3 - Low</option>
         </select>
+        <select class="sort-select" id="statusFilter">
+          <option value="">All Status</option>
+          <option value="Built">Built</option>
+          <option value="In progress">In progress</option>
+          <option value="Not started">Not started</option>
+        </select>
       </div>
 
       <div class="table-wrapper">
@@ -417,6 +446,7 @@
               <th>Competitor Coverage</th>
               <th>Coverage %</th>
               <th>Priority</th>
+              <th>Status</th>
               <th>Supported By</th>
             </tr>
           </thead>
@@ -475,6 +505,9 @@
         const priorityMatch = record['Priority']?.match(/P[0-3]/);
         const priorityClass = priorityMatch ? `priority-${priorityMatch[0].toLowerCase()}` : '';
 
+        const statusValue = record['Status'] || 'Not started';
+        const statusClass = `status-${statusValue.toLowerCase().replace(/\s+/g, '-')}`;
+
         const supportedByArray = record['Supported By']
           ? record['Supported By'].split(',').map(s => s.trim()).filter(s => s && s !== '""')
           : [];
@@ -490,6 +523,7 @@
             <td>${record['Competitor Coverage']}</td>
             <td><span class="coverage-badge">${record['Coverage %']}</span></td>
             <td><span class="priority-badge ${priorityClass}">${record['Priority']}</span></td>
+            <td><span class="status-badge ${statusClass}">${statusValue}</span></td>
             <td class="supported-by">
               ${supportedByArray.length > 0
                 ? `<div class="badge-list">${supportedByArray.map(s => `<span>${s}</span>`).join('')}</div>`
@@ -508,6 +542,7 @@
       const searchInput = document.getElementById('searchInput');
       const typeFilter = document.getElementById('typeFilter');
       const priorityFilter = document.getElementById('priorityFilter');
+      const statusFilter = document.getElementById('statusFilter');
 
       function applyFilters() {
         let filtered = allRecords.filter(record => {
@@ -520,7 +555,10 @@
           const matchesPriority = !priorityFilter.value ||
             record['Priority'].startsWith(priorityFilter.value);
 
-          return matchesSearch && matchesType && matchesPriority;
+          const matchesStatus = !statusFilter.value ||
+            (record['Status'] || 'Not started') === statusFilter.value;
+
+          return matchesSearch && matchesType && matchesPriority && matchesStatus;
         });
 
         renderTable(filtered);
@@ -529,6 +567,7 @@
       searchInput.addEventListener('input', applyFilters);
       typeFilter.addEventListener('change', applyFilters);
       priorityFilter.addEventListener('change', applyFilters);
+      statusFilter.addEventListener('change', applyFilters);
     }
 
     // Load data when DOM is ready

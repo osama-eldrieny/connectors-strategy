@@ -1,0 +1,11 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "stub workflow required to be in default branch"

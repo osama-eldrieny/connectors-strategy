@@ -1059,6 +1059,121 @@
 </div>
 </div>
 
+<!-- JOURNEY 4: EXISTING USER - SIMPLIFIED CONNECTOR NEEDS SURVEY -->
+<div class="journey-section" style="grid-column: 1 / -1;">
+  <h2>👥 Journey 4: Existing User (Connector Needs - Branching) <span class="priority-badge">Primary</span></h2>
+  <p>4-step branching survey to identify missing connectors and urgency</p>
+  <div class="journey-flow">Step 1: Are there any connectors, actions, or features you're missing?
+  → [Yes] Step 2: What connectors or actions are missing that you need? (text area)
+    → Step 3: How urgent is this need? (4 options)
+      → Step 4: Thank you message
+  → [No] Step 4: Thank you message</div>
+
+  <div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 1</div>
+    <div class="question-title">
+      <h3>Are there any connectors, actions, or features you're missing?</h3>
+      <p class="question-subtitle">Initial connector gap identification</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">On page load or user interaction</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Single-Choice (Yes/No)</div>
+      <div class="spec-content">Binary response with branching logic</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">No, Yes</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Branching</div>
+      <div class="spec-content">Yes → Step 2, No → Step 4</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 2</div>
+    <div class="question-title">
+      <h3>What connectors or actions are missing that you need?</h3>
+      <p class="question-subtitle">Detailed connector/action inventory</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 1: Yes answer</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Open Text Input</div>
+      <div class="spec-content">Free-form text area with "Submit" button and placeholder</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 3</div>
+    <div class="question-title">
+      <h3>How urgent is this need?</h3>
+      <p class="question-subtitle">Prioritize based on urgency level</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 2 answer</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Single-Choice Rating</div>
+      <div class="spec-content">4 urgency levels</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Options</div>
+      <div class="spec-content">Nice to have, exploring, not blocking anything<br/>Important, planned in the next 1–3 months<br/>Critical, needed this quarter<br/>Blocking, need it now, actively stuck</div>
+    </div>
+  </div>
+</div>
+
+<div class="question-card">
+  <div class="question-header">
+    <div class="question-number">Step 4</div>
+    <div class="question-title">
+      <h3>Thanks for sharing your feedback really appreciate it!</h3>
+      <p class="question-subtitle">Survey completion message</p>
+    </div>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-item">
+      <div class="spec-label">Trigger</div>
+      <div class="spec-content">After Step 1: No, or after Step 3 answer</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Type</div>
+      <div class="flow-badge">Modal / Thank You Screen</div>
+      <div class="spec-content">Completion message with close button</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Message</div>
+      <div class="spec-content">Thanks for sharing your feedback really appreciate it!</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Button</div>
+      <div class="spec-content">"Close"</div>
+    </div>
+  </div>
+</div>
+</div>
+
 </div>
   </div>
 </section>
